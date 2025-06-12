@@ -1,0 +1,22 @@
+.subheader {
+  background-color: #c3e344;
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 2rem 0;
+
+  background-image: url('icons/leaves-pattern.svg'); /* adjust path */
+  background-repeat: repeat; /* repeats both horizontally & vertically */
+  background-size: 1000px;  /* or try auto, or a specific value like 50px */
+  background-blend-mode: color-burn; /* keep container fully visible */
+}
+
+.about_content {
+    border-radius: 10px;
+    background-color: #2094d243;
+    padding: 25px;
+    margin: 2%
+}
+
+.other_links {
+  color: #0057b8;
+}

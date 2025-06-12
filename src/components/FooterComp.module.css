@@ -1,0 +1,18 @@
+/* FooterComp.module.css */
+
+/* Contains styling for the Footer component (FooterComp.jsx). */
+
+
+.footer_links {
+    padding: 1%;
+}
+
+.footer_link_text {
+    color: #003e2b;
+    text-decoration: none;
+    padding: 1%;
+}
+
+.footer_link_text:hover {
+  color: #c3e344;
+}

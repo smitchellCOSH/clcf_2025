@@ -1,0 +1,50 @@
+/* Navbar.module.css */
+
+/* Contains styling for the Navigation Bar component (Navbar.jsx). */
+
+
+
+/* Navbar block styling */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0.75rem;
+  background-color: #f5f5f5;
+  border-top: 2px solid #c3e344;
+  border-bottom: 2px solid #c3e344;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+
+/* Navbar link styling */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #383838;
+  transition: color 0.3s ease;
+  font-weight: 600;
+}
+
+/* Hover controls the color of the link when hovering with the mouse. */
+.nav-link:hover {
+  color: #0057b8;
+}
+
+/* Navbar icons styling */
+.nav-icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+/* Mobile screen size styling */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
