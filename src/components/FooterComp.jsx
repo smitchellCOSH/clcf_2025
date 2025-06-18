@@ -24,7 +24,7 @@ const FooterComp = () => {
 
         <a
           className={styles.footer_link_text}
-          href="https://sterlingheights.com"
+          href="https://www.sterlingheights.gov/"
           target="_blank"
           rel="noopener noreferrer"
         >

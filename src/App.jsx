@@ -9,6 +9,9 @@ import Resources from './pages/Resources';
 import PlotYourForest from './pages/PlotYourForest';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+import Step1 from './pages/Step1';
+import Step2 from './pages/Step2';
+import Step3 from './pages/Step3';
 
 const App = () => {
   return (
@@ -20,6 +23,9 @@ const App = () => {
         <Route path="/plot" element={<PlotYourForest />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/faq" element={<FAQ />} />
+        <Route path="/step1" element={<Step1 />} />
+        <Route path="/step2" element={<Step2 />} />
+        <Route path="/step3" element={<Step3 />} />
       </Routes>
     </Router>
   );

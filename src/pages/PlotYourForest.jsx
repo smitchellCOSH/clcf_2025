@@ -1,6 +1,8 @@
 import HeaderComp from "../components/HeaderComp";
 import FooterComp from "../components/FooterComp";
 import Navbar from "../components/Navbar";
+import styles from '../mystyle.module.css';
+
 
 
 const PlotYourForest = () => {
@@ -9,8 +11,16 @@ const PlotYourForest = () => {
       <HeaderComp />
       <Navbar />
 
-      <h2>Plot Your Forest</h2>
-      <p>This is the Plot Your Forest page content.</p>
+      <div className={styles.subheader}>
+      Plot Your Forest
+      </div>
+
+      <div className={styles.about_content}>
+
+      <p>Use the tool below to simulate how your Pocket Forest will look based on your square footage, 
+        forest shape, and selected plants. </p>
+
+      </div>
 
 
       <FooterComp />

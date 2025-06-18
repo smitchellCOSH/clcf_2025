@@ -3,6 +3,9 @@ import styles from '../mystyle.module.css';
 import Navbar from '../components/Navbar';
 import FooterComp from '../components/FooterComp';
 import HeaderComp from '../components/HeaderComp';
+import FrostedImage from '../components/FrosterImage';
+import BasicButton from '../components/BasicButton';
+import ScrollToTop from '../components/ScrollToTop';
 
 
 /* About page - content */
@@ -31,7 +34,7 @@ const About = () => {
       {/* Subheader */}
       <div className={styles.subheader}>
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", color: "#2094d2", fontSize: "3rem" }}>Welcome</span>{" "}
+          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", color: "#0057b8", fontSize: "3rem" }}>Welcome</span>{" "}
           
           <span style={{ fontFamily: "Nunito Sans", fontSize: "2.5rem", fontWeight: "bold" }}>to the Pocket Forests project
             of Sterling Heights, Michigan!</span>
@@ -47,23 +50,16 @@ const About = () => {
           <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forests</span>, otherwise known as{" "}
           <span style={{ fontStyle: "italic", color: "#0057b8" }}>Microforests </span> or{" "}
           <span style={{ fontStyle: "italic", color: "#0057b8" }}>Miniforests</span> are areas of densely-packed,
-          highly biodiverse vegetation.Pocket forests are a tool in urban forestry used to combat deforestation and
-          provide ecological benefits, such as lowering an urban area’s heat index, improving air quality, and
-          increasing carbon sequestration.&nbsp;
+          highly biodiverse vegetation. Pocket forests are a tool in urban forestry used to combat deforestation and
+          provide ecological benefits, such as lowering an urban area’s heat index (in other words, cooling off a city during
+           the hot summer months), improving air quality, and removing carbon from the atmosphere.&nbsp;
         </p>
 
-        <img
-          src="/photos/about_image_001.jpg"
-          alt="Pocket forest"
-          style={{
-            display: "block",
-            margin: "auto",
-            alignSelf: "center",
-            width: "75%",
-            height: "auto",
-            padding: "50px"
-          }}
-        />
+      <FrostedImage
+      src="/photos/about_image_001.jpg"
+      alt="Pocket forest"
+      attribution="Liriodendron tulipifera - Tulip tree"
+      />
 
         <p>
           This website builds off of the work of Akira Miyawaki, a botanist and ecologist who pioneered the Miyawaki Method which
@@ -78,8 +74,6 @@ const About = () => {
           and visit our <span style={{ fontWeight: "bold", color: "#0057b8" }}>Plot your forest</span> page to design a layout of
           your Pocket Forest.
         </p>
-
-
       </div>
 
 
@@ -127,12 +121,11 @@ const About = () => {
 
         </p>
 
-        <img
-          src="photos/akira_miyawaki.jpg" // Public
-          className="App-logo"
-          alt="sh-logo"
-          style={{ width: "50%", height: "auto", padding: "10px"}}
-        />
+        <FrostedImage
+          src="/photos/akira_miyawaki.jpg"
+          alt="Akira Miyawaki"
+          attribution="Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka."
+          />
 
       </div>
 
@@ -171,8 +164,8 @@ const About = () => {
 
         <img
           src="photos/plant_height_dg.png" // Public
-          className="App-logo"
-          alt="sh-logo"
+          className="Plant Height Diagram"
+          alt="Plant Height Diagram"
           style={{ width: "80%", height: "auto", padding: "10px"}}
         />
 
@@ -217,9 +210,9 @@ const About = () => {
         </p>
 
         <img
-          src="photos/forest_comp_001.png" // Public
-          className="App-logo"
-          alt="sh-logo"
+          src="photos/forest_comp_002.png" // Public
+          className="Forest Composition Table"
+          alt="Forest Composition Table"
           style={{ width: "80%", height: "auto", padding: "10px"}}
         />
 
@@ -290,7 +283,7 @@ const About = () => {
         Urban Heat Index, a phenomenon that describes when urban areas become hotter than surrounding rural regions 
         due to urban architecture trapping heat and a lack of vegetation to cool things off. By increasing urban vegetation, 
         we can make Sterling Heights more comfortable and safe for its residents, particularly during the hot summer months. 
-        You can read more in the 
+        You can read more in the{" "}
         <a
           className={styles.other_links}
           href="https://www.sterlingheights.gov/2257/City-Plans"
@@ -304,10 +297,11 @@ const About = () => {
         <span style={{ fontWeight: "bold", color: "#0057b8" }}> Plot your forest</span> tool to learn more about Pocket Forest design.
         </p>
 
+
         <img
           src="photos/about_image_002.jpg" // Public
-          className="App-logo"
-          alt="about_image_002"
+          className="About Image 2"
+          alt="About Image 2"
           style={{ width: "80%", height: "auto", padding: "10px"}}
         />
 
@@ -334,17 +328,20 @@ const About = () => {
         There, you’ll learn how to build your own Pocket Forest, including how much space you need, which plants qualify, 
         and methods for constructing your forest.
 
+
+        <div style={{ marginTop: "2rem" }}>
+          <BasicButton to="/Guide">Up Next: Guide</BasicButton>
+          <ScrollToTop />
+        </div>
+
+
       </div>
-
-
-
-
 
       <FooterComp />
 
     </div>
 
-  </div>        
+  </div>
 
   );
 };

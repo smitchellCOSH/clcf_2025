@@ -1,0 +1,242 @@
+import React from 'react';
+import styles from '../mystyle.module.css';
+import Navbar from '../components/Navbar';
+import FooterComp from '../components/FooterComp';
+import HeaderComp from '../components/HeaderComp';
+import FrostedImage from '../components/FrosterImage';
+import BasicButton from '../components/BasicButton';
+import ScrollToTop from '../components/ScrollToTop';
+import { Link } from 'react-router-dom';
+
+
+
+/* Step 1: Before Planting - content */
+
+/* 
+Styling:
+
+Some styling is "in-line", where style={{}} in this file.
+Basic styling comes from mystyle.module.css file.
+Navbar styling from components/Navbar.module.css
+See the imports above for direction.
+
+*/
+
+const Step2 = () => {
+  return (
+    <div>
+    <HeaderComp />
+    <Navbar />
+
+
+    <div className="About">
+
+
+
+      {/* Subheader */}
+      <div className={styles.subheader}>
+        <p>
+          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", color: "#0057b8", fontSize: "2.5rem" }}>Step 2:</span>{" "}
+          
+          <span style={{ fontFamily: "Nunito Sans", fontSize: "2.5rem", fontWeight: "bold" }}>Planting Day</span>
+        </p>
+
+        </div>
+      
+      <div className={styles.about_content}>
+        <p>
+            Preparation takes a lot of work. The good news is that once your preparation is complete, it’s time for fun – planting!
+        </p>
+
+        <p>
+            Before you start planting, you will want to consider methods for protecting your plants from deer. You can protect your 
+            plants by using fencing. Though any fencing will act as a deterrent to deer, it is recommended to use sturdy fencing that 
+            is at least 6 feet tall to prevent deer grazing. Whether you build your fencing before or after you plant your forest, 
+            make sure you adequately protect your forest while it is in the establishment period, for at least one year. 
+        </p>
+
+        <p>
+            For resources on suitable fencing products, see {" "}
+            <a
+              className={styles.other_links}
+              href="https://www.dammannsgardenco.com/blog/how-to-identify-soil-types#:~:text=THE%20SQUISH%20TEST,have%20a%20high%20silt%20percentage"
+              target="_blank"
+              rel="noopener noreferrer"
+            > Deerbusters</a>.
+        </p>
+
+        <p>
+            Another consideration is that some plants are naturally deer resistant. Some plants have strong scents that deer avoid, 
+            others affect a deer’s skin or respiratory tract, and others deer simply don’t want to eat. 
+            To find out which plants are deer resistant, consult our plant calculator.
+        </p>
+
+        <p>
+            As a last step before you begin planting, make sure that you have access to and from your site both by foot and by vehicle. 
+            Be prepared to water your plants and do a final sweep of your site for lingering weeds or obstructions
+        </p>
+
+        {/* TODO: ADD IMAGE */}
+
+        <p>
+            Finally, it’s time to plant. Optionally, use our <Link to="/PlotYourForest" className={styles.other_links}>layout tool</Link> to understand where 
+            to plant each of your plants. Once you’re ready, follow the steps below to plant your forest.
+        </p>
+
+      </div>
+
+      <div className={styles.subheader}>
+        <p>
+          How to plant
+        </p>
+      </div>
+
+
+      <div className={styles.about_content}>
+        <p>
+            Since your plants should all be relatively young and should fit in a planting container that is no larger than 
+            5 gallons, planting should be the same for most, if not all, of your plants. 
+        </p>
+
+        <p>
+          If you used the “cover and smother” method of weeding, you will need to first choose 
+          where to place your plant, and cut a hole in the burlap large enough to dig a hole to fit the plant. 
+          The hole should be deep enough to cover the root-ball of your plant and twice as wide as the depth. 
+          Start digging and set your soil to the side, using a tarp if necessary to protect nearby plants
+        </p>
+
+        <p>
+            Only after preparing your hole should you remove your plant from its planting container. Gently loosen the roots in their 
+            potted soil, spreading them naturally. 
+        </p>
+
+        <p>
+            Place your plant gently into the hole you dug. The base of your plant should be at or slightly above grade (higher than the surrounding soil). 
+        </p>
+
+        <p>
+            Using the soil you set to the side, gently refill the hole, covering the roots up to the base of the plant. 
+        </p>
+
+        <p>
+            Optionally, you can create a berm around your plant – a slight cup shape of soil a few inches from your plant – to help retain water 
+            during your watering phase. Unless your soil is particularly dry or fast-draining, this step is not necessary and all berms will need 
+            to be leveled after the maintenance period.
+        </p>
+
+        <p>
+            Finally, after each planting, you will need to generously water your plant and, optionally, apply mulch. Watering and mulching can 
+            happen after each plant, or can occur after all of your plants are in the ground. When mulching, leave space around the base of 
+            your plant without mulch, in order to prevent accidentally suppressing your plants. The space you leave around the base of your plant 
+            should be as wide as your berms.
+        </p>
+
+        {/* TODO: ADD IMAGE */}
+
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Step 1: Gather your plants
+          </span>
+        </p>
+
+        <p>
+            First, gather your plants. You’ll want to have all of your plants ready to go near your planting site. 
+            However, make sure to keep them cool and covered until they are ready to plant to prevent damage from the sun, insects, or a lack of water.
+        </p>
+
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Step 2: Plant your Canopy Trees
+          </span>
+        </p>
+
+        <p>
+            Start with your largest trees first. You will want to plant these trees equidistant across your planting site, around 10 feet apart. 
+            You may need to modify your layout depending on what lies outside your plot, leaving a buffer of at least 5 feet between your largest 
+            trees and any surrounding roads, buildings, and other structures. 
+        </p>
+
+        {/* TODO: ADD DIAGRAM */}
+
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Step 3: Plant your Trees
+          </span>
+        </p>
+
+        <p>
+            Next, fill in your second largest set of plants, your trees. Spread your trees equally between the canopy trees, leaving at 
+            least 5 feet of space between the trees and canopy plantings. Again, it is best if you leave a buffer between your trees and any 
+            sidewalks, roads, or buildings.
+        </p>
+
+        {/* TODO: ADD DIAGRAM */}
+
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Step 4: Plant your Sub-Trees
+          </span>
+        </p>
+
+        <p>
+            For the third step of planting, begin to fill in your site with sub-trees. Sub-trees that are the same species should be spaced apart as 
+            much as possible, creating species diversity throughout the plot.
+        </p>
+
+        {/* TODO: ADD DIAGRAM */}
+
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Step 5: Plant your Shrubs
+          </span>
+        </p>
+
+        <p>
+            For the fourth and final step of planting, fill in the gaps in your planting site with the shrubs you have chosen, randomizing 
+            selection as much as possible. Depending on the species you choose, it may not always be possible to space them apart. 
+            Similar species may be planted close together in those cases.
+        </p>
+
+        {/* TODO: ADD DIAGRAM */}
+
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Step 6: After planting
+          </span>
+        </p>
+
+        <p>
+            Once you’ve finished planting, make sure to thoroughly water and mulch your planting site (if you choose). After that, your Pocket Forest is ready to grow!
+        </p>
+
+        {/* TODO: ADD DIAGRAM */}
+
+        <p>
+            At this point, it may be a good idea to document your Pocket Forest by taking pictures so that you can see your forest’s 
+            growth over time. Keeping a diagram of your forest showing where specific plants were placed may be helpful for maintenance. 
+            Additionally, you can register your forest here TODO: CREATE FORM? to help us keep track of the Pocket Forests being planted 
+            in and around Sterling Heights. Once registered, you can find your Pocket Forest on our interactive map. TODO: CREATE MAP OR REMOVE?
+        </p>
+
+        <p>
+            Finally, check out the final step of building your Pocket Forest: After planting & Maintenance.
+        </p>
+
+      </div>
+
+
+      <div style={{ marginTop: "2rem" }}>
+          <BasicButton to="/Step3">Step 3: Maintenance</BasicButton>
+          <ScrollToTop />
+        </div>
+
+      <FooterComp />
+
+    </div>
+
+  </div>
+
+  );
+};
+
+export default Step2;

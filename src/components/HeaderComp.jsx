@@ -17,7 +17,7 @@ const HeaderComp = () => {
           src="photos/sh_logo.png" // Public
           className="App-logo"
           alt="sh-logo"
-          style={{ width: "10%", height: "auto", padding: "10px"}}
+          style={{ width: "6%", height: "8%", padding: "10px"}}
         />
 
         {/* Title */}

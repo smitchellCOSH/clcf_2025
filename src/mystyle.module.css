@@ -1,22 +1,64 @@
+/* Subheader and section breaks */
 .subheader {
   background-color: #c3e344;
   border-radius: 10px;
-  padding: 1rem;
+  padding: 0.5rem;
   margin: 2rem 0;
+  font-weight: bold;
+  font-size: 2.5rem;
+  /*text-shadow: 1px 1px 2px rgba(0, 27, 58, 0.8);*/
 
-  background-image: url('icons/leaves-pattern.svg'); /* adjust path */
-  background-repeat: repeat; /* repeats both horizontally & vertically */
-  background-size: 1000px;  /* or try auto, or a specific value like 50px */
-  background-blend-mode: color-burn; /* keep container fully visible */
+  /* Adds background image to subheader block components */
+  background-image: url("icons/leaves-pattern.svg");
+  background-repeat: repeat;
+  background-size: 1000px;
+  background-blend-mode: soft-light;
 }
 
+
+/* Main content for each page. */
 .about_content {
     border-radius: 10px;
-    background-color: #2094d243;
+    background-color: #2094d243; /* Semi-translucent */
     padding: 25px;
     margin: 2%
 }
 
-.other_links {
+
+/* Custom link text color for links on the Resources page*/
+.resource_links {
   color: #0057b8;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover controls the color of the link when hovering with the mouse. */
+.resource_links:hover {
+  color: #003e2b;
+  font-size: 1.53rem;
+  transition-property: font-size;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+}
+
+
+/* Custom link text color for misc. links on various pages*/
+.other_links {
+  font-weight: bold;
+  color: #0057b8;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Hover controls the color of the link when hovering with the mouse. */
+.other_links:hover {
+  color: #003e2b;
+}
+
+
+
+/* Content for the Resource page, or any left-justified content */
+.resource_content {
+  justify-content: "left";
+
 }
