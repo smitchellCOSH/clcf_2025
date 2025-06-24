@@ -1,3 +1,21 @@
+/* First Guide page - Contains the content displayed on the Step 1: Before Planting page. */
+
+/* 
+Styling:
+
+Some styling is "in-line".
+
+Other basic styling comes from mystyle.module.css file.
+
+Styling for individual components contained in respective component files.
+
+See the import statements for navigation.
+
+*/
+
+
+
+/* Imports */
 import React from 'react';
 import styles from '../mystyle.module.css';
 import Navbar from '../components/Navbar';
@@ -8,17 +26,6 @@ import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 
 
-/* Step 1: Before Planting - content */
-
-/* 
-Styling:
-
-Some styling is "in-line", where style={{}} in this file.
-Basic styling comes from mystyle.module.css file.
-Navbar styling from components/Navbar.module.css
-See the imports above for direction.
-
-*/
 
 const Step1 = () => {
   return (
@@ -27,28 +34,28 @@ const Step1 = () => {
     <Navbar />
 
 
-    <div className="About">
-
-
+    <div className="Content">
 
       {/* Subheader */}
       <div className={styles.subheader}>
         <p>
           <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", color: "#0057b8", fontSize: "2.5rem" }}>Step 1:</span>{" "}
-          
           <span style={{ fontFamily: "Nunito Sans", fontSize: "2.5rem", fontWeight: "bold" }}>Before Planting</span>
         </p>
-
         </div>
-      
+
+
+      {/* Content */}
+
+      {/* Introduction */}
       <div className={styles.about_content}>
         <p>
             Before you start planting, you’ll want to carefully assess your planting space and understand the maintenance requirements 
             for your unique Pocket Forest. Some things you’ll want to consider might include the soil type of your 
             plot area, the shape and size of your plot area, any preexisting plants in your planting area, 
             underground utilities and obstructions within your plot area. Pocket Forests are very resilient, and as 
-            long as you have about 125 square feet of space, with 10 contiguous square feet of space in any direction, 
-            you have enough room for a Pocket Forest, though smaller forests may be an option with specific conditions.
+            long as you have about 10 square feet of space, with 10 contiguous square feet of space in any direction, you can create a
+            Pocket Forest. It is recommended, however, to have about 125 square feet of space for best results.
         </p>
 
         <p>
@@ -57,10 +64,16 @@ const Step1 = () => {
           </span>
         </p>
 
-        {/* TODO: ADD IMAGE */}
+        <FrostedImage
+          src="/photos/step1_image_001.jpg"
+          alt="Step 1: Photo 001"
+          attribution="Iris virginica - Blue flag iris"
+        />
 
       </div>
 
+
+      {/* Step 1: Choosing your site */}
       <div className={styles.subheader}>
         <p>
           Choosing your site
@@ -94,6 +107,7 @@ const Step1 = () => {
       </div>
 
 
+      {/* Step 2: Soil Type and Soil Drainage */}
       <div className={styles.subheader}>
         <p>
           Soil Type and Soil Drainage
@@ -267,6 +281,9 @@ const Step1 = () => {
         </p>
       </div>
 
+
+
+      {/* Step 3: Choosing your plants */}
       <div className={styles.subheader}>
         <p>
           Choosing your plants
@@ -290,7 +307,7 @@ const Step1 = () => {
           the rest of the guide!
         </p>
 
-        <BasicButton to="/PlantCalculator">Plant calculator</BasicButton>
+        <BasicButton to="/plant-calculator">Plant calculator</BasicButton>
 
 
         <p>
@@ -312,6 +329,8 @@ const Step1 = () => {
 
       </div>
 
+
+      {/* Step 4: Preparing to plant */}
       <div className={styles.subheader}>
         <p>
           Preparing to plant
@@ -350,6 +369,7 @@ const Step1 = () => {
       </div>
 
 
+      {/* Step 5: Next steps */}
       <div className={styles.subheader}>
         <p>
           Next steps
@@ -370,7 +390,6 @@ const Step1 = () => {
       <FooterComp />
 
     </div>
-
   </div>
 
   );

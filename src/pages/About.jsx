@@ -1,3 +1,21 @@
+/* About page - Contains the content displayed on the about page. */
+
+/* 
+Styling:
+
+Some styling is "in-line".
+
+Other basic styling comes from mystyle.module.css file.
+
+Styling for individual components contained in respective component files.
+
+See the import statements for navigation.
+
+*/
+
+
+
+/* Imports */
 import React from 'react';
 import styles from '../mystyle.module.css';
 import Navbar from '../components/Navbar';
@@ -8,17 +26,6 @@ import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 
 
-/* About page - content */
-
-/* 
-Styling:
-
-Some styling is "in-line", where style={{}} in this file.
-Basic styling comes from mystyle.module.css file.
-Navbar styling from components/Navbar.module.css
-See the imports above for direction.
-
-*/
 
 const About = () => {
   return (
@@ -298,12 +305,13 @@ const About = () => {
         </p>
 
 
-        <img
-          src="photos/about_image_002.jpg" // Public
-          className="About Image 2"
-          alt="About Image 2"
-          style={{ width: "80%", height: "auto", padding: "10px"}}
+
+        <FrostedImage
+        src="/photos/about_image_002.jpg"
+        alt="Pocket forest"
+        attribution="A lush Oak forest."
         />
+
 
       </div>
 

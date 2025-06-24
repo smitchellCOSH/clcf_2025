@@ -1,3 +1,55 @@
+/* Resources page - Contains the content displayed on the Resources page. */
+
+/* 
+Styling:
+
+Some styling is "in-line".
+
+Other basic styling comes from mystyle.module.css file.
+
+Styling for individual components contained in respective component files.
+
+See the import statements for navigation.
+
+*/
+
+
+/*
+
+TO ADD ADDITIONAL RESOURCES:
+
+1. Choose which section you'd like to add your resource to:
+--- Sterling Heights resources
+--- Michigan Native Plants
+--- Equipment & Planting
+--- Pocket Forestry & the Miyawaki Method
+
+2. Copy a block of code, such as this:
+
+<p>  
+  <a
+    className={styles.other_links}
+    href="https://www.sterlingheights.gov/2330/Pathway-to-Play-and-Preservation"
+    target="_blank"
+    rel="noopener noreferrer">
+  Pathway to Play and Preservation Millage
+  </a>
+</p>
+
+
+3. Replace the href link in the quotes with your link.
+
+4. Under the "rel" line and before the </a>, write the text that should display
+with your link attached to it. See the example above.
+
+5. Save and reload.
+
+*/
+
+
+
+
+/* Imports */
 import HeaderComp from "../components/HeaderComp";
 import FooterComp from "../components/FooterComp";
 import Navbar from "../components/Navbar";
@@ -5,7 +57,7 @@ import styles from '../mystyle.module.css';
 import FrostedImage from "../components/FrosterImage";
 
 
-
+/* Content */
 const Resources = () => {
   return (
     <div>
@@ -22,6 +74,12 @@ const Resources = () => {
       <div className={styles.about_content}>
         <p>Learn more about Pocket Forestry through the resources below.</p>
 
+
+
+        {/* Resources, sectioned appropriately */}
+
+
+        {/* Sterling Heights Resources */}
         <div className={styles.resource_content}>
           <p>
             <span style={{ fontWeight: "bold", color: "#383838", fontSize: "2rem"}}>
@@ -204,8 +262,6 @@ const Resources = () => {
 
 
         </div>
-
-
       </div>
 
 

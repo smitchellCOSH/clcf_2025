@@ -1,3 +1,21 @@
+/* Guide page - Contains the content displayed on the Guide homepage. */
+
+/* 
+Styling:
+
+Some styling is "in-line".
+
+Other basic styling comes from mystyle.module.css file.
+
+Styling for individual components contained in respective component files.
+
+See the import statements for navigation.
+
+*/
+
+
+
+/* Imports */
 import HeaderComp from "../components/HeaderComp";
 import FooterComp from "../components/FooterComp";
 import Navbar from "../components/Navbar";
@@ -9,19 +27,20 @@ import FrostedImage from '../components/FrosterImage';
 
 
 
-// src/pages/Guide.jsx
 const Guide = () => {
   return (
     <div>
       <HeaderComp />
       <Navbar />
 
+      {/* Subheader */}
       <div className={styles.subheader}>
         Guide: Build your own <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forest</span>
 
       </div>
 
 
+      {/* Content */}
       <div className={styles.about_content}>
         Before you begin, check out the{" "}
 
@@ -31,7 +50,7 @@ const Guide = () => {
             {" "} and {" "}
 
             <Link to="/Resources" className={styles["other_links"]}>
-            Resources</Link> 
+            Resources</Link>
 
             {" "} pages for more information about Pocket Forests. In this section, we’ll outline step-by-step
             instructions for building a Pocket Forest from scratch. You’ll learn about which plants qualify, planting methods, and guidelines for following
@@ -56,7 +75,6 @@ const Guide = () => {
           alt="Pocket forest"
           attribution="Carpinus caroliniana - Blue beech tree"
           />
-
 
       </div>
 

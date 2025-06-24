@@ -3,6 +3,7 @@
 /* Styling contained in Navbar.module.css */
 
 
+/* Imports */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';

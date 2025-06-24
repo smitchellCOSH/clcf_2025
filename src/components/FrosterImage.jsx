@@ -1,3 +1,17 @@
+/* 
+
+  Frosted Image component specifications. 
+
+  Handles creating an overlay over images when hovered over by the mouse.
+  The overlay blurs the content of the image and displays the image's
+  attribution, or other information important to the image.
+
+*/
+
+/* Styling contained in FrostedImage.css */
+
+
+/* Imports */
 import React from "react";
 import "./FrostedImage.css";
 

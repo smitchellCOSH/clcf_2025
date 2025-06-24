@@ -1,7 +1,16 @@
-/* Footer component specifications */
+/* 
+
+  Footer component specifications. 
+  Adds a footer to the base of each page with links to resources,
+  including a contact page, a FAQ page, and to the Sterling Heights
+  official government website.
+
+*/
 
 /* Styling contained in FooterComp.module.css */
 
+
+/* Imports */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FooterComp.module.css';

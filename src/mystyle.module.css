@@ -6,7 +6,6 @@
   margin: 2rem 0;
   font-weight: bold;
   font-size: 2.5rem;
-  /*text-shadow: 1px 1px 2px rgba(0, 27, 58, 0.8);*/
 
   /* Adds background image to subheader block components */
   background-image: url("icons/leaves-pattern.svg");
@@ -47,14 +46,13 @@
   font-weight: bold;
   color: #0057b8;
   transition: color 0.3s ease;
-  text-decoration: none;
+  /*text-decoration: none;*/
 }
 
 /* Hover controls the color of the link when hovering with the mouse. */
 .other_links:hover {
   color: #003e2b;
 }
-
 
 
 /* Content for the Resource page, or any left-justified content */

@@ -128,7 +128,7 @@ const Step2 = () => {
             Finally, after each planting, you will need to generously water your plant and, optionally, apply mulch. Watering and mulching can 
             happen after each plant, or can occur after all of your plants are in the ground. When mulching, leave space around the base of 
             your plant without mulch, in order to prevent accidentally suppressing your plants. The space you leave around the base of your plant 
-            should be as wide as your berms.
+            should be as wide as your berms, if you add berms to your forest. You will want to apply at least 2 inches of mulch to cover your forest floor.
         </p>
 
         {/* TODO: ADD IMAGE */}

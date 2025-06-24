@@ -1,29 +1,38 @@
-/* Header component specifications */
+/* 
+
+Header component specifications.
+Creates a header at the top of any page with the
+Sterling Heights logo and project title.
+
+*/
 
 /* Styling contained in HeaderComp.module.css */
 
 
+/* Imports */
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HeaderComp.module.css';
+
+
+
 
 const HeaderComp = () => {
   return (
     <header className={styles.HeaderComp}>
 
       {/* Logo */}
-
         <img
-          src="photos/sh_logo.png" // Public
+          src="photos/sh_logo.png"
           className="App-logo"
           alt="sh-logo"
-          style={{ width: "6%", height: "8%", padding: "10px"}}
+          style={{ width: "auto", height: "auto", padding: "10px"}}
         />
 
         {/* Title */}
-        <h1 style={{ margin: 0, fontSize: "auto" }}>
+        <h1 style={{ margin: 0, fontSize: "3rem" }}>
           Pocket Forests of{" "}
-          <span style={{ color: "#0057b8" }}>
+          <span style={{ color: "#383838" }}>
             Sterling Heights
           </span>
         </h1>
