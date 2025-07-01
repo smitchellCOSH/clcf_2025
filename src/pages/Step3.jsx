@@ -1,3 +1,22 @@
+/* Third Guide page - Contains the content displayed on the Step 3: Maintenance. */
+
+/* 
+Styling:
+
+Some styling is "in-line".
+
+Other basic styling comes from mystyle.module.css file.
+
+Styling for individual components contained in respective component files.
+
+See the import statements for navigation.
+
+*/
+
+
+
+
+/* Imports */
 import React from 'react';
 import styles from '../mystyle.module.css';
 import Navbar from '../components/Navbar';
@@ -10,18 +29,8 @@ import { Link } from 'react-router-dom';
 
 
 
-/* Step 1: Before Planting - content */
 
-/* 
-Styling:
-
-Some styling is "in-line", where style={{}} in this file.
-Basic styling comes from mystyle.module.css file.
-Navbar styling from components/Navbar.module.css
-See the imports above for direction.
-
-*/
-
+/* Content */
 const Step3 = () => {
   return (
     <div>
@@ -31,27 +40,30 @@ const Step3 = () => {
 
     <div className="About">
 
-      {/* Subheader */}
-      <div className={styles.subheader}>
-        <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", color: "#0057b8", fontSize: "2.5rem" }}>Step 3:</span>{" "}After Planting and Maintenance
-        </p>
-        </div>
-      
       <div className={styles.about_content}>
+
+        {/* Subheader */}
+        <div className={styles.subheader}>
+            <p>
+            Step 3: After Planting and Maintenance
+            </p>
+        </div>
+
         <p>
             Now that you’ve finished planting, it is time to move on to maintenance. Pocket Forests are designed to grow very quickly, meaning that your 
             forest should establish itself within only 1-2 years. However, minor maintenance is still recommended in order to give your plants the 
             best chance of survival.
         </p>
 
-        </div>
-
         <div className={styles.subheader}>
-            Weeding
+            Weeding and Watering
         </div>
 
-        <div className={styles.about_content}>
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Weeding
+          </span>
+        </p>
         
         <p>
             Frequent and diligent weeding is recommended for your Pocket Forest in the first 1-2 years of 
@@ -81,14 +93,12 @@ const Step3 = () => {
                 target="_blank"
                 rel="noopener noreferrer">Michigan’s Worst Weeds</a> article.
         </p>
-        
-        </div>
 
-        <div className={styles.subheader}>
-          Watering
-        </div>
-
-        <div className={styles.about_content}>
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Watering
+          </span>
+        </p>
         
         <p>
             In general, Pocket Forests in Michigan do not require regular watering. However, depending on 
@@ -110,17 +120,20 @@ const Step3 = () => {
             following planting. If your plants appear to need more water, it is acceptable to give more water, 
             even if it doesn’t follow your typical watering schedule. Use your best judgment, and your plants will thank you!
         </p>
-        
-        </div>
+
 
 
 
         <div className={styles.subheader}>
-            Animal care and pest control
+            Animal Care and Plant Care
         </div>
 
-        <div className={styles.about_content}>
-        
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Animal Care
+          </span>
+        </p>
+
         <p>
             Check on your fencing every once in a while, making sure that it cannot be easily breached 
             by deer or other large grazing animals. Walk the perimeter of your fencing every once in a 
@@ -140,17 +153,13 @@ const Step3 = () => {
             base of your pants. Limit exposed skin as much as possible. Check yourself before and after 
             arriving inside, and change and wash your clothes if necessary to prevent transporting any pests with you.
         </p>
-        
-        </div>
 
+        <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Plant Care
+          </span>
+        </p>
 
-
-        <div className={styles.subheader}>
-            Plant care
-        </div>
-
-        <div className={styles.about_content}>
-        
         <p>
             Symptoms of plant disease can be alarming, but it is helpful to remember that your 
             plants are strong and resilient. Furthermore, it is expected that some of the plants 
@@ -166,32 +175,40 @@ const Step3 = () => {
                 target="_blank"
                 rel="noopener noreferrer">this article</a>.
         </p>
-        
-        </div>
 
 
 
         <div className={styles.subheader}>
-            Questions
+            Wrapping Up and Questions
         </div>
 
-        <div className={styles.about_content}>
-        
+        <p>
+            That's a wrap! Congratulations on building your very own Pocket Forest. We appreciate your
+            efforts to help reforest our city. We hope that in building this forest, you can benefit from
+            better air, more shade, and company from the small animals and insects that may visit.
+
+        </p>
+
         <p>
             If you have any questions about the care and keeping of your Pocket Forest, visit 
             our <Link to="/Contact" className={styles.other_links}>Contact</Link> page. 
-            We are happy to help or point you in the right direction. You can also visit 
-            our <Link to="/Resources" className={styles.other_links}>Resources</Link> page for more information.
+            We are happy to help or point you in the right direction. Once you've finished planting
+            your Pocket Forest, please let us know! We'd love to learn more about the Forests 
+            that are being planted by community members like you.
+            
+            If you need additional help, you can also visit 
+            our <Link to="/Resources" className={styles.other_links}>Resources</Link> page for 
+            more information.
         </p>
-        
-        </div>
 
 
 
 
         <div style={{ marginTop: "2rem" }}>
-          <BasicButton to="/Step3">Step 3: Maintenance</BasicButton>
+          <BasicButton to="/FAQ">Frequently Asked Questions</BasicButton>
           <ScrollToTop />
+        </div>
+
         </div>
 
       <FooterComp />

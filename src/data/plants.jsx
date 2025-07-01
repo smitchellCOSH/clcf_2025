@@ -130,7 +130,9 @@ let redOak = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED], 
+    image: "/plant_photos/quercus-rubra_red-oak.jpg",
+    imgAttribution: "",
 };
 
 let burOak = {
@@ -145,7 +147,9 @@ let burOak = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE, forestType.POLLINATOR]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE, forestType.POLLINATOR],
+    image: "/plant_photos/quercus-macrocarpa_bur-oak.jpg",
+    imgAttribution: "",
 };
 
 
@@ -161,7 +165,9 @@ let swampWhiteOak = {
     resistanceType: [resistanceType.MILD],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/quercus-bicolor_swamp-white-oak.jpg",
+    imgAttribution: "Image by P. Showers",
 };
 
 
@@ -177,7 +183,9 @@ let whiteOak = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.DRYPRAIRIE, forestType.CHALLENGED, forestType.OAKFOREST]
+    forestType: [forestType.DRYPRAIRIE, forestType.CHALLENGED, forestType.OAKFOREST],
+    image: "/plant_photos/quercus-alba_white-oak.jpg",
+    imgAttribution: "",
 };
 
 
@@ -193,7 +201,9 @@ let americanElm = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.DRYPRAIRIE, forestType.WETPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.DRYPRAIRIE, forestType.WETPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/ulmus-americana_american-elm.jpg",
+    imgAttribution: "Image by L. Wallis",
 };
 
 
@@ -209,7 +219,9 @@ let hackberry = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
-    forestType: [forestType.CHALLENGED, forestType.WETPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.CHALLENGED, forestType.WETPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/celtis-occidentalis_hackberry.jpg",
+    imgAttribution: "Image by L. Wallis",
 };
 
 
@@ -225,7 +237,9 @@ let yellowBirch = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.DRYPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.DRYPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/betula-alleghaniensis_yellow-birch.jpg",
+    imgAttribution: "",
 };
 
 
@@ -241,7 +255,9 @@ let americanBeech = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
-    forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.WETPRAIRIE]
+    forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.WETPRAIRIE],
+    image: "/plant_photos/fagus-grandifolia_american-beech.jpg",
+    imgAttribution: "",
 };
 
 
@@ -257,7 +273,9 @@ let shagbarkHickory = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE],
+    image: "/plant_photos/carya-ovata_shagbark-hickory.jpg",
+    imgAttribution: "",
 };
 
 
@@ -273,7 +291,9 @@ let tulipTree = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR],
+    image: "/plant_photos/liriodendron-tulipifera_tulip-tree.jpg",
+    imgAttribution: "",
 };
 
 
@@ -289,12 +309,14 @@ let sycamore = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.WETPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.WETPRAIRIE],
+    image: "/plant_photos/platanus-occidentalis_sycamore.jpg", 
+    imgAttribution: "",
 };
 
 
 let purplestemAngelica = {
-    id: "sycamore",
+    id: "purplestem_angelica",
     plantName: "Purplestem Angelica",
     scientificName: "Angelica atropurpurea",
     notes: "",
@@ -305,7 +327,9 @@ let purplestemAngelica = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.WETPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.WETPRAIRIE],
+    image: "/plant_photos/angelica-atropurpurea_purplestem-angelica.jpg",
+    imgAttribution: "",
 };
 
 
@@ -321,14 +345,16 @@ let canadaAnemone = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.CHALLENGED, forestType.POLLINATOR, forestType.DRYPRAIRIE]
+    forestType: [forestType.CHALLENGED, forestType.POLLINATOR, forestType.DRYPRAIRIE],
+    image: "/plant_photos/anemone-canadensis_canada-anemone.jpg",
+    imgAttribution: "Image by A. A. Reznicek",
 };
 
 
 let newEnglandAster = {
     id: "new_england_aster",
     plantName: "New England Aster",
-    scientificName: "Anemone canadensis",
+    scientificName: "Symphyotrichum novae-angliae",
     notes: "",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
@@ -337,7 +363,9 @@ let newEnglandAster = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE],
+    image: "/plant_photos/symphyotrichum-novae-angliae_new-england-aster.jpg",
+    imgAttribution: "",
 };
 
 
@@ -353,7 +381,9 @@ let sandCoreopsis = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "plant_photos/coreopsis-lanceolata_sand-coreopsis.jpg",
+    imgAttribution: "",
 };
 
 
@@ -369,7 +399,9 @@ let commonBoneset = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/eupatorium-perfoliatum_common-boneset.jpg",
+    imgAttribution: "",
 };
 
 
@@ -385,7 +417,9 @@ let paleleafWoodlandSunflower = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE, forestType.DRYPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE, forestType.DRYPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/helianthus-strumosus_paleleaf-woodland-sunflower.jpg",
+    imgAttribution: "",
 };
 
 
@@ -402,7 +436,9 @@ let blueLobelia = {
     resistanceType: [resistanceType.LOW],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE],
+    image: "/plant_photos/lobelia-siphilitica_blue-lobelia.jpg",
+    imgAttribution: "",
 };
 
 
@@ -419,7 +455,9 @@ let horsemint = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/monarda-punctata_horsemint-spotted-beebalm.jpg",
+    imgAttribution: "",
 };
 
 
@@ -436,7 +474,9 @@ let shrubbyCinquefoil = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/potentilla-fruticosa_shrubby-cinquefoil.jpg",
+    imgAttribution: "",
 };
 
 
@@ -453,7 +493,9 @@ let pinnatePrairieCornflower = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/ratibida-pinnata_yellow-coneflower.jpg",
+    imgAttribution: "",
 };
 
 
@@ -470,7 +512,9 @@ let cupPlant = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE],
+    image: "/plant_photos/silphium-perfoliatum_cup-plant.jpg",
+    imgAttribution: "",
 };
 
 
@@ -479,7 +523,7 @@ let riddellsGoldenrod = {
     id: "riddellsGoldenrod",
     plantName: "Riddell's Goldenrod",
     scientificName: "Oligoneuron riddellii",
-    notes: "",
+    notes: "This species can be substituted with most other Goldenrod species; many are native to Southeast Michigan.",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN],
     soilType: [soilType.CLAY],
@@ -487,7 +531,9 @@ let riddellsGoldenrod = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE],
+    image: "plant_photos/oligoneuron_riddellii_riddells-goldenrod.jpg",
+    imgAttribution: "Image by iNaturalist user @Kevin, chdphoto",
 };
 
 
@@ -503,7 +549,9 @@ let meadowsweet = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
+    image: "/plant_photos/spiraea-alba_meadowsweet.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -520,7 +568,9 @@ let goldenAlexanders = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/zizia-aurea_golden-alexanders.jpg",
+    imgAttribution: "",
 };
 
 
@@ -537,7 +587,9 @@ let yellowGiantHyssop = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/agastache-nepetoides_yellow-giant-hyssop.jpg",
+    imgAttribution: "Image by R. W. Smith",
 };
 
 
@@ -553,7 +605,9 @@ let noddingWildOnion = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/allium-cernuum_nodding-wild-onion.jpg",
+    imgAttribution: "",
 };
 
 
@@ -569,7 +623,9 @@ let swampMilkweed = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
+    image: "/plant_photos/asclepias-incarnata_swamp-milkweed.jpg",
+    imgAttribution: "",
 };
 
 
@@ -586,7 +642,9 @@ let butterflyWeed = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/asclepias-tuberosa_butterfly-weed.jpg",
+    imgAttribution: "",
 };
 
 
@@ -603,7 +661,9 @@ let smoothBlueAster = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/symphyotrichum-laeve_smooth-blue-aster.jpg",
+    imgAttribution: "",
 };
 
 
@@ -621,7 +681,9 @@ let paleIndianPlantain = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/cacalia-atriplicifolium_pale-indian-plantain.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -638,7 +700,9 @@ let buttonbush = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.CHALLENGED, forestType.WETPRAIRIE]
+    forestType: [forestType.CHALLENGED, forestType.WETPRAIRIE],
+    image: "/plant_photos/cephalanthus-occidentalis_buttonbush.jpg",
+    imgAttribution: "",
 };
 
 
@@ -655,7 +719,9 @@ let wildStrawberry = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST]
+    forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST],
+    image: "/plant_photos/fragaria-virginiana_wild-strawberry.jpg",
+    imgAttribution: "",
 };
 
 
@@ -672,7 +738,9 @@ let roughBlazingStar = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.CHALLENGED, forestType.DRYPRAIRIE, forestType.OAKFOREST, forestType.WETPRAIRIE]
+    forestType: [forestType.CHALLENGED, forestType.DRYPRAIRIE, forestType.OAKFOREST, forestType.WETPRAIRIE],
+    image: "/plant_photos/liatris-aspera_blazing-star.jpg",
+    imgAttribution: "",
 };
 
 
@@ -689,7 +757,9 @@ let eveningPrimrose = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.CHALLENGED, forestType.OAKFOREST]
+    forestType: [forestType.CHALLENGED, forestType.OAKFOREST],
+    image: "/plant_photos/oenothera-biennis_evening-primrose.jpg",
+    imgAttribution: "",
 };
 
 
@@ -706,7 +776,9 @@ let penstemon = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE],
+    image: "/plant_photos/penstemon-hirsutus_hairy-beardtongue.jpg",
+    imgAttribution: "",
 };
 
 
@@ -722,7 +794,9 @@ let michiganRose = {
     resistanceType: [resistanceType.SUSCEPTIBLE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/rosa-setigera_michigan-rose.jpg",
+    imgAttribution: "Image by A. A. Reznicek",
 };
 
 
@@ -739,7 +813,9 @@ let lateFigwort = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.DRYPRAIRIE],
+    image: "/plant_photos/scrophularia-marilandica_late-figwort.jpg",
+    imgAttribution: "",
 };
 
 
@@ -756,7 +832,9 @@ let showyGoldenrod = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/solidago-speciosa_showy-goldenrod.jpg",
+    imgAttribution: "",
 };
 
 
@@ -773,7 +851,9 @@ let hoaryVervain = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.CHALLENGED, forestType.DRYPRAIRIE]
+    forestType: [forestType.CHALLENGED, forestType.DRYPRAIRIE],
+    image: "/plant_photos/verbena-stricta_hoary-vervain.jpg", 
+    imgAttribution: "",
 };
 
 
@@ -790,7 +870,9 @@ let ironweed = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.WETPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.WETPRAIRIE],
+    image: "/plant_photos/vernonia-missurica_ironweed.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -808,7 +890,9 @@ let culversRoot = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE],
+    image: "/plant_photos/veronicastrum-virginicum_culvers-root.jpg",
+    imgAttribution: "",
 };
 
 
@@ -825,7 +909,9 @@ let leadplant = {
     resistanceType: [resistanceType.SUSCEPTIBLE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE],
+    image: "/plant_photos/amorpha-canescens_leadplant.jpg",
+    imgAttribution: "",
 };
 
 
@@ -841,7 +927,9 @@ let columbine = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.DRYPRAIRIE]
+    forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.DRYPRAIRIE],
+    image: "plant_photos/aquilegia-canadensis_columbine.jpg",
+    imgAttribution: "",
 };
 
 
@@ -858,7 +946,9 @@ let newJerseyTea = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE],
+    image: "/plant_photos/ceanothus-americanus_new-jersey-tea.jpg",
+    imgAttribution: "",
 };
 
 
@@ -875,7 +965,9 @@ let showyTickTrefoil = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.WETPRAIRIE]
+    forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
+    image: "/plant_photos/desmodium-canadense_showy-tick-trefoil.jpg",
+    imgAttribution: "",
 };
 
 
@@ -892,7 +984,9 @@ let wildGeranium = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/geranium-maculatum_wild-geranium.jpg",
+    imgAttribution: "",
 };
 
 
@@ -909,7 +1003,9 @@ let alumRoot = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.WETPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
+    image: "/plant_photos/heuchera-americana_alum-root.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -926,7 +1022,9 @@ let virginiaWaterleaf = {
     resistanceType: [resistanceType.SUSCEPTIBLE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE],
+    image: "/plant_photos/hydrophyllum-virginianum_virginia-waterleaf.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -943,7 +1041,9 @@ let hairyBushclover = {
     resistanceType: [resistanceType.SUSCEPTIBLE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE],
+    image: "/plant_photos/lespedeza-hirta_hairy-bush-clover.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -960,7 +1060,9 @@ let redberriedElder = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/sambucus-racemosa_red-berried-elder.jpg",
+    imgAttribution: "",
 };
 
 
@@ -977,7 +1079,9 @@ let roundleavedRagwort = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE],
+    image: "/plant_photos/packera-obovata_round-leaved-ragwort.jpg",
+    imgAttribution: "",
 };
 
 
@@ -994,7 +1098,9 @@ let juneberry = {
     resistanceType: [resistanceType.LOW],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE],
+    image: "/plant_photos/amelanchier-arborea_juneberry.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1011,7 +1117,9 @@ let smoothShadbush = {
     resistanceType: [resistanceType.LOW],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/amelanchier-laevis_smooth-shadbush.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1028,7 +1136,9 @@ let pawpaw = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE],
+    image: "/plant_photos/asimina-triloba_pawpaw.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1045,7 +1155,9 @@ let grayBirch = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/betula-populifolia_gray-birch.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -1062,7 +1174,9 @@ let hornbeam = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/carpinus-caroliniana_hornbeam.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1079,7 +1193,9 @@ let hawthorn = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.POLLINATOR]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.POLLINATOR],
+    image: "plant_photos/crataegus-magnifolia_hawthorn.jpg",
+    imgAttribution: "Image by iNaturalist user @theo_witsell",
 };
 
 
@@ -1096,7 +1212,9 @@ let floweringDogwood = {
     resistanceType: [resistanceType.LOW],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST],
+    image: "/plant_photos/cornus-florida_flowering-dogwood.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1112,7 +1230,9 @@ let clusteredHawthorn = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.DRYPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.DRYPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/crataegus-compacta_hawthorn.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1128,7 +1248,9 @@ let downyHawthorn = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/crataegus-mollis_downy-hawthorn.jpg",
+    imgAttribution: "Image by R. W. Smith",
 };
 
 
@@ -1145,7 +1267,9 @@ let riverBirch = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.DRYPRAIRIE, forestType.WETPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
+    image: "/plant_photos/betula-nigra_river-birch.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1162,7 +1286,9 @@ let bitternutHickory = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.WETPRAIRIE]
+    forestType: [forestType.WETPRAIRIE],
+    image: "/plant_photos/carya-cordiformis_bitternut-hickory.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -1179,7 +1305,9 @@ let pignutHickory = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/carya-glabra_pignut-hickory.jpg",
+    imgAttribution: "Image by R. Schipper",
 };
 
 
@@ -1196,7 +1324,9 @@ let butternut = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/juglans-cinerea_butternut.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1213,7 +1343,9 @@ let whiteMulberry = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/morus-alba_white-mulberry.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1230,7 +1362,9 @@ let honeyLocust = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/gleditsia-triacanthos_honey-locust.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1247,7 +1381,9 @@ let larch = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE],
+    image: "/plant_photos/larix-laricina_larch.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1264,7 +1400,9 @@ let ohioBuckeye = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/aesculus-glabra_ohio-buckeye.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1281,7 +1419,9 @@ let paperBirch = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE],
+    image: "/plant_photos/betula-papyrifera_paper-birch.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1298,7 +1438,9 @@ let alternateleavedDogwood = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED],
+    image: "/plant_photos/cornus-alternifolia_alternate-leaved-dogwood.jpg",
+    imgAttribution: "Image by R. W. Smith",
 };
 
 
@@ -1315,7 +1457,9 @@ let cockspurThorn = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.ALKALINE, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED],
+    image: "/plant_photos/crataegus-crus-galli_cockspur-thorn.jpg",
+    imgAttribution: "Image by R. W. Smith",
 };
 
 
@@ -1332,7 +1476,9 @@ let fleshyHawthorn = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.ALKALINE, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED],
+    image: "/plant_photos/crataegus-succulenta_hawthorn.jpg",
+    imgAttribution: "Image by P. G. O'Hara",
 };
 
 
@@ -1349,7 +1495,9 @@ let pinOak = {
     resistanceType: [resistanceType.LOW],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE],
+    image: "/plant_photos/quercus-palustris_pin-oak.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1366,7 +1514,9 @@ let shumardOak = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/quercus-shumardii_shumard-oak.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1383,7 +1533,9 @@ let sassafras = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/sassifras-albidum_sassafras.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1400,7 +1552,9 @@ let whiteCedar = {
     resistanceType: [resistanceType.SUSCEPTIBLE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE]
+    forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE],
+    image: "/plant_photos/thuja-occidentalis_arbor-vitae.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1417,7 +1571,9 @@ let basswood = {
     resistanceType: [resistanceType.SUSCEPTIBLE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR],
+    image: "/plant_photos/tilia-americana_linden.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1434,7 +1590,9 @@ let hemlock = {
     resistanceType: [resistanceType.MODERATE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/tsuga-canadensis_canada-hemlock.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1451,7 +1609,9 @@ let balsamFir = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "plant_photos/abies-balsamea_balsam-fir.png",
+    imgAttribution: "",
 };
 
 
@@ -1467,7 +1627,9 @@ let threeSeededMercury = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/acalypha-rhomboidea_three-seeded-mercury.jpg",
+    imgAttribution: "Image by B. S. Walters",
 };
 
 
@@ -1484,7 +1646,9 @@ let fieldThistle = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
-    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.POLLINATOR]
+    forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.POLLINATOR],
+    image: "/plant_photos/cirsium-discolor_field-thistle.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1501,7 +1665,9 @@ let cuckooFlower = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.DRYPRAIRIE]
+    forestType: [forestType.DRYPRAIRIE],
+    image: "/plant_photos/cardamine-pratensis_cuckoo-flower.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1518,7 +1684,9 @@ let beechDrops = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/epifagus-virginiana_beach-drops.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1535,7 +1703,9 @@ let joePyeWeed = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE],
-    forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/eutrochium-maculatum_joe-pye-weed.jpg",
+    imgAttribution: "Image by R. W. Smith",
 };
 
 
@@ -1552,7 +1722,9 @@ let maidenhairFern = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL, soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/adiantum-pedatum_maidenhair-fern.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1569,7 +1741,9 @@ let interruptedFern = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/claytosmunda-claytoniana_interrupted-fern.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1586,7 +1760,9 @@ let newYorkFern = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/thelypteris-novaboracensis_new-york-fern.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1603,7 +1779,9 @@ let cottongrass = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.WETPRAIRIE]
+    forestType: [forestType.WETPRAIRIE],
+    image: "/plant_photos/eriophorum-virginicum_cottongrass.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1621,7 +1799,9 @@ let bromelikeSedge = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL],
-    forestType: [forestType.WETPRAIRIE]
+    forestType: [forestType.WETPRAIRIE],
+    image: "/plant_photos/carex-bromoides_brome-like-sedge.jpg",
+    imgAttribution: "Image by R. Schipper",
 };
 
 
@@ -1638,7 +1818,9 @@ let purpleLovegrass = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/eragrostis-spectabilis_purple-lovegrass.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1656,7 +1838,9 @@ let commonReed = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/phragmites-australis_common-reed.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1673,7 +1857,9 @@ let gardenersGarters = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE, soilpH.ACID],
-    forestType: [forestType.DRYPRAIRIE]
+    forestType: [forestType.DRYPRAIRIE],
+    image: "/plant_photos/phalaris-arundinacea_gardeners-garters.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1689,7 +1875,9 @@ let commonHops = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE, soilpH.ACID],
-    forestType: [forestType.WETPRAIRIE]
+    forestType: [forestType.WETPRAIRIE],
+    image: "/plant_photos/humulus-lupulus_common-hops.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1706,7 +1894,9 @@ let glaucousHoneysuckle = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "plant_photos/lonicera-dioica_glacous-honeysuckle.jpg",
+    imgAttribution: "Image by R. W. Smith",
 };
 
 
@@ -1723,7 +1913,9 @@ let blueFlagIris = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/iris-virginica_blue-iris.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1741,7 +1933,9 @@ let witchHazel = {
     resistanceType: [resistanceType.SOME],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
-    forestType: [forestType.OAKFOREST]
+    forestType: [forestType.OAKFOREST],
+    image: "/plant_photos/hamamelis-virginiana_witch-hazel.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1757,7 +1951,9 @@ let redbud = {
     resistanceType: [resistanceType.FULL],
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.ALKALINE, soilpH.NEUTRAL],
-    forestType: [forestType.OAKFOREST, forestType.POLLINATOR]
+    forestType: [forestType.OAKFOREST, forestType.POLLINATOR],
+    image: "/plant_photos/cercis-canadensis_redbud.jpg",
+    imgAttribution: "",
 };
 
 
@@ -1774,7 +1970,9 @@ let commonHopSedge = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED]
+    forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED],
+    image: "/plant_photos/carex-lupulina_common-hop-sedge.jpg",
+    imgAttribution: "Image by R. W. Smith",
 };
 
 
@@ -1791,7 +1989,9 @@ let woolGrass = {
     resistanceType: [resistanceType.NONE],
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
-    forestType: [forestType.WETPRAIRIE, forestType.DRYPRAIRIE, forestType.CHALLENGED]
+    forestType: [forestType.WETPRAIRIE, forestType.DRYPRAIRIE, forestType.CHALLENGED],
+    image: "/plant_photos/scirpus-cyperinus_cottongrass-bulrush.jpg",
+    imgAttribution: "",
 };
 
 

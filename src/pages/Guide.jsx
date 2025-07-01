@@ -26,22 +26,21 @@ import FrostedImage from '../components/FrosterImage';
 
 
 
-
+/* Content */
 const Guide = () => {
   return (
     <div>
       <HeaderComp />
       <Navbar />
 
-      {/* Subheader */}
-      <div className={styles.subheader}>
-        Guide: Build your own <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forest</span>
-
-      </div>
-
-
       {/* Content */}
       <div className={styles.about_content}>
+
+        {/* Subheader */}
+        <div className={styles.subheader}>
+          Build your own Pocket Forest
+        </div>
+
         Before you begin, check out the{" "}
 
             <Link to="/" className={styles["other_links"]}>About
@@ -57,6 +56,8 @@ const Guide = () => {
             the Miyawaki Method specific to Southeast Michigan’s ecology.
 
 
+
+        {/* Buttons for each step of the guide */}
         <p>
           <BasicButton to="/Step1">Step 1: Before Planting</BasicButton>
         </p>
@@ -78,9 +79,7 @@ const Guide = () => {
 
       </div>
 
-
       <FooterComp />
-
     </div>
   );
 };

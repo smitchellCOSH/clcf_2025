@@ -25,7 +25,7 @@ export const forestProfiles = [
     description: "Prairies were once abundant in Michigan, spanning most of the state. Today, 99% of all prairie land in the state has been destroyed or repurposed, with no historically significant prairie lands remaining. While not a typical forest, choosing the Dry Prairie type will help to restore one of Michigan’s most prominent natural ecosystems, providing habitat for birds and pollinators alike. A dry prairie consists of soils with faster water drainage and generally drier soils.",
     image: "/photos/dry_prairie.jpg",
     densities: {
-      CANOPY: 1, SHRUB: 1, SUBTREE: 1, TREE: 1,
+      CANOPY: 10, SHRUB: 7, SUBTREE: 3, TREE: 2,
     },
     plantTypes: ["CANOPY", "SHRUB", "SUBTREE", "TREE"]
   },

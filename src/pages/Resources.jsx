@@ -47,7 +47,7 @@ with your link attached to it. See the example above.
 */
 
 
-
+/* **************************************************************************** */
 
 /* Imports */
 import HeaderComp from "../components/HeaderComp";
@@ -64,14 +64,17 @@ const Resources = () => {
       <HeaderComp />
       <Navbar />
 
-      {/* Subheader */}
-      <div className={styles.subheader}>
-        <p>
-          Resources
-        </p>
-      </div>
-
       <div className={styles.about_content}>
+
+        {/* Subheader */}
+        <div className={styles.subheader}>
+          <p>
+            Resources
+          </p>
+        </div>
+
+
+
         <p>Learn more about Pocket Forestry through the resources below.</p>
 
 
@@ -116,7 +119,7 @@ const Resources = () => {
           </p>
 
 
-
+          {/* Michigan Native Plants */}
           <p>
             <span style={{ fontWeight: "bold", color: "#383838", fontSize: "2rem"}}>
               Michigan Native Plants
@@ -188,7 +191,7 @@ const Resources = () => {
 
 
 
-
+          {/* Equipment & Planting */}
           <p>
             <span style={{ fontWeight: "bold", color: "#383838", fontSize: "2rem"}}>
               Equipment & Planting
@@ -226,7 +229,7 @@ const Resources = () => {
 
 
 
-
+          {/* Pocket Forestry & the Miyawaki Method */}
           <p>
             <span style={{ fontWeight: "bold", color: "#383838", fontSize: "2rem"}}>
               Pocket Forestry & the Miyawaki Method
@@ -254,6 +257,9 @@ const Resources = () => {
             </a>
           </p>
 
+
+
+          {/* Image */}
           <FrostedImage
           src="/photos/resource_image_001.jpg"
           alt="Tallgrass Prairie"
@@ -265,6 +271,7 @@ const Resources = () => {
       </div>
 
 
+      {/* Page end components */}
       <FooterComp />
 
     </div>

@@ -1,0 +1,111 @@
+/* styles/PlantSelector.module.css */
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.plantCard {
+  border: 1px solid #383838;
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fdfff6;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.plantImage {
+  /*height: 9rem;
+  width: 100%;*/
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+  /*border-radius: 10px;*/
+
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #fdfff6;
+  box-shadow: 0 4px 6px #383838;
+}
+
+.plantName {
+  font-weight: bold;
+}
+
+.plantNotes {
+  font-size: 0.9rem;
+  color: #383838;
+}
+
+
+.categorySection {
+  margin-bottom: 2rem;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  color: #0057b8;
+  margin-bottom: 1rem;
+}
+
+
+.selectButton {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.selectButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.selectedButton {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+
+.qtyControls {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qtyControls button {
+  padding: 4px 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.qtyControls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.qtyControls span {
+  min-width: 20px;
+  text-align: center;
+}

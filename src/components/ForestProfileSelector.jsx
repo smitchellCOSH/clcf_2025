@@ -1,19 +1,23 @@
 import styles from './ForestProfileSelector.module.css';
 
 
-export default function ForestProfileSelector({ profiles, selected, onSelect }) {
+export default function ForestProfileSelector({ profiles, selected, onSelect }) { /* Accepts array of profiles, currently selected forest, callback function */
   return (
     <div className={styles.responsiveGrid}>
-      {profiles.map(profile => (
+
+      {profiles.map(profile => ( /* Iterates over forest profiles array */
         <div
-          key={profile.id}
-          className={`${styles.gridItem} ${selected?.id === profile.id ? 'border-blue-500' : ''}`}
-          onClick={() => onSelect?.(profile)}
+          key={profile.id} /* Each item is a div with the key determined by the profile ID */
+          className={`${styles.gridItem} ${selected?.id === profile.id ? styles.selected : ""}`}
+          onClick={() => onSelect?.(profile)} /* Calls the function when clicked */
         >
-          <img src={profile.image} alt={profile.name} className="h-32 w-full object-cover mb-2" />
-          <h3 className="font-bold">{profile.name}</h3>
-          <p>{profile.description}</p>
+          <img src={profile.image} alt={profile.name} /> {/* Displays the image */}
+
+          <p className={styles.gridItemTitle}> {profile.name} </p> {/* Displays the profile's name.*/}
+
+          <p className={styles.gridItemDesc} >{profile.description} </p> {/* Display's the profile's description. */}
         </div>
+
       ))}
     </div>
   );

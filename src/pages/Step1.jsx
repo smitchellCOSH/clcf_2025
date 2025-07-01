@@ -26,7 +26,7 @@ import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 
 
-
+/* Content */
 const Step1 = () => {
   return (
     <div>
@@ -36,19 +36,20 @@ const Step1 = () => {
 
     <div className="Content">
 
-      {/* Subheader */}
-      <div className={styles.subheader}>
-        <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", color: "#0057b8", fontSize: "2.5rem" }}>Step 1:</span>{" "}
-          <span style={{ fontFamily: "Nunito Sans", fontSize: "2.5rem", fontWeight: "bold" }}>Before Planting</span>
-        </p>
-        </div>
 
 
       {/* Content */}
 
       {/* Introduction */}
       <div className={styles.about_content}>
+
+        {/* Subheader */}
+        <div className={styles.subheader}>
+          <p>
+            Step 1: Before Planting
+          </p>
+        </div>
+
         <p>
             Before you start planting, you’ll want to carefully assess your planting space and understand the maintenance requirements 
             for your unique Pocket Forest. Some things you’ll want to consider might include the soil type of your 
@@ -58,10 +59,8 @@ const Step1 = () => {
             Pocket Forest. It is recommended, however, to have about 125 square feet of space for best results.
         </p>
 
-        <p>
-          <span style={{ fontWeight: "bold", color: "#383838" }}> 
+        <p className={styles.note_content}>
             Remember – Pocket Forests require at least 3 canopy trees, properly spaced!
-          </span>
         </p>
 
         <FrostedImage
@@ -69,8 +68,6 @@ const Step1 = () => {
           alt="Step 1: Photo 001"
           attribution="Iris virginica - Blue flag iris"
         />
-
-      </div>
 
 
       {/* Step 1: Choosing your site */}
@@ -81,7 +78,6 @@ const Step1 = () => {
       </div>
 
 
-      <div className={styles.about_content}>
         <p>
             First, you’ll want to choose your planting site. This could be in your yard or piece of land that you own. 
             You’ll want to consider whether or not you have permission to plant on the land and if there are 
@@ -102,9 +98,12 @@ const Step1 = () => {
             drain? This will help you to determine which plants will grow best in your forest.
         </p>
 
-        {/* TODO: ADD IMAGE */}
+        <FrostedImage
+          src="/photos/step1_image_002.jpg"
+          alt="Step 1: Photo 002"
+          attribution="Cercis canadensis - Redbud"
+        />
 
-      </div>
 
 
       {/* Step 2: Soil Type and Soil Drainage */}
@@ -115,8 +114,7 @@ const Step1 = () => {
       </div>
 
 
-      <div className={styles.about_content}>
-
+        {/* Soil Type */}
         <p>
           <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
             Soil Type
@@ -154,7 +152,12 @@ const Step1 = () => {
             where samples mailed to the university will be processed for detailed assessment and results. 
         </p>
 
-        {/* TODO: ADD IMAGE - Soil Type */}
+
+        <FrostedImage
+          src="/photos/step1_image_003.jpg"
+          alt="Step 1: Photo 003"
+          attribution="Root system in soil"
+        />
 
         <p>
             Finally, if you would like to learn more details about your soil type, you can also use {" "}
@@ -163,18 +166,24 @@ const Step1 = () => {
               href="https://umich.maps.arcgis.com/apps/mapviewer/index.html?layers=06e5fd61bdb6453fb16534c676e1c9b9"
               target="_blank"
               rel="noopener noreferrer"
-            > this map tool</a>,
+            > this map tool</a> {" "}
             for more information.
         </p>
 
-        <p>
-          <span style={{ fontWeight: "bold", color: "#383838", backgroundColor: "#c3e344", borderRadius: "10px" }}> 
-            Note that beginner foresters might find the map tool confusing, but don’t worry! 
-            A simple soil test is good enough to determine which plants are best suited for your Pocket Forest.
-          </span>
-        </p>
 
 
+
+        {/* Special note */}
+        <div className={ styles.note_content }>
+          <p>
+              Note that beginner foresters might find the map tool confusing, but don’t worry! 
+              A simple soil test is good enough to determine which plants are best suited for your Pocket Forest.
+          </p>
+        </div>
+
+
+
+        {/* Soil Drainage */}
         <p>
           <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
             Soil Drainage
@@ -191,7 +200,11 @@ const Step1 = () => {
           Testing soil drainage is also easy. Follow the steps below to figure out how your soil drains.
         </p>
 
-        {/* TODO: ADD IMAGE HERE */}
+        <FrostedImage
+          src="/photos/step1_image_004.jpg"
+          alt="Step 1: Photo 004"
+          attribution="Sprouts growing in wet soil"
+        />
 
         <p>
         <span style={{fontWeight: "bold", color: "#0057b8" }}>First</span>, in your forest plot, dig a hole that is at least 12 
@@ -210,8 +223,11 @@ const Step1 = () => {
         By determining how much time has passed, you can understand your soil’s drainage type.
         </p>
 
+
+
+        <div className={styles.result_content}>
         <p>
-        <span style={{fontWeight: "bold", color: "#0057b8" }}>Results</span>
+        <span style={{fontWeight: "900", color: "#0057b8" }}>Results</span>
         </p>
 
         <p>
@@ -220,7 +236,7 @@ const Step1 = () => {
 
         <p>
         Your soil is{" "}
-        <span style={{fontWeight: "bold", color: "#0057b8" }}>fast-draining</span> and is acceptable for most plants.
+        <span style={{ color: "#006747" }}>fast-draining</span> and is acceptable for most plants.
         </p>
 
         <p>
@@ -229,7 +245,7 @@ const Step1 = () => {
 
         <p>
         Your soil is{" "}
-        <span style={{fontWeight: "bold", color: "#0057b8" }}>moderate-draining</span>. This drainage type is ideal for most plants.
+        <span style={{ color: "#006747" }}>moderate-draining</span>. This drainage type is ideal for most plants.
         </p>
 
         <p>
@@ -238,7 +254,7 @@ const Step1 = () => {
 
         <p>
         Your soil is{" "}
-        <span style={{fontWeight: "bold", color: "#0057b8" }}>slow-draining</span>. While still acceptable for many plants, 
+        <span style={{ color: "#006747" }}>slow-draining</span>. While still acceptable for many plants, 
         some plants will require more well-drained soil.
         </p>
 
@@ -252,7 +268,7 @@ const Step1 = () => {
         may thrive in your planting area.
         </p>
 
-        {/* TODO: Chart version / image for soil drainage */}
+
 
         <p>
         This {" "}
@@ -267,19 +283,19 @@ const Step1 = () => {
 
       </div>
 
-      <div className={styles.subheader}>
-        <p>
-          Other Considerations
-        </p>
-      </div>
 
-      <div className={styles.about_content}>
-        <p>
-          To help with planting, you’ll want to make sure that your Pocket Forest site is easily accessible both on 
-          foot and by vehicle. For the establishment period, you will want to make sure that your Pocket Forest 
-          can easily be watered, with a hose or sprinkler system nearby.
-        </p>
-      </div>
+      <p>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}> 
+            Other Considerations
+          </span>
+      </p>
+
+
+      <p>
+        To help with planting, you’ll want to make sure that your Pocket Forest site is easily accessible both on 
+        foot and by vehicle. For the establishment period, you will want to make sure that your Pocket Forest 
+        can easily be watered, with a hose or sprinkler system nearby.
+      </p>
 
 
 
@@ -290,7 +306,6 @@ const Step1 = () => {
         </p>
       </div>
 
-      <div className={styles.about_content}>
         <p>
           Now that you have considered your Pocket Forest placement, soil, and accessibility, 
           it’s time to choose your plants. Remember, a Pocket Forest consists of {" "}
@@ -307,6 +322,8 @@ const Step1 = () => {
           the rest of the guide!
         </p>
 
+
+        {/* Links to the Plant Calculator tool on a separate page */}
         <BasicButton to="/plant-calculator">Plant calculator</BasicButton>
 
 
@@ -327,8 +344,6 @@ const Step1 = () => {
 
         </p>
 
-      </div>
-
 
       {/* Step 4: Preparing to plant */}
       <div className={styles.subheader}>
@@ -337,9 +352,12 @@ const Step1 = () => {
         </p>
       </div>
 
-      <div className={styles.about_content}>
 
-        {/* TODO: ADD IMAGES TO THIS SECTION */}
+        <FrostedImage
+          src="/photos/step1_image_005.jpg"
+          alt="Step 1: Photo 005"
+          attribution="Gardener removing weeds from soil"
+        />
 
         <p>After choosing your plants, there are still a few things you need to do before planting day.</p>
 
@@ -366,8 +384,6 @@ const Step1 = () => {
         Although it may appear helpful, unless your weeding is 100% effective, tilling will spread weeds across your plot 
         and assist their growth. Tilling is not necessary for your Pocket Forest except for in special circumstances.</p>
 
-      </div>
-
 
       {/* Step 5: Next steps */}
       <div className={styles.subheader}>
@@ -376,19 +392,23 @@ const Step1 = () => {
         </p>
       </div>
 
-      <div className={styles.about_content}>
         <p>
           Now that you've chosen your plants and prepared your planting area, it's time to plant.
         </p>
-      </div>
+
 
       <div style={{ marginTop: "2rem" }}>
           <BasicButton to="/Step2">Step 2: Planting day</BasicButton>
           <ScrollToTop />
-        </div>
+      </div>
 
-      <FooterComp />
 
+
+    </div>
+
+    <FooterComp />
+
+    
     </div>
   </div>
 

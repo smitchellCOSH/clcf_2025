@@ -1,19 +1,50 @@
-export default function PlantSelector({ plants }) {
+import React from 'react';
+import styles from '../components/PlantSelector.module.css';
+
+export default function PlantSelector({ categorizedPlants, selectedPlants, onChangeQuantity, plantCounts }) {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
-      {plants.map((plant) => (
-        <div key={plant.id} className="border rounded p-4">
-          <img
-            src={plant.image}
-            alt={plant.name}
-            className="h-32 w-full object-cover mb-2"
-          />
-          <h4 className="font-bold">{plant.name}</h4>
-          <p className="text-sm text-gray-500">
-            {plant.tags?.join(", ") ?? "No tags"}
-          </p>
-        </div>
-      ))}
+    <div>
+      {Object.entries(categorizedPlants).map(([type, plants]) => {
+        const totalSelected = selectedPlants[type]
+          ? Object.values(selectedPlants[type]).reduce((a, b) => a + b, 0)
+          : 0;
+
+        const maxAllowed = plantCounts[type] || 0;
+
+        return (
+          <div key={type}>
+            <h3>{type} ({totalSelected} / {maxAllowed} selected)</h3>
+
+            <div className={styles.gridContainer}>
+              {plants.map((plant) => {
+                const qty = (selectedPlants[type] && selectedPlants[type][plant.id]) || 0;
+
+                return (
+                  <div key={plant.id} className={styles.plantCard}>
+                    <img src={plant.image} alt={plant.plantName} className={styles.plantImage} />
+                    <div className={styles.plantName}>{plant.plantName}</div>
+                    <p className={styles.plantNotes}>{plant.notes}</p>
+
+                    <div className={styles.qtyControls}>
+                      <button
+                        onClick={() => onChangeQuantity(type, plant.id, -1)}
+                        disabled={qty === 0}
+                      >-</button>
+
+                      <span>{qty}</span>
+
+                      <button
+                        onClick={() => onChangeQuantity(type, plant.id, 1)}
+                        disabled={totalSelected >= maxAllowed}
+                      >+</button>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

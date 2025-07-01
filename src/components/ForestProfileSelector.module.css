@@ -1,3 +1,6 @@
+
+/* Defines the grid of forest profile cards, with 5 cards
+for screens > 768px wide */
 .responsiveGrid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -6,19 +9,24 @@
   margin: 0 auto;
 }
 
+
+/* MOBILE & TABLET SPECS */
+
+/* Defines grid numbers for screens that are <= 768 px wide. */
 @media (max-width: 768px) {
   .responsiveGrid {
-    grid-template-columns: repeat(3, 1fr); /* Medium screens: 3 columns */
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
+/* Defines number of cards for screens that are <= 640 px wide. */
 @media (max-width: 640px) {
   .responsiveGrid {
-    grid-template-columns: repeat(2, 1fr); /* Small screens: 2 columns */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
+/* Styles each forest profile card. */
 .gridItem {
   border: 1px solid #f5f5f5;
   border-radius: 6px;
@@ -26,26 +34,36 @@
   cursor: pointer;
   overflow: hidden;
   background-color: #f5f5f5;
+  border: 1px solid #383838
 }
 
+/* Styles each forest card image */
 .gridItem img {
   width: 100%;
   height: 150px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 0.5rem;
+  border: 1px solid #383838;
 }
 
-.gridItem h3 {
+
+/* Styles title text. */
+.gridItemTitle {
   font-size: 1rem;
   margin-bottom: 0.25rem;
+  font-weight: bold;
 }
 
-.gridItem p {
-  font-size: 0.875rem;
-  color: #444;
+
+/* Styles description text. */
+.gridItemDesc {
+  font-size: 0.9rem;
+  color: #383838;
 }
 
+
+/* Styles color when selected */
 .selected {
-  background-color: #c3e344;
+  background-color: hsl(93, 100%, 89%);
 }

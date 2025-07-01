@@ -1,10 +1,27 @@
+/* Plot your forest page - Contains the content displayed on the plotting page. */
+
+/* 
+Styling:
+
+Some styling is "in-line".
+
+Other basic styling comes from mystyle.module.css file.
+
+Styling for individual components contained in respective component files.
+
+See the import statements for navigation.
+
+*/
+
+
+/* Imports */
 import HeaderComp from "../components/HeaderComp";
 import FooterComp from "../components/FooterComp";
 import Navbar from "../components/Navbar";
 import styles from '../mystyle.module.css';
 
 
-
+/* Content */
 const PlotYourForest = () => {
   return (
     <div>

@@ -24,6 +24,9 @@ import HeaderComp from '../components/HeaderComp';
 import FrostedImage from '../components/FrosterImage';
 import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
+import { Link } from 'react-router-dom';
+import ImageGrid from '../components/ImageGrid';
+
 
 
 
@@ -36,23 +39,16 @@ const About = () => {
 
     <div className="About">
 
-
-
-      {/* Subheader */}
-      <div className={styles.subheader}>
-        <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", color: "#0057b8", fontSize: "3rem" }}>Welcome</span>{" "}
-          
-          <span style={{ fontFamily: "Nunito Sans", fontSize: "2.5rem", fontWeight: "bold" }}>to the Pocket Forests project
-            of Sterling Heights, Michigan!</span>
-        </p>
-      </div>
-
-
-
-
       {/* Main content - Introduction */}
       <div className={styles.about_content}>
+
+        {/* Subheader */}
+        <div className={styles.subheader}>
+          <p>
+            Welcome to the Pocket Forests project of Sterling Heights, Michigan!
+          </p>
+        </div>
+
         <p>
           <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forests</span>, otherwise known as{" "}
           <span style={{ fontStyle: "italic", color: "#0057b8" }}>Microforests </span> or{" "}
@@ -62,11 +58,11 @@ const About = () => {
            the hot summer months), improving air quality, and removing carbon from the atmosphere.&nbsp;
         </p>
 
-      <FrostedImage
-      src="/photos/about_image_001.jpg"
-      alt="Pocket forest"
-      attribution="Liriodendron tulipifera - Tulip tree"
-      />
+        <FrostedImage
+        src="/photos/about_image_001.jpg"
+        alt="Pocket forest"
+        attribution="Liriodendron tulipifera - Tulip tree"
+        />
 
         <p>
           This website builds off of the work of Akira Miyawaki, a botanist and ecologist who pioneered the Miyawaki Method which
@@ -76,28 +72,28 @@ const About = () => {
         </p>
 
         <p>
-          On this website, read <span style={{ fontWeight: "bold", color: "#0057b8" }}>step-by-step instructions</span> for how to build a Pocket Forest, 
-          use our<span style={{ fontWeight: "bold", color: "#0057b8" }}> Plant Calculator </span>tool to pick out your plants and figure out how many you will need, 
-          and visit our <span style={{ fontWeight: "bold", color: "#0057b8" }}>Plot your forest</span> page to design a layout of
+          On this website, read <span style={{ fontWeight: "bold", color: "#0057b8" }}>step-by-step instructions</span> for 
+          how to build a Pocket Forest, use our <Link to="/plant-calculator" className={styles["other_links"]}>Plant Calculator</Link> tool 
+          to pick out your plants and figure out how many you will need, and visit our {" "}
+          <Link to="/plot" className={styles["other_links"]}>Plot your forest</Link> page to design a layout of
           your Pocket Forest.
         </p>
-      </div>
 
 
 
 
 
-      {/* Section 1: Background */}
+
+        {/* Section 1: Background */}
 
         {/* Subheader */}
         <div className={styles.subheader}>
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", fontSize: "2rem" }}>Background</span>{" "}
+          Background
         </p>
         </div>
 
-      {/* Content */}
-      <div className={styles.about_content}>
+        {/* Content */}
 
         <p>
           Recently, the city of Sterling Heights {" "}
@@ -134,22 +130,19 @@ const About = () => {
           attribution="Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka."
           />
 
-      </div>
+
+        
 
 
-
-
-
-      {/* Section 2: What is a Pocket Forest? */}
+        {/* Section 2: What is a Pocket Forest? */}
 
         {/* Subheader */}
         <div className={styles.subheader}>
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", fontSize: "2rem" }}>What is a Pocket Forest?</span>{" "}
+          What is a Pocket Forest?
         </p>
         </div>
 
-      <div className={styles.about_content}>
 
         {/* Content */}
 
@@ -169,12 +162,13 @@ const About = () => {
         canopy and shade for sub-trees and shrubs. Smaller plants enrich the soil and contribute to soil drainage. 
         </p>
 
-        <img
-          src="photos/plant_height_dg.png" // Public
-          className="Plant Height Diagram"
-          alt="Plant Height Diagram"
-          style={{ width: "80%", height: "auto", padding: "10px"}}
+
+        <FrostedImage
+        src="photos/plant_height_dg.png"
+        alt="Plant Height Diagram"
+        attribution="Relative heights of different plant types in a Pocket Forest."
         />
+
 
         <p>
         Because Pocket Forests are meant to be self-sustaining with little maintenance during the first year of planting, 
@@ -182,22 +176,19 @@ const About = () => {
         with fewer steps required to grow your forest.
         </p>
 
-      </div>
   
 
 
-
-
-      {/* Section 3: What makes a Michigan Pocket Forest? */}
+        {/* Section 3: What makes a Michigan Pocket Forest? */}
 
         {/* Subheader */}
         <div className={styles.subheader}>
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", fontSize: "2rem" }}>What makes a Michigan Pocket Forest?</span>{" "}
+          What makes a Michigan Pocket Forest?
         </p>
         </div>
 
-      <div className={styles.about_content}>
+
 
         {/* Content */}
 
@@ -216,62 +207,80 @@ const About = () => {
         Below, take a closer look at the differences between a commercial forest, a Miyawaki forest, and a Michigan Pocket Forest.
         </p>
 
-        <img
-          src="photos/forest_comp_002.png" // Public
-          className="Forest Composition Table"
-          alt="Forest Composition Table"
-          style={{ width: "80%", height: "auto", padding: "10px"}}
+
+        <FrostedImage
+        src="photos/forest_comp_003.png"
+        alt="Forest Composition Table"
+        attribution="Attributes of a commercial forest, Miyawaki forest, and a Michigan Miyawaki forest."
         />
 
-      </div>
 
 
 
-
-
-      {/* Section 4: Sterling Heights' Pocket Forest */}
+        {/* Section 4: Sterling Heights' Pocket Forest */}
 
         {/* Subheader */}
         <div className={styles.subheader}>
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", fontSize: "2rem" }}>Sterling Heights' Pocket Forest</span>{" "}
+          Sterling Heights' Pocket Forest
         </p>
         </div>
 
-      <div className={styles.about_content}>
 
-        {/* Content */}
+          {/* Content */}
 
-        TODO: Add section!
+          <p>
+          You can visit Sterling Heights’ very own Pocket Forest at James C. Nelson Park, part of Sterling Heights’ 
+          Community Garden. The Pocket Forest was planted in April of 2025 and is one of the steps the city is taking to 
+          improve reforestation. Housed next to the Butterfly Garden, the Pocket Forest will one day be a refuge for 
+          pollinators and small animal life.
+          </p>
 
-      </div>
+          <FrostedImage
+            src="/photos/about_image_004.jpg"
+            alt="Sterling Heights' Pocket Forest"
+            attribution="Sterling Heights' Pocket Forest at James C. Nelson Park."
+          />
+
+          <p>
+            To learn more about the Pocket Forest and Community Gardens, visit the <a
+              className={styles.other_links}
+              href="https://www.sterlingheights.gov/2328/Community-Garden-at-Nelson-Park"
+              target="_blank"
+              rel="noopener noreferrer">
+              Community Garden</a> webpage. You can also visit the 
+            Pocket Forest in person at the James C. Nelson Park during visiting hours.
+          </p>
 
 
 
 
-
-      {/* Section 5: What's in our forest? */}
+        {/* Section 5: What's in our forest? */}
 
         {/* Subheader */}
         <div className={styles.subheader}>
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", fontSize: "2rem" }}>What's in our forest?</span>{" "}
+          What's in our forest?
         </p>
+
         </div>
 
-      <div className={styles.about_content}>
 
-        {/* Content */}
+          {/* Content */}
 
-        TODO: Add section!
+          There are many plants in our Pocket Forest. You'll be able to choose these plants using the plant calculator. 
+          Here is a peak at what these plants may look like once they are full grown. Note that this is not all of the plants
+          available in our plant calculator — there are plenty more to choose from!
 
-      </div>
-
-
-
+          <ImageGrid />
 
 
-      {/* Section 6: Benefits and Challenges */}
+
+
+
+
+
+        {/* Section 6: Benefits and Challenges */}
 
         {/* Subheader */}
         <div className={styles.subheader}>
@@ -280,7 +289,6 @@ const About = () => {
         </p>
         </div>
 
-      <div className={styles.about_content}>
 
         {/* Content */}
 
@@ -313,13 +321,10 @@ const About = () => {
         />
 
 
-      </div>
 
 
 
-
-
-      {/* Section 7: Next Steps */}
+        {/* Section 7: Next Steps */}
 
         {/* Subheader */}
         <div className={styles.subheader}>
@@ -328,7 +333,6 @@ const About = () => {
         </p>
         </div>
 
-      <div className={styles.about_content}>
 
         {/* Content */}
 
@@ -337,6 +341,10 @@ const About = () => {
         and methods for constructing your forest.
 
 
+
+
+
+        {/* Final components */}
         <div style={{ marginTop: "2rem" }}>
           <BasicButton to="/Guide">Up Next: Guide</BasicButton>
           <ScrollToTop />
