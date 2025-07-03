@@ -13,11 +13,13 @@ import Step1 from './pages/Step1';
 import Step2 from './pages/Step2';
 import Step3 from './pages/Step3';
 import PlantCalculator from './pages/PlantCalculator';
+import AutoTop from './components/AutoTop';
 
 
 const App = () => {
   return (
     <Router>
+      <AutoTop />
       <Routes>
         <Route path="/" element={<About />} />
         <Route path="/guide" element={<Guide />} />

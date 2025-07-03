@@ -85,7 +85,7 @@ const Step2 = () => {
           <FrostedImage
             src="/photos/step2_image_001.jpg"
             alt="Step 2: Photo 001"
-            attribution="A deer grazes in a field of shrubs"
+            attribution="A deer grazes in a field of shrubs."
           />
 
           <p>

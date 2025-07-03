@@ -61,7 +61,7 @@ const About = () => {
         <FrostedImage
         src="/photos/about_image_001.jpg"
         alt="Pocket forest"
-        attribution="Liriodendron tulipifera - Tulip tree"
+        attribution="Liriodendron tulipifera – Tulip tree."
         />
 
         <p>
@@ -164,9 +164,10 @@ const About = () => {
 
 
         <FrostedImage
-        src="photos/plant_height_dg.png"
+        src="photos/plant_height_dg_003.png"
         alt="Plant Height Diagram"
-        attribution="Relative heights of different plant types in a Pocket Forest."
+        attribution="Relative heights of different plants."
+        style={{ width: "80%" }}
         />
 
 
@@ -176,7 +177,7 @@ const About = () => {
         with fewer steps required to grow your forest.
         </p>
 
-  
+
 
 
         {/* Section 3: What makes a Michigan Pocket Forest? */}
@@ -211,7 +212,8 @@ const About = () => {
         <FrostedImage
         src="photos/forest_comp_003.png"
         alt="Forest Composition Table"
-        attribution="Attributes of a commercial forest, Miyawaki forest, and a Michigan Miyawaki forest."
+        attribution="Attributes of various forests."
+        style={{width: "80%"}}
         />
 
 

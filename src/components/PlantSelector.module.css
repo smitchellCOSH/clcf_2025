@@ -1,5 +1,6 @@
 /* styles/PlantSelector.module.css */
 
+
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr;
@@ -15,7 +16,7 @@
 
 @media (min-width: 768px) {
   .gridContainer {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -24,16 +25,16 @@
   border-radius: 10px;
   padding: 1rem;
   background-color: #fdfff6;
-  max-width: 90%;
-  max-height: 90%;
+  width: auto;
+  height: 455px;
+  overflow: hidden;
+  position: relative;
 }
 
+
 .plantImage {
-  /*height: 9rem;
-  width: 100%;*/
   object-fit: cover;
   margin-bottom: 0.5rem;
-  /*border-radius: 10px;*/
 
   width: 150px;
   height: 150px;
@@ -52,52 +53,50 @@
 }
 
 
-.categorySection {
-  margin-bottom: 2rem;
-}
 
-.categoryTitle {
+
+
+/* Styles the text that counts plant selections for each category */
+.catTitle {
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 2%;
+  border-radius: 999px;
+  background-color: #0057b8;
+  padding: 1%;
+  color: #fdfff6;
+  width: 25%;
+  display: inline-block;
   font-size: 1.5rem;
-  color: #0057b8;
-  margin-bottom: 1rem;
 }
 
 
-.selectButton {
-  margin-top: 8px;
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-.selectButton:disabled {
-  background-color: #cccccc;
-  cursor: not-allowed;
-}
-
-.selectedButton {
-  margin-top: 8px;
-  padding: 6px 12px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
 
 
+
+/* Styles the plant selection buttons and their text*/
 .qtyControls {
-  margin-top: 8px;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
+  background-color: #fdfff6;
+  padding-top: 0.5rem;
+  color: #383838;
 }
 
 .qtyControls button {
   padding: 4px 8px;
   font-size: 1rem;
   cursor: pointer;
+  color: #006747;
+  width: 30px;
+  border-radius: 999px;
+  border: 0.5px solid #383838;
 }
 
 .qtyControls button:disabled {

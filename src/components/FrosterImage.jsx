@@ -15,8 +15,8 @@
 import React from "react";
 import "./FrostedImage.css";
 
-const FrostedImage = ({ src, alt, attribution }) => (
-  <div className="frosted-container">
+const FrostedImage = ({ src, alt, attribution, style }) => (
+  <div className="frosted-container" style={style}>
     <img src={src} alt={alt} className="frosted-image" />
     <div className="frosted-overlay">{attribution || alt}</div>
   </div>

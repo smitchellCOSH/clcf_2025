@@ -4,7 +4,7 @@
 
 Contains styling for images that require attributions, where
 the image is "frosted" when hovered over by the mouse and the 
-attribution is shown (FrosterImage.jsx). 
+attribution is shown (FrosterImage.jsx).
 
 */
 
@@ -13,9 +13,9 @@ attribution is shown (FrosterImage.jsx).
 /* Container for the frosting component */
 .frosted-container {
   position: relative;
-  width: 65%;
+  width: 45%;
   margin: 50px auto;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
 }
 

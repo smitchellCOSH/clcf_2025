@@ -9,18 +9,26 @@ buttons on each page.
 /* Styling contained in BasicButton.module.css. */
 
 
-/* Imports */
+
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './BasicButton.module.css';
 
-
 const BasicButton = ({ to, children }) => {
+  const navigate = useNavigate();
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate(to);
+  };
+
   return (
-    <Link to={to} className={styles.basicButton}>
+    <button onClick={handleClick} className={styles.basicButton}>
       {children}
-    </Link>
+    </button>
   );
 };
 
 export default BasicButton;
+

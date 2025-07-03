@@ -59,14 +59,16 @@ const Step1 = () => {
             Pocket Forest. It is recommended, however, to have about 125 square feet of space for best results.
         </p>
 
-        <p className={styles.note_content}>
-            Remember – Pocket Forests require at least 3 canopy trees, properly spaced!
+        <p className={ styles.note_content }>
+            Some of the Forest Types you can choose from in our Plant Calculator will have more trees than others.
+            Make sure to choose the Forest Type that best suits your needs!
         </p>
 
         <FrostedImage
           src="/photos/step1_image_001.jpg"
           alt="Step 1: Photo 001"
-          attribution="Iris virginica - Blue flag iris"
+          attribution="Iris virginica – Blue flag iris"
+          style={{width: "35%"}}
         />
 
 
@@ -84,24 +86,22 @@ const Step1 = () => {
             any restrictions on what you can plant on your land.
         </p>
 
-        <p>
-          <span style={{ fontWeight: "bold", color: "#383838" }}> 
-            Note that while planting a Pocket Forest with native plants might expand planting options on your property, 
-            but make sure to check for any restrictions that may apply to your planting site.
-          </span>
+        <p className={styles.note_content}>
+          Note that while planting a Pocket Forest with native plants might expand planting options on your property, 
+          but make sure to check for any restrictions in your area that may apply to your planting site.
         </p>
 
         <p>
-            Next, you’ll want to assess the specific conditions of your planting site. What is the soil type? 
-            How much sunlight does your forest get? Is there enough room for a buffer between your home or any 
-            other buildings on your property and the planting site? What is the soil type? How well does the soil 
-            drain? This will help you to determine which plants will grow best in your forest.
+          Next, you’ll want to assess the specific conditions of your planting site. What is the soil type? 
+          How much sunlight does your forest get? Is there enough room for a buffer between your home or any 
+          other buildings on your property and the planting site? What is the soil type? How well does the soil 
+          drain? This will help you to determine which plants will grow best in your forest.
         </p>
 
         <FrostedImage
           src="/photos/step1_image_002.jpg"
           alt="Step 1: Photo 002"
-          attribution="Cercis canadensis - Redbud"
+          attribution="Cercis canadensis – Redbud."
         />
 
 
@@ -156,7 +156,7 @@ const Step1 = () => {
         <FrostedImage
           src="/photos/step1_image_003.jpg"
           alt="Step 1: Photo 003"
-          attribution="Root system in soil"
+          attribution="Root system in soil."
         />
 
         <p>
@@ -203,7 +203,7 @@ const Step1 = () => {
         <FrostedImage
           src="/photos/step1_image_004.jpg"
           alt="Step 1: Photo 004"
-          attribution="Sprouts growing in wet soil"
+          attribution="Sprouts growing in wet soil."
         />
 
         <p>
@@ -356,7 +356,7 @@ const Step1 = () => {
         <FrostedImage
           src="/photos/step1_image_005.jpg"
           alt="Step 1: Photo 005"
-          attribution="Gardener removing weeds from soil"
+          attribution="Gardener removing weeds from soil."
         />
 
         <p>After choosing your plants, there are still a few things you need to do before planting day.</p>

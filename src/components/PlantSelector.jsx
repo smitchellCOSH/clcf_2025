@@ -13,7 +13,12 @@ export default function PlantSelector({ categorizedPlants, selectedPlants, onCha
 
         return (
           <div key={type}>
-            <h3>{type} ({totalSelected} / {maxAllowed} selected)</h3>
+
+            <div className={styles.catTitle}>
+              <p>{type} </p>
+              <p> ({totalSelected} / {maxAllowed} selected) </p>
+              </div>
+
 
             <div className={styles.gridContainer}>
               {plants.map((plant) => {
@@ -24,6 +29,7 @@ export default function PlantSelector({ categorizedPlants, selectedPlants, onCha
                     <img src={plant.image} alt={plant.plantName} className={styles.plantImage} />
                     <div className={styles.plantName}>{plant.plantName}</div>
                     <p className={styles.plantNotes}>{plant.notes}</p>
+                    <p className={styles.plantNotes}>{plant.imgAttribution}</p>
 
                     <div className={styles.qtyControls}>
                       <button

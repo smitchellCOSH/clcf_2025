@@ -74,7 +74,7 @@ const Guide = () => {
         <FrostedImage
           src="/photos/guide_image_001.jpg"
           alt="Pocket forest"
-          attribution="Carpinus caroliniana - Blue beech tree"
+          attribution="Carpinus caroliniana – Blue beech tree."
           />
 
       </div>
