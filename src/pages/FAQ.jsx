@@ -1,4 +1,4 @@
-/* Freqintly Asked Questions page - Contains the content displayed on the FAQ page. */
+/* Frequently Asked Questions page - Contains the content displayed on the FAQ page. */
 
 /* 
 Styling:

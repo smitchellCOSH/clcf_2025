@@ -21,7 +21,7 @@ import styles from '../mystyle.module.css';
 import Navbar from '../components/Navbar';
 import FooterComp from '../components/FooterComp';
 import HeaderComp from '../components/HeaderComp';
-import FrostedImage from '../components/FrosterImage';
+import FrostedImage from '../components/FrostedImage';
 import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 import { Link } from 'react-router-dom';
@@ -43,7 +43,7 @@ const About = () => {
       <div className={styles.about_content}>
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="welcome">
           <p>
             Welcome to the Pocket Forests project of Sterling Heights, Michigan!
           </p>
@@ -87,7 +87,7 @@ const About = () => {
         {/* Section 1: Background */}
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="background">
         <p>
           Background
         </p>
@@ -137,7 +137,7 @@ const About = () => {
         {/* Section 2: What is a Pocket Forest? */}
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="definition">
         <p>
           What is a Pocket Forest?
         </p>
@@ -183,7 +183,7 @@ const About = () => {
         {/* Section 3: What makes a Michigan Pocket Forest? */}
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="michigan_forest">
         <p>
           What makes a Michigan Pocket Forest?
         </p>
@@ -222,7 +222,7 @@ const About = () => {
         {/* Section 4: Sterling Heights' Pocket Forest */}
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="sh_forest">
         <p>
           Sterling Heights' Pocket Forest
         </p>
@@ -260,7 +260,7 @@ const About = () => {
         {/* Section 5: What's in our forest? */}
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="sh_comp">
         <p>
           What's in our forest?
         </p>
@@ -285,9 +285,9 @@ const About = () => {
         {/* Section 6: Benefits and Challenges */}
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="benefits_challenges">
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", fontSize: "2rem" }}>Benefits and Challenges</span>{" "}
+          Benefits and Challenges
         </p>
         </div>
 
@@ -329,9 +329,9 @@ const About = () => {
         {/* Section 7: Next Steps */}
 
         {/* Subheader */}
-        <div className={styles.subheader}>
+        <div className={styles.subheader} id="next_steps">
         <p>
-          <span style={{ fontFamily: "Nunito Sans", fontWeight: "bold", fontSize: "2rem" }}>Next Steps</span>{" "}
+          Next Steps
         </p>
         </div>
 

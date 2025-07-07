@@ -1,3 +1,9 @@
+/* ForestProfileSelector.module.css */
+
+/* Contains styling for the Forest Profile Selector component (ForestProfileSelector.jsx). */
+
+
+
 
 /* Defines the grid of forest profile cards, with 5 cards
 for screens > 768px wide */
@@ -10,8 +16,7 @@ for screens > 768px wide */
 }
 
 
-/* MOBILE & TABLET SPECS */
-
+/* MOBILE & TABLET SCREEN WIDTHS */
 /* Defines grid numbers for screens that are <= 768 px wide. */
 @media (max-width: 768px) {
   .responsiveGrid {
@@ -25,6 +30,10 @@ for screens > 768px wide */
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+
+
+/* ******************************** */
 
 /* Styles each forest profile card. */
 .gridItem {

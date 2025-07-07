@@ -1,6 +1,23 @@
-/* TODO: Add description */
+/* 
 
+Plant Calculator page - Contains the content displayed on the Plant Calculator page.
+Also, interfaces with the ForestProfileSelector and PlantSelector to get
+the user's choices.
 
+*/
+
+/* 
+Styling:
+
+Some styling is "in-line".
+
+Other basic styling comes from mystyle.module.css file.
+
+Styling for individual components contained in respective component files.
+
+See the import statements for navigation.
+
+*/
 
 
 
@@ -20,6 +37,7 @@ import { jsPDF } from "jspdf";
 import BasicButton from "../components/BasicButton";
 import GeneratePDFButton from "../components/GeneratePDFButton";
 import logoBase64 from '../data/logoBase64';
+import ScrollToTop from "../components/ScrollToTop";
 
 
 
@@ -140,8 +158,7 @@ export default function PlantCalculator() {
   });
 
   const pageWidth = doc.internal.pageSize.getWidth(); // Gets the width of the page for centering.
-
-  let y = 0.3;
+  let y = 0.2;
 
   // Adds the logo to the top of the PDF.
   doc.addImage(logoBase64, "PNG", 0.5, y, 2.5, 1); // (x, y, width, height)
@@ -151,14 +168,14 @@ export default function PlantCalculator() {
   doc.setFont("helvetica", "bold");
   doc.text("Pocket Forests Project", 3.8, y + 0.6); // Sets the x and y position.
 
-  doc.line(0, 1.4, 8.5, 1.4, "F")
+  doc.line(0, 1.3, 8.5, 1.3, "F")
   y += 1.5;
 
 
   // Forest Type display.
   doc.setFont("helvetica", "bold");
   doc.setFontSize(24)
-  const prof = "Your Forest Type  — " + selectedProfile.name;
+  const prof = "Your Forest Type — " + selectedProfile.name;
   const textWidth = doc.getTextWidth(prof);
   const x = (pageWidth - textWidth) / 2; // Centers the text.
   doc.text(prof, x, y);
@@ -235,10 +252,21 @@ export default function PlantCalculator() {
           <div style={{ marginBottom: "1rem", padding: "0.2rem" }}>
           <input className={styles.inputBox}
             type="number"
+            min="0"
             placeholder="Enter square footage"
             value={squareFootage}
-            onChange={(e) => setSquareFootage(e.target.value)}
-          />{" "}
+            onChange={(e) => {
+              let usrinp = e.target.value;
+              usrinp = Math.abs(usrinp);
+              usrinp = Number.parseFloat(usrinp, 10);
+              if (!isNaN(usrinp) && usrinp >= 0) {
+              setSquareFootage(usrinp.toString());
+            }
+              let cleanedStr = usrinp.toString().replace(/^0+(?=\d)/, "");
+
+              setSquareFootage(cleanedStr)}}
+          />
+          {" "}
           square feet.
           </div>
 
@@ -319,6 +347,11 @@ export default function PlantCalculator() {
             </div>
           )}
 
+
+        <div style={{ marginTop: "2rem" }}>
+          <BasicButton to="/Resources">Resources</BasicButton>
+          <ScrollToTop />
+        </div>
 
       </div>
 

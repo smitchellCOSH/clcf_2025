@@ -49,3 +49,47 @@
     align-items: flex-start;
   }
 }
+
+
+
+/* ****** DROPDOWN MENUS ****** /
+
+
+/* Dropdown container that positions the dropdown menu. */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+/* Dropdown menu styling. */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fdfff6;
+  border: 1px solid #c3e344;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 160px;
+  border-radius: 10px;
+}
+
+/* Links within the dropdown menu. */
+.dropdown-link {
+  display: block;
+  padding: 0.2rem 0.8rem;
+  text-decoration: none;
+  color: #383838;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: large;
+  border-bottom: 0.2px solid #c3e344;
+}
+
+
+/* Colors applied when hovering over a dropdown link */
+.dropdown-link:hover {
+  background-color: #e8f5c8;
+  color: #0057b8;
+}

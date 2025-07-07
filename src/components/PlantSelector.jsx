@@ -1,6 +1,22 @@
+/* 
+
+PlantSelector.jsx. This component allows the user to select plants from the list based
+on the selected forest profile and stores the selections and 
+data for use in the plant calculator.
+
+*/
+
+/* Styling contained in PlantSelector.module.css */
+
+
+
+/* Imports */
 import React from 'react';
 import styles from '../components/PlantSelector.module.css';
 
+
+
+/* Content */
 export default function PlantSelector({ categorizedPlants, selectedPlants, onChangeQuantity, plantCounts }) {
   return (
     <div>

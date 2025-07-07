@@ -1,4 +1,7 @@
-/* Subheader and section breaks */
+/* Additional site-wide styling. See each comment below for details */
+
+
+/* Subheader / section breaks */
 .subheader {
   background-color: #c3e344;
   border-radius: 10px;
@@ -21,7 +24,8 @@
 }
 
 
-/* Main content for each page. */
+/* Main content block for each page (content that occurs in the
+light-blue background. */
 .about_content {
     border-radius: 10px;
     background-color: #2094d243; /* Semi-translucent */
@@ -56,7 +60,6 @@
   color: #0057b8;
   transition: color 0.3s ease;
   text-decoration-thickness: 1.95px;
-  /*text-decoration: none;*/
 }
 
 /* Hover controls the color of the link when hovering with the mouse. */
@@ -72,7 +75,7 @@
 }
 
 
-/* Styles notes on the guide pages */
+/* Styles the notes on the guide pages */
 .note_content {
     border-radius: 10px;
     background-color: #0057b8;
@@ -86,7 +89,9 @@
 
 
 
-/* Styles notes on the guide pages */
+/* Styles the results sections on various pages,
+or content that otherwise needs to be separated from
+the main content. */
 .result_content {
     border-radius: 10px;
     background-color: #fdfff6; 
@@ -95,7 +100,7 @@
 }
 
 
-/* Styles the input box (example: used in the Plant Calculator) */
+/* Styles user input boxes (example: used in the Plant Calculator). */
 .inputBox {
   width: 4rem;
   background-color: #fdfff6;

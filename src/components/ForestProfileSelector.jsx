@@ -1,3 +1,14 @@
+/* 
+
+ForestProfileSelector.jsx. This component allows the user to select a forest
+profile from the list and stores the selection and data for use in the plant calculator.
+
+*/
+
+/* Styling contained in ForestProfileSelector.module.css */
+
+
+
 import styles from './ForestProfileSelector.module.css';
 
 
@@ -11,7 +22,7 @@ export default function ForestProfileSelector({ profiles, selected, onSelect }) 
           className={`${styles.gridItem} ${selected?.id === profile.id ? styles.selected : ""}`}
           onClick={() => onSelect?.(profile)} /* Calls the function when clicked */
         >
-          <img src={profile.image} alt={profile.name} /> {/* Displays the image */}
+          <img src={profile.image} alt={profile.name} /> {/* Displays the image. */}
 
           <p className={styles.gridItemTitle}> {profile.name} </p> {/* Displays the profile's name.*/}
 

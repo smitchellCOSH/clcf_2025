@@ -8,10 +8,12 @@ page and generates a PDF list of selected plants when clicked.
 /* Styling contained in BasicButton.module.css. */
 
 
-
+/* Imports */
 import React from 'react';
 import styles from './BasicButton.module.css';
 
+
+/* Content */
 const GeneratePDFButton = ({ onClick, children }) => {
 
   return (

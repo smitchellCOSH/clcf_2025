@@ -1,7 +1,9 @@
-// src/App.jsx
+
+/* App.jsx controls the routing between pages for the whole app. */
+
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Guide from './pages/Guide';

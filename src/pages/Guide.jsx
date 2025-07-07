@@ -22,7 +22,7 @@ import Navbar from "../components/Navbar";
 import styles from "../mystyle.module.css"
 import { Link } from 'react-router-dom';
 import BasicButton from '../components/BasicButton';
-import FrostedImage from '../components/FrosterImage';
+import FrostedImage from '../components/FrostedImage';
 
 
 

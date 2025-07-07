@@ -24,7 +24,7 @@ TO ADD ADDITIONAL RESOURCES:
 --- Equipment & Planting
 --- Pocket Forestry & the Miyawaki Method
 
-2. Copy a block of code, such as this:
+2. Copy a block of code, such as the block below:
 
 <p>  
   <a
@@ -54,7 +54,7 @@ import HeaderComp from "../components/HeaderComp";
 import FooterComp from "../components/FooterComp";
 import Navbar from "../components/Navbar";
 import styles from '../mystyle.module.css';
-import FrostedImage from "../components/FrosterImage";
+import FrostedImage from "../components/FrostedImage";
 
 
 /* Content */
