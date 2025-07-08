@@ -18,8 +18,10 @@ import styles from '../components/PlantSelector.module.css';
 
 /* Content */
 export default function PlantSelector({ categorizedPlants, selectedPlants, onChangeQuantity, plantCounts }) {
+
   return (
     <div>
+
       {Object.entries(categorizedPlants).map(([type, plants]) => {
         const totalSelected = selectedPlants[type]
           ? Object.values(selectedPlants[type]).reduce((a, b) => a + b, 0)
@@ -30,10 +32,14 @@ export default function PlantSelector({ categorizedPlants, selectedPlants, onCha
         return (
           <div key={type}>
 
-            <div className={styles.catTitle}>
-              <p>{type} </p>
-              <p> ({totalSelected} / {maxAllowed} selected) </p>
+            <div className={styles.catHeaderRow}>
+              <div className={styles.catTitle}>{type}</div>
+              <div className={styles.catCount}>
+                {totalSelected} / {maxAllowed} selected
               </div>
+            </div>
+
+
 
 
             <div className={styles.gridContainer}>

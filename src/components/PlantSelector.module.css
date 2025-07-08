@@ -23,6 +23,12 @@
 /* Styles for larger screens */
 @media (min-width: 768px) {
   .gridContainer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .gridContainer {
     grid-template-columns: repeat(4, 1fr);
   }
 }
@@ -38,7 +44,7 @@
   padding: 1rem;
   background-color: #fdfff6;
   width: auto;
-  height: 455px;
+  height: 550px;
   overflow: hidden;
   position: relative;
 }
@@ -74,20 +80,52 @@ Includes the image attributions */
 /* ************* SELECTIONS ************** */
 
 
+
 /* Styles the text that counts plant selections for each category */
 .catTitle {
   font-weight: bold;
-  margin-top: 5%;
-  margin-bottom: 2%;
   border-radius: 999px;
   background-color: #0057b8;
-  padding: 1%;
+  padding: 0.8rem;
   color: #fdfff6;
-  width: 25%;
+  font-size: 1rem;
+  width: fit-content;
   display: inline-block;
-  font-size: 1.5rem;
 }
 
+
+/* Floating count bubble that scrolls with the page. */
+.floatingCount {
+  position: fixed;
+  background-color: #c3e344;
+  color: #383838;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.catHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-top: 30px;
+}
+
+.catCount {
+  position: sticky;
+  top: 10px;
+  background-color: #c3e344;
+  color: #383838;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
 
 
 
@@ -125,6 +163,8 @@ Includes the image attributions */
   opacity: 0.5;
 }
 
+
+/* Styles the quantity control button (+/-) */
 .qtyControls span {
   min-width: 20px;
   text-align: center;

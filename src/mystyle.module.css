@@ -110,3 +110,29 @@ the main content. */
   padding: 10px;
   text-align: center;
 }
+
+
+/* Styles the plant calculator results section. */
+.plantCountRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; 
+  margin-top: 1rem;
+  justify-content: center;
+  margin: 30px;
+}
+
+.plantCountItem {
+  display: inline-block;
+  margin: 10px;
+}
+
+.plantCountBubble {
+  background-color: #0057b8;
+  color: #fdfff6;
+  border-radius: 999px;
+  padding: 0.7rem 1.2rem;
+  white-space: nowrap;
+}
+
+

@@ -23,16 +23,15 @@ See the import statements for navigation.
 
 
 /* Imports */
-import { useState } from "react";
-import { forestProfiles } from "../data/forestProfiles";
-import { plants, forestType, forestProfileMap, plantType } from "../data/plants";
-import ForestProfileSelector from "../components/ForestProfileSelector";
-import PlantSelector from "../components/PlantSelector";
+import { useState } from 'react';
+import { forestProfiles } from '../data/forestProfiles';
+import { plants, forestType, forestProfileMap, plantType } from '../data/plants';
+import ForestProfileSelector from '../components/ForestProfileSelector';
+import PlantSelector from '../components/PlantSelector';
 import Navbar from '../components/Navbar';
 import FooterComp from '../components/FooterComp';
 import HeaderComp from '../components/HeaderComp';
 import styles from '../mystyle.module.css';
-import selectorStyles from '../components/PlantSelector.module.css'
 import { jsPDF } from "jspdf";
 import BasicButton from "../components/BasicButton";
 import GeneratePDFButton from "../components/GeneratePDFButton";
@@ -49,23 +48,48 @@ export default function PlantCalculator() {
 
   /* Tracks variables, incl. square footage input by the user,
   selected forest profile, and the plants selected for each category */
+  const [squareFootage, setSquareFootage] = useState(0); // Square footage.
+  const [selectedProfile, setSelectedProfile] = useState(null); // Selected forest profile.
+  const [selectedPlants, setSelectedPlants] = useState({}); // Selected plants.
 
-  const [squareFootage, setSquareFootage] = useState(0); // Square footage
-  const [selectedProfile, setSelectedProfile] = useState(null); // Selected forest profile
-  const [selectedPlants, setSelectedPlants] = useState({}); // Selected plants
-  
-  
+
+/* ********************************************************************* */
+
+  /* Ensures the plantTypes are ordered by their height ranges */
+  const orderedTypes = Object.entries(plantType)
+      .sort((a, b) => a[1] - b[1]) // Sorts the plantTypes by numeric order.
+      .map(([type]) => type);      // Extracts the keys.
+
+
+  /* Ensures the Forest Profiles are displayed in a specific order. */
+    /* Defines the order to display. */
+    const profileOrder = [
+    "Oak Forest",
+    "Pollinator Forest",
+    "Dry Prairie",
+    "Wet Prairie",
+    "Challenged Site Forest"
+    ];
+
+    /* Sorts the profiles. */
+    const sortedProfiles = profileOrder
+      .map((name) => forestProfiles.find((p) => p.name === name))
+      .filter(Boolean);
+
+
+
+
+/* ********************************************************************* */
   
   /* Tracks the number of plants selected for each plant type and allows
   the user to increment or decrement the number of plants chosen.
   Prevents the user from going below 0 plants selected and from going over
   the recommended amount of plants based on the square footage input */
-
   const handleChangeQuantity = (type, plantId, delta) => {
 
     setSelectedPlants((prev) => { // Sets the selected plants based on the chosen plant type.
     const typeSelection = prev[type] || {}; // Sets the plant type.
-    const currentQty = typeSelection[plantId] || 0; // Sets the current quantity
+    const currentQty = typeSelection[plantId] || 0; // Sets the current quantity.
     const newQty = currentQty + delta; // Sets the new quantity based on user control.
 
     // Calculates the current total selected plants in the plant type excluding the current plant.
@@ -76,8 +100,8 @@ export default function PlantCalculator() {
     // Defines the maximum number of plants allowed for each plant type.
     const maxAllowed = plantCounts[type] || 0;
 
-    if (newQty < 0) return prev; // Prevents the user from decrementing below 0.
-    if (totalOtherQty + newQty > maxAllowed) return prev; // Prevents the user from exceeding the maximum.
+    // Prevents the user from decrementing below 0 or exceeding the maximum.
+    if (newQty < 0 || totalOtherQty + newQty > maxAllowed) return prev; 
 
 
     // Returns the selections.
@@ -93,35 +117,40 @@ export default function PlantCalculator() {
 
 
 
+
+/* ********************************************************************* */
+
+
   /* Handles the plant recommendation calculations using the plant density
   for each forest type and the inputted square footage */
   const handleCalculate = () => {
-  if (!selectedProfile) return {};
-  const density = selectedProfile.densities;
-  const plantCounts = {};
+    if (!selectedProfile) return {};
+    const density = selectedProfile.densities;
+    const plantCounts = {};
+    const alwaysInclude = ["SHRUB", "SUBTREE"];
 
-  const alwaysInclude = ["SHRUB", "SUBTREE"];
+    for (let type in density) {
+      const rawCount = (squareFootage / 10) * density[type];
 
-  for (let type in density) {
-    const rawCount = (squareFootage / 10) * density[type];
+      // Ensures a minimum of at least 1 shrub & sub-tree for small plots, only for specified plant types.
+      plantCounts[type] = squareFootage > 0 && density[type] > 0 &&
+        rawCount < 1 && alwaysInclude.includes(type) ? 1 : Math.floor(rawCount);
+      }
 
-    // Ensures a minimum of at least 1 shrub & sub-tree for small plots, only for specified plant types.
-    plantCounts[type] = squareFootage > 0 && density[type] > 0 &&
-      rawCount < 1 && alwaysInclude.includes(type) ? 1 : Math.floor(rawCount);
-    }
-
-  return plantCounts;
-};
-
+    return plantCounts;
+  };
 
 
   /* Calls the calculation function for each plant type. */
   const plantCounts = handleCalculate();
 
 
+
+  /* ********************************************************************* */
+
   /* Filters from the plant database the plants selected by the
   forest type. For example, choosing the Dry Prairie type will display
-  only Dry Prairie plants */
+  only Dry Prairie plants. */
   const filteredPlants = selectedProfile
     ? plants.filter((plant) =>
         plant.forestType.includes(forestType[forestProfileMap[selectedProfile.id]])
@@ -129,15 +158,7 @@ export default function PlantCalculator() {
     : [];
 
 
-  /* Ensures the plantTypes are ordered by their height ranges */
-  const orderedTypes = Object.entries(plantType)
-      .sort((a, b) => a[1] - b[1]) // Sorts the plantTypes by numeric order.
-      .map(([type]) => type);      // Extracts the keys.
-
-
-
-
-  /* Groups the filtered plants into categories based on their plant types */
+  /* Groups the filtered plants into categories based on their plant types. */
   const categorizedPlants = {};
   if (filteredPlants.length > 0) { // Error handling.
     Object.keys(plantType).forEach((typeKey) => {
@@ -148,84 +169,87 @@ export default function PlantCalculator() {
   }
 
 
+
+
+  /* ********************************************************************* */
+
   /* Generates a PDF using jsPDF and plant selections */
   const generatePDF = () => {
 
-  // Generates the PDF.
-  const doc = new jsPDF({
-    unit: "in",
-    format: [8.5, 11]
-  });
+    // Generates the PDF.
+    const doc = new jsPDF({
+      unit: "in",
+      format: [8.5, 11]
+    });
 
-  const pageWidth = doc.internal.pageSize.getWidth(); // Gets the width of the page for centering.
-  let y = 0.2;
+    const pageWidth = doc.internal.pageSize.getWidth(); // Gets the width of the page for centering.
+    let y = 0.2;
 
-  // Adds the logo to the top of the PDF.
-  doc.addImage(logoBase64, "PNG", 0.5, y, 2.5, 1); // (x, y, width, height)
+    // Adds the logo to the top of the PDF.
+    doc.addImage(logoBase64, "PNG", 0.5, y, 2.5, 1); // (x, y, width, height)
 
-  // Adds the title to the top of the PDF.
-  doc.setFontSize(28);
-  doc.setFont("helvetica", "bold");
-  doc.text("Pocket Forests Project", 3.8, y + 0.6); // Sets the x and y position.
+    // Adds the title to the top of the PDF.
+    doc.setFontSize(28);
+    doc.setFont("helvetica", "bold");
+    doc.text("Pocket Forests Project", 3.8, y + 0.6); // Sets the x and y position.
 
-  doc.line(0, 1.3, 8.5, 1.3, "F")
-  y += 1.5;
-
-
-  // Forest Type display.
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(24)
-  const prof = "Your Forest Type — " + selectedProfile.name;
-  const textWidth = doc.getTextWidth(prof);
-  const x = (pageWidth - textWidth) / 2; // Centers the text.
-  doc.text(prof, x, y);
-  y += 0.6;
+    doc.line(0, 1.3, 8.5, 1.3, "F")
+    y += 1.5;
 
 
-  // Adds forest type description.
-  doc.setFontSize(15) // Font size for the forest description.
-  doc.setFont("helvetica", "normal"); // Font type for the forest description.
-  const descriptionLines = doc.splitTextToSize(selectedProfile.description, 7.5);
-  doc.text(descriptionLines, 0.5, y);
-  y += descriptionLines.length * 0.3;
+    // Forest Type display.
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(24)
+    const prof = "Your Forest Type — " + selectedProfile.name;
+    const textWidth = doc.getTextWidth(prof);
+    const x = (pageWidth - textWidth) / 2; // Centers the text.
+    doc.text(prof, x, y);
+    y += 0.6;
 
 
-  // Adds a plant selection subtitle.
-  doc.setFont("helvetica", "bold");
-  doc.setFontSize(24)
-  doc.text("Your Plant Selections", 2.8, y); // Centers it.
-  y += 0.8;
-
-  let somethingAdded = false; // Ensures no plants are added to begin.
-  doc.setFontSize(15) // Font size for each plant entry.
-  doc.setFont("helvetica", "normal"); // Font type set for plants list.
+    // Adds forest type description.
+    doc.setFontSize(15) // Font size for the forest description.
+    doc.setFont("helvetica", "normal"); // Font type for the forest description.
+    const descriptionLines = doc.splitTextToSize(selectedProfile.description, 7.5);
+    doc.text(descriptionLines, 0.5, y);
+    y += descriptionLines.length * 0.3;
 
 
-  // Allows excess selections to spill onto a new page.
-  const lineHeight = 0.5;
-  const bottomMargin = 0.5;
-  const pageHeight = doc.internal.pageSize.getHeight();
-  const maxY = pageHeight - bottomMargin;
+    // Adds a plant selection subtitle.
+    doc.setFont("helvetica", "bold");
+    doc.setFontSize(24)
+    doc.text("Your Plant Selections", 2.8, y); // Centers it.
+    y += 0.8;
 
-  // Lists each plant selected.
-  Object.entries(selectedPlants).forEach(([type, plantMap]) => {
-  Object.entries(plantMap).forEach(([plantId, qty]) => {
-    const plant = plants.find((p) => p.id === plantId);
-    if (plant && qty > 0) {
-      const line = `${plant.plantName} (${plant.scientificName}) — ${qty}`;
+    let somethingAdded = false; // Ensures no plants are added to begin.
+    doc.setFontSize(15) // Font size for each plant entry.
+    doc.setFont("helvetica", "normal"); // Font type set for plants list.
 
-      if (y + lineHeight > maxY) {
-        doc.addPage();
-        y = 0.8;
+
+    // Allows excess selections to spill onto a new page.
+    const lineHeight = 0.5;
+    const bottomMargin = 0.5;
+    const pageHeight = doc.internal.pageSize.getHeight();
+    const maxY = pageHeight - bottomMargin;
+
+    // Lists each plant selected.
+    Object.entries(selectedPlants).forEach(([type, plantMap]) => {
+    Object.entries(plantMap).forEach(([plantId, qty]) => {
+      const plant = plants.find((p) => p.id === plantId);
+      if (plant && qty > 0) {
+        const line = `${plant.plantName} (${plant.scientificName}) — ${qty}`;
+
+        if (y + lineHeight > maxY) {
+          doc.addPage();
+          y = 0.8;
+        }
+
+        doc.text(line, 0.5, y);
+        y += lineHeight;
+        somethingAdded = true;  // Updates to true once a plant has been selected.
       }
-
-      doc.text(line, 0.5, y);
-      y += lineHeight;
-      somethingAdded = true;  // Updates to true once a plant has been selected.
-    }
+    });
   });
-  });
-
 
   // Displays if a user generates a PDF without selecting any plants.
   if (!somethingAdded) {
@@ -234,6 +258,18 @@ export default function PlantCalculator() {
 
   doc.save("your_plant_list.pdf");
 };
+
+
+
+
+/* ********************************************************************* */
+
+  /* Clears selected plant quantities for a "Clear all" button */
+  const clearSelections = () => {
+    setSelectedPlants({});
+  };
+
+
 
 
   /* Rendered layout */
@@ -247,27 +283,26 @@ export default function PlantCalculator() {
       <div className={styles.about_content}>
         <div className={styles.subheader}>Plant Calculator</div>
 
-        <p>Input the square footage of your Pocket Forest below.</p>
+          <div style={{ marginBottom: "0.8rem", padding: "0.2rem" }}>
+            Input the square footage of your Pocket Forest:
+            <input className={styles.inputBox}
+              type="number"
+              min="0"
+              placeholder="Enter square footage"
+              value={squareFootage}
+              onChange={(e) => {
+                let usrinp = e.target.value;
+                usrinp = Math.abs(usrinp);
+                usrinp = Number.parseFloat(usrinp, 10);
+                if (!isNaN(usrinp) && usrinp >= 0) {
+                setSquareFootage(usrinp.toString());
+              }
+                let cleanedStr = usrinp.toString().replace(/^0+(?=\d)/, "");
 
-          <div style={{ marginBottom: "1rem", padding: "0.2rem" }}>
-          <input className={styles.inputBox}
-            type="number"
-            min="0"
-            placeholder="Enter square footage"
-            value={squareFootage}
-            onChange={(e) => {
-              let usrinp = e.target.value;
-              usrinp = Math.abs(usrinp);
-              usrinp = Number.parseFloat(usrinp, 10);
-              if (!isNaN(usrinp) && usrinp >= 0) {
-              setSquareFootage(usrinp.toString());
-            }
-              let cleanedStr = usrinp.toString().replace(/^0+(?=\d)/, "");
-
-              setSquareFootage(cleanedStr)}}
-          />
-          {" "}
-          square feet.
+                setSquareFootage(cleanedStr)}}
+            />
+            {" "}
+            square feet.
           </div>
 
         <p>
@@ -277,7 +312,7 @@ export default function PlantCalculator() {
 
         <div style={{padding: "20px"}}>
         <ForestProfileSelector
-          profiles={forestProfiles}
+          profiles={sortedProfiles}
           selected={selectedProfile}
           onSelect={setSelectedProfile}
         />
@@ -289,15 +324,18 @@ export default function PlantCalculator() {
                 Below is the number of each type of plant you will need for your
                 Pocket Forest space.
               </p>
-              {orderedTypes.map((type) => (
-                <p key={type}> <span style={{ fontWeight: "bold", backgroundColor: "#0057b8", color: "#fdfff6",
-                   borderRadius: "999px", padding: "0.7rem" }}>
-                    {type}
-                  </span>
-                  {plantCounts[type] || 0} plants
-                </p>
+              <div className={styles.plantCountRow}>
+                {orderedTypes.map((type) => (
+                  <div key={type} className={styles.plantCountItem}>
+                    <span className={styles.plantCountBubble}>
+                      <strong>{type}:</strong> {plantCounts[type] || 0} plants
+                    </span>
+                  </div>
                 ))}
+              </div>
+
             </div>
+              
 
         <div className={styles.subheader}>
           Choose your plants
@@ -337,6 +375,13 @@ export default function PlantCalculator() {
 
         )}
 
+        <div style={{ marginTop: "1rem" }}>
+          <GeneratePDFButton onClick={clearSelections}>
+            Clear All Selections
+          </GeneratePDFButton>
+        </div>
+
+
         {Object.keys(selectedPlants).length > 0 && (
             <div style={{ marginTop: "2rem" }}>
 
@@ -347,12 +392,10 @@ export default function PlantCalculator() {
             </div>
           )}
 
-
         <div style={{ marginTop: "2rem" }}>
           <BasicButton to="/Resources">Resources</BasicButton>
           <ScrollToTop />
         </div>
-
       </div>
 
 
@@ -360,3 +403,5 @@ export default function PlantCalculator() {
     </div>
   );
 }
+
+
