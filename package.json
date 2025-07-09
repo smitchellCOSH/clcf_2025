@@ -8,13 +8,15 @@
 		"dev": "vite --port 3000 --open",
 		"build": "vite build",
 		"serve": "vite preview --open",
-		"test": "vitest"
+		"test": "vitest",
+		"predeploy": "npm run build",
+  		"deploy": "gh-pages -d build"
 	},
 	"dependencies": {
-		"gh-pages": "^6.3.0",
 		"jspdf": "^3.0.1",
 		"react": "^19.0.0",
-		"react-dom": "^19.0.0"
+		"react-dom": "^19.0.0",
+		"react-router-dom": "^7.6.3"
 	},
 	"devDependencies": {
 		"@testing-library/jest-dom": "^6.6.3",

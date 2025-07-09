@@ -130,7 +130,7 @@ let redOak = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED], 
-    image: "/plant_photos/quercus-rubra_red-oak.jpg",
+    image: "plant_photos/quercus-rubra_red-oak.jpg",
     imgAttribution: "",
 };
 
@@ -147,7 +147,7 @@ let burOak = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE, forestType.POLLINATOR],
-    image: "/plant_photos/quercus-macrocarpa_bur-oak.jpg",
+    image: "plant_photos/quercus-macrocarpa_bur-oak.jpg",
     imgAttribution: "",
 };
 
@@ -165,7 +165,7 @@ let swampWhiteOak = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/quercus-bicolor_swamp-white-oak.jpg",
+    image: "plant_photos/quercus-bicolor_swamp-white-oak.jpg",
     imgAttribution: "Image by P. Showers.",
 };
 
@@ -183,7 +183,7 @@ let whiteOak = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.DRYPRAIRIE, forestType.CHALLENGED, forestType.OAKFOREST],
-    image: "/plant_photos/quercus-alba_white-oak.jpg",
+    image: "plant_photos/quercus-alba_white-oak.jpg",
     imgAttribution: "",
 };
 
@@ -201,7 +201,7 @@ let americanElm = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.DRYPRAIRIE, forestType.WETPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/ulmus-americana_american-elm.jpg",
+    image: "plant_photos/ulmus-americana_american-elm.jpg",
     imgAttribution: "Image by L. Wallis.",
 };
 
@@ -219,7 +219,7 @@ let hackberry = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
     forestType: [forestType.CHALLENGED, forestType.WETPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/celtis-occidentalis_hackberry.jpg",
+    image: "plant_photos/celtis-occidentalis_hackberry.jpg",
     imgAttribution: "Image by L. Wallis.",
 };
 
@@ -237,7 +237,7 @@ let yellowBirch = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.DRYPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/betula-alleghaniensis_yellow-birch.jpg",
+    image: "plant_photos/betula-alleghaniensis_yellow-birch.jpg",
     imgAttribution: "",
 };
 
@@ -255,7 +255,7 @@ let americanBeech = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
     forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.WETPRAIRIE],
-    image: "/plant_photos/fagus-grandifolia_american-beech.jpg",
+    image: "plant_photos/fagus-grandifolia_american-beech.jpg",
     imgAttribution: "",
 };
 
@@ -273,7 +273,7 @@ let shagbarkHickory = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE],
-    image: "/plant_photos/carya-ovata_shagbark-hickory.jpg",
+    image: "plant_photos/carya-ovata_shagbark-hickory.jpg",
     imgAttribution: "",
 };
 
@@ -282,7 +282,7 @@ let tulipTree = {
     id: "tulip_tree",
     plantName: "Tulip Tree",
     scientificName: "Liriodendron tulipifera",
-    notes: "The tulip poplar is a native large deciduous tree that may grow 90 to 120 feet tall and takes its name from its greenish-yellow heartwood and attractive tulip-like flowers. The tulip poplar is a favorite nesting site for birds, and the flowers attract butterflies and hummingbirds. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This tree may grow 90 to 120 feet tall and takes its name from its greenish-yellow heartwood and attractive tulip-like flowers. It is a favorite nesting site for birds, and the flowers attract butterflies and hummingbirds. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.CANOPY],
     sunType: [sunType.FULLSUN],
     soilType: [soilType.LOAM_SILT],
@@ -291,7 +291,7 @@ let tulipTree = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR],
-    image: "/plant_photos/liriodendron-tulipifera_tulip-tree.jpg",
+    image: "plant_photos/liriodendron-tulipifera_tulip-tree.jpg",
     imgAttribution: "",
 };
 
@@ -309,7 +309,7 @@ let sycamore = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.WETPRAIRIE],
-    image: "/plant_photos/platanus-occidentalis_sycamore.jpg",
+    image: "plant_photos/platanus-occidentalis_sycamore.jpg",
     imgAttribution: "",
 };
 
@@ -327,7 +327,7 @@ let purplestemAngelica = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.WETPRAIRIE],
-    image: "/plant_photos/angelica-atropurpurea_purplestem-angelica.jpg",
+    image: "plant_photos/angelica-atropurpurea_purplestem-angelica.jpg",
     imgAttribution: "",
 };
 
@@ -345,7 +345,7 @@ let canadaAnemone = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.CHALLENGED, forestType.POLLINATOR, forestType.DRYPRAIRIE],
-    image: "/plant_photos/anemone-canadensis_canada-anemone.jpg",
+    image: "plant_photos/anemone-canadensis_canada-anemone.jpg",
     imgAttribution: "Image by A. A. Reznicek.",
 };
 
@@ -354,7 +354,7 @@ let newEnglandAster = {
     id: "new_england_aster",
     plantName: "New England Aster",
     scientificName: "Symphyotrichum novae-angliae",
-    notes: "The New England Aster is a herbaceous perennial that may grow 3 to 7 feet tall. Large, purple flowers with a yellow center mature from August to October. Showy deep pink-purple flowers are attractive to wildlife including bees and butterflies and also make great cut flowers for arrangements. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "Large, purple flowers with a yellow center mature from August to October. Showy deep pink-purple flowers are attractive to wildlife including bees and butterflies. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.CLAY, soilType.HIGHORGANICMATTER],
@@ -363,7 +363,7 @@ let newEnglandAster = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE],
-    image: "/plant_photos/symphyotrichum-novae-angliae_new-england-aster.jpg",
+    image: "plant_photos/symphyotrichum-novae-angliae_new-england-aster.jpg",
     imgAttribution: "",
 };
 
@@ -390,7 +390,7 @@ let commonBoneset = {
     id: "common_boneset",
     plantName: "Common Boneset",
     scientificName: "Eupatorium perfoliatum",
-    notes: "Boneset is a large herbaceous, clump-forming rhizomatous perennial herb in the aster (Asteraceae) family that is native to the eastern USA and Canada and as far west as TX, NB and the Dakotas. Boneset has small white flowers that appear in late summer and fall. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "Boneset is a large herbaceous, clump-forming rhizomatous perennial herb in the aster (Asteraceae) family that is native to the eastern USA and Canada. Boneset has small white flowers that appear in late summer and fall. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.LOAM_SILT, soilType.SAND, soilType.CLAY, soilType.HIGHORGANICMATTER],
@@ -399,7 +399,7 @@ let commonBoneset = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/eupatorium-perfoliatum_common-boneset.jpg",
+    image: "plant_photos/eupatorium-perfoliatum_common-boneset.jpg",
     imgAttribution: "",
 };
 
@@ -417,7 +417,7 @@ let paleleafWoodlandSunflower = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE, forestType.DRYPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/helianthus-strumosus_paleleaf-woodland-sunflower.jpg",
+    image: "plant_photos/helianthus-strumosus_paleleaf-woodland-sunflower.jpg",
     imgAttribution: "",
 };
 
@@ -427,7 +427,7 @@ let blueLobelia = {
     id: "blue_lobelia",
     plantName: "Blue Lobelia",
     scientificName: "Lobelia siphilitica",
-    notes: "The blue flowers of this plant first mature in mid-summer and continue into early fall. The flowers are larger than other Lobelias and have stripes on the tube portion. The nectar and pollen of the flowers attract primarily bumblebees and other long-tongued bees. (Source: North Carolina Extension Gardener Plant Toolbox). ",
+    notes: "The blue flowers of this plant first mature in mid-summer and continue into early fall. The nectar and pollen of the flowers attract primarily bumblebees and other long-tongued bees. (Source: North Carolina Extension Gardener Plant Toolbox). ",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE, sunType.DAPPLEDSUNLIGHT],
     soilType: [soilType.HIGHORGANICMATTER],
@@ -436,7 +436,7 @@ let blueLobelia = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.WETPRAIRIE],
-    image: "/plant_photos/lobelia-siphilitica_blue-lobelia.jpg",
+    image: "plant_photos/lobelia-siphilitica_blue-lobelia.jpg",
     imgAttribution: "",
 };
 
@@ -455,7 +455,7 @@ let horsemint = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/monarda-punctata_horsemint-spotted-beebalm.jpg",
+    image: "plant_photos/monarda-punctata_horsemint-spotted-beebalm.jpg",
     imgAttribution: "",
 };
 
@@ -474,7 +474,7 @@ let shrubbyCinquefoil = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/potentilla-fruticosa_shrubby-cinquefoil.jpg",
+    image: "plant_photos/potentilla-fruticosa_shrubby-cinquefoil.jpg",
     imgAttribution: "",
 };
 
@@ -493,7 +493,7 @@ let pinnatePrairieCornflower = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/ratibida-pinnata_yellow-coneflower.jpg",
+    image: "plant_photos/ratibida-pinnata_yellow-coneflower.jpg",
     imgAttribution: "",
 };
 
@@ -503,7 +503,7 @@ let cupPlant = {
     id: "cup_plant",
     plantName: "Cup Plant",
     scientificName: "Silphium perfoliatum",
-    notes: "The common name Cup Plant is in reference to the stout leaves that join at the stem, forming a cup that will hold water.  Birds, especially goldfinches, are attracted to the water and also eat the seeds. Bumblebees and honeybees use parts of the plant for nesting.  Short-tongued bees, wasps and flies frequent the flowers for pollen and nectar. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "The common name Cup Plant is in reference to the stout leaves that join at the stem, forming a cup that will hold water. Birds are attracted to the water and also eat the seeds. Bumblebees and honeybees use parts of the plant for nesting. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.LOAM_SILT],
@@ -512,7 +512,7 @@ let cupPlant = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE],
-    image: "/plant_photos/silphium-perfoliatum_cup-plant.jpg",
+    image: "plant_photos/silphium-perfoliatum_cup-plant.jpg",
     imgAttribution: "",
 };
 
@@ -549,7 +549,7 @@ let meadowsweet = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
-    image: "/plant_photos/spiraea-alba_meadowsweet.jpg",
+    image: "plant_photos/spiraea-alba_meadowsweet.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -568,7 +568,7 @@ let goldenAlexanders = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/zizia-aurea_golden-alexanders.jpg",
+    image: "plant_photos/zizia-aurea_golden-alexanders.jpg",
     imgAttribution: "",
 };
 
@@ -587,7 +587,7 @@ let yellowGiantHyssop = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/agastache-nepetoides_yellow-giant-hyssop.jpg",
+    image: "plant_photos/agastache-nepetoides_yellow-giant-hyssop.jpg",
     imgAttribution: "Image by R. W. Smith.",
 };
 
@@ -605,7 +605,7 @@ let noddingWildOnion = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/allium-cernuum_nodding-wild-onion.jpg",
+    image: "plant_photos/allium-cernuum_nodding-wild-onion.jpg",
     imgAttribution: "",
 };
 
@@ -623,7 +623,7 @@ let swampMilkweed = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
-    image: "/plant_photos/asclepias-incarnata_swamp-milkweed.jpg",
+    image: "plant_photos/asclepias-incarnata_swamp-milkweed.jpg",
     imgAttribution: "",
 };
 
@@ -642,7 +642,7 @@ let butterflyWeed = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.WETPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/asclepias-tuberosa_butterfly-weed.jpg",
+    image: "plant_photos/asclepias-tuberosa_butterfly-weed.jpg",
     imgAttribution: "",
 };
 
@@ -661,7 +661,7 @@ let smoothBlueAster = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/symphyotrichum-laeve_smooth-blue-aster.jpg",
+    image: "plant_photos/symphyotrichum-laeve_smooth-blue-aster.jpg",
     imgAttribution: "",
 };
 
@@ -672,7 +672,7 @@ let paleIndianPlantain = {
     id: "pale_indian_plantain",
     plantName: "Pale Indian Plantain",
     scientificName: "Cacalia atriplicifolium",
-    notes: "Pale Indian Plantain is a native wildflower with striking foliage. Its natural habitat includes mesic forests, woodland edges, savannas, thickets sand dunes, stream banks, clearings, prairies, and meadows. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This native wildflower has striking foliage. Its natural habitats are varied. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.SHALLOWROCKY, soilType.LOAM_SILT, soilType.SAND],
@@ -681,7 +681,7 @@ let paleIndianPlantain = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/cacalia-atriplicifolium_pale-indian-plantain.jpg",
+    image: "plant_photos/cacalia-atriplicifolium_pale-indian-plantain.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -691,7 +691,7 @@ let buttonbush = {
     id: "buttonbush",
     plantName: "Buttonbush",
     scientificName: "Cephalanthus occidentalis",
-    notes: "In June to September small, fragrant, white, tubular flowers occur in round clusters that have protruding styles, giving them a pincushion-like effect. Buttonbush has exceptional wildlife benefits, attracting many types of pollinators, waterfowl, birds, and mammals. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "In June to September small, fragrant, white, tubular flowers occur in round clusters, giving them a pincushion-like effect. Buttonbush has exceptional wildlife benefits, attracting many types of pollinators, waterfowl, birds, and mammals. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.SHALLOWROCKY, soilType.LOAM_SILT, soilType.SAND, soilType.HIGHORGANICMATTER, soilType.CLAY],
@@ -700,7 +700,7 @@ let buttonbush = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.CHALLENGED, forestType.WETPRAIRIE],
-    image: "/plant_photos/cephalanthus-occidentalis_buttonbush.jpg",
+    image: "plant_photos/cephalanthus-occidentalis_buttonbush.jpg",
     imgAttribution: "",
 };
 
@@ -719,7 +719,7 @@ let wildStrawberry = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.OAKFOREST],
-    image: "/plant_photos/fragaria-virginiana_wild-strawberry.jpg",
+    image: "plant_photos/fragaria-virginiana_wild-strawberry.jpg",
     imgAttribution: "",
 };
 
@@ -738,7 +738,7 @@ let roughBlazingStar = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.CHALLENGED, forestType.DRYPRAIRIE, forestType.OAKFOREST, forestType.WETPRAIRIE],
-    image: "/plant_photos/liatris-aspera_blazing-star.jpg",
+    image: "plant_photos/liatris-aspera_blazing-star.jpg",
     imgAttribution: "",
 };
 
@@ -757,7 +757,7 @@ let eveningPrimrose = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.CHALLENGED, forestType.OAKFOREST],
-    image: "/plant_photos/oenothera-biennis_evening-primrose.jpg",
+    image: "plant_photos/oenothera-biennis_evening-primrose.jpg",
     imgAttribution: "",
 };
 
@@ -776,7 +776,7 @@ let penstemon = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE],
-    image: "/plant_photos/penstemon-hirsutus_hairy-beardtongue.jpg",
+    image: "plant_photos/penstemon-hirsutus_hairy-beardtongue.jpg",
     imgAttribution: "",
 };
 
@@ -794,7 +794,7 @@ let michiganRose = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/rosa-setigera_michigan-rose.jpg",
+    image: "plant_photos/rosa-setigera_michigan-rose.jpg",
     imgAttribution: "Image by A. A. Reznicek.",
 };
 
@@ -802,9 +802,9 @@ let michiganRose = {
 
 let lateFigwort = {
     id: "late_figwort",
-    plantName: "Late Figwort / Carpenter's Square",
+    plantName: "Late Figwort",
     scientificName: "Scrophularia marilandica",
-    notes: "The unusual flowers appear from late summer to fall and produce an abundance of nectar that attracts bees, wasps, flies, butterflies and hummingbirds. Its nectar is quick to replenish and beekeepers have used the plant to make good-quality honey in the past. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "The unusual flowers appear from late summer to fall and produce an abundance of nectar that attracts bees, wasps, flies, butterflies and hummingbirds. Beekeepers have used the plant to make good-quality honey. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.DAPPLEDSUNLIGHT, sunType.PARTIALSHADE],
     soilType: [soilType.LOAM_SILT, soilType.HIGHORGANICMATTER, soilType.SAND],
@@ -813,7 +813,7 @@ let lateFigwort = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.DRYPRAIRIE],
-    image: "/plant_photos/scrophularia-marilandica_late-figwort.jpg",
+    image: "plant_photos/scrophularia-marilandica_late-figwort.jpg",
     imgAttribution: "",
 };
 
@@ -832,7 +832,7 @@ let showyGoldenrod = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/solidago-speciosa_showy-goldenrod.jpg",
+    image: "plant_photos/solidago-speciosa_showy-goldenrod.jpg",
     imgAttribution: "",
 };
 
@@ -851,7 +851,7 @@ let hoaryVervain = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.CHALLENGED, forestType.DRYPRAIRIE],
-    image: "/plant_photos/verbena-stricta_hoary-vervain.jpg", 
+    image: "plant_photos/verbena-stricta_hoary-vervain.jpg", 
     imgAttribution: "",
 };
 
@@ -870,7 +870,7 @@ let ironweed = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.WETPRAIRIE],
-    image: "/plant_photos/vernonia-missurica_ironweed.jpg",
+    image: "plant_photos/vernonia-missurica_ironweed.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -890,7 +890,7 @@ let culversRoot = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE],
-    image: "/plant_photos/veronicastrum-virginicum_culvers-root.jpg",
+    image: "plant_photos/veronicastrum-virginicum_culvers-root.jpg",
     imgAttribution: "",
 };
 
@@ -900,7 +900,7 @@ let leadplant = {
     id: "leadplant",
     plantName: "Leadplant",
     scientificName: "Amorpha canescens",
-    notes: "This plant has tiny purple flowers that are grouped together in showy terminal spikes. The leaves are covered with short, dense hairs. This covering gives a gray tint to the leaves, making the plant appear as have been dusted with lead. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This plant has tiny purple flowers that are grouped together with leaves that are covered with short, dense hairs. This covering gives a gray tint to the leaves, making the plant appear as have been dusted with lead. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.CLAY, soilType.SAND, soilType.LOAM_SILT],
@@ -909,7 +909,7 @@ let leadplant = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE],
-    image: "/plant_photos/amorpha-canescens_leadplant.jpg",
+    image: "plant_photos/amorpha-canescens_leadplant.jpg",
     imgAttribution: "",
 };
 
@@ -946,7 +946,7 @@ let newJerseyTea = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.DRYPRAIRIE],
-    image: "/plant_photos/ceanothus-americanus_new-jersey-tea.jpg",
+    image: "plant_photos/ceanothus-americanus_new-jersey-tea.jpg",
     imgAttribution: "",
 };
 
@@ -965,7 +965,7 @@ let showyTickTrefoil = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.CHALLENGED, forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
-    image: "/plant_photos/desmodium-canadense_showy-tick-trefoil.jpg",
+    image: "plant_photos/desmodium-canadense_showy-tick-trefoil.jpg",
     imgAttribution: "",
 };
 
@@ -984,7 +984,7 @@ let wildGeranium = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/geranium-maculatum_wild-geranium.jpg",
+    image: "plant_photos/geranium-maculatum_wild-geranium.jpg",
     imgAttribution: "",
 };
 
@@ -1003,7 +1003,7 @@ let alumRoot = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
-    image: "/plant_photos/heuchera-americana_alum-root.jpg",
+    image: "plant_photos/heuchera-americana_alum-root.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -1013,7 +1013,7 @@ let virginiaWaterleaf = {
     id: "virginia_waterleaf",
     plantName: "Virginia Waterleaf",
     scientificName: "Hydrophyllum virginianum",
-    notes: "Blooming occurs in early spring to July with small, white to lilac, bell-shaped flowers in clusters on 4 inch long stalks that attract bees. Young leaves and shoots are edible and can be added to salads. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This plant blooms with small white to lilac, bell-shaped flowers in clusters on stalks that attract bees. Young leaves and shoots are edible and can be added to salads. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.PARTIALSHADE, sunType.DAPPLEDSUNLIGHT],
     soilType: [soilType.LOAM_SILT, soilType.HIGHORGANICMATTER, soilType.SHALLOWROCKY],
@@ -1022,7 +1022,7 @@ let virginiaWaterleaf = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE],
-    image: "/plant_photos/hydrophyllum-virginianum_virginia-waterleaf.jpg",
+    image: "plant_photos/hydrophyllum-virginianum_virginia-waterleaf.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -1041,7 +1041,7 @@ let hairyBushclover = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE],
-    image: "/plant_photos/lespedeza-hirta_hairy-bush-clover.jpg",
+    image: "plant_photos/lespedeza-hirta_hairy-bush-clover.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -1060,7 +1060,7 @@ let redberriedElder = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/sambucus-racemosa_red-berried-elder.jpg",
+    image: "plant_photos/sambucus-racemosa_red-berried-elder.jpg",
     imgAttribution: "",
 };
 
@@ -1079,7 +1079,7 @@ let roundleavedRagwort = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE],
-    image: "/plant_photos/packera-obovata_round-leaved-ragwort.jpg",
+    image: "plant_photos/packera-obovata_round-leaved-ragwort.jpg",
     imgAttribution: "",
 };
 
@@ -1098,7 +1098,7 @@ let juneberry = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE],
-    image: "/plant_photos/amelanchier-arborea_juneberry.jpg",
+    image: "plant_photos/amelanchier-arborea_juneberry.jpg",
     imgAttribution: "",
 };
 
@@ -1117,7 +1117,7 @@ let smoothShadbush = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/amelanchier-laevis_smooth-shadbush.jpg",
+    image: "plant_photos/amelanchier-laevis_smooth-shadbush.jpg",
     imgAttribution: "",
 };
 
@@ -1127,7 +1127,7 @@ let pawpaw = {
     id: "pawpaw",
     plantName: "Pawpaw",
     scientificName: "Asimina triloba",
-    notes: "The Pawpaw produces an edible, sweet, custard-like fruit. Wear gloves when harvesting as contact dermatitis has been known to occur. Stomach and intestinal pain can occur from eating the fruit skin or seeds. Do not consume leaves or stems. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "The Pawpaw produces an edible, sweet, custard-like fruit. Wear gloves when harvesting to prevent contact dermatitis. Stomach and intestinal pain can occur from eating the fruit skin or seeds. Do not consume leaves or stems. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SUBTREE],
     sunType: [sunType.DEEPSHADE, sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.LOAM_SILT],
@@ -1136,7 +1136,7 @@ let pawpaw = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE],
-    image: "/plant_photos/asimina-triloba_pawpaw.jpg",
+    image: "plant_photos/asimina-triloba_pawpaw.jpg",
     imgAttribution: "",
 };
 
@@ -1155,7 +1155,7 @@ let grayBirch = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/betula-populifolia_gray-birch.jpg",
+    image: "plant_photos/betula-populifolia_gray-birch.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -1165,7 +1165,7 @@ let hornbeam = {
     id: "hornbeam",
     plantName: "Hornbeam / Blue-beech",
     scientificName: "Carpinus caroliniana",
-    notes: "This leaves of this tree turn an attractive orange-red color in the fall. In early spring, yellow-green, male and fuzzy, yellow-green, female flowers mature. The nuts of this tree are edible but rarely eaten by humans. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This leaves of this tree turn an attractive orange-red color in the fall. In early spring, yellow-green male and fuzzy female flowers mature. The nuts of this tree are edible but rarely eaten by humans. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SUBTREE],
     sunType: [sunType.DEEPSHADE, sunType.PARTIALSHADE],
     soilType: [soilType.CLAY, soilType.HIGHORGANICMATTER, soilType.LOAM_SILT, soilType.SAND],
@@ -1174,7 +1174,7 @@ let hornbeam = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/carpinus-caroliniana_hornbeam.jpg",
+    image: "plant_photos/carpinus-caroliniana_hornbeam.jpg",
     imgAttribution: "",
 };
 
@@ -1212,7 +1212,7 @@ let floweringDogwood = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST],
-    image: "/plant_photos/cornus-florida_flowering-dogwood.jpg",
+    image: "plant_photos/cornus-florida_flowering-dogwood.jpg",
     imgAttribution: "",
 };
 
@@ -1230,7 +1230,7 @@ let clusteredHawthorn = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.DRYPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/crataegus-compacta_hawthorn.jpg",
+    image: "plant_photos/crataegus-compacta_hawthorn.jpg",
     imgAttribution: "",
 };
 
@@ -1248,7 +1248,7 @@ let downyHawthorn = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.POLLINATOR, forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/crataegus-mollis_downy-hawthorn.jpg",
+    image: "plant_photos/crataegus-mollis_downy-hawthorn.jpg",
     imgAttribution: "Image by R. W. Smith.",
 };
 
@@ -1267,7 +1267,7 @@ let riverBirch = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.DRYPRAIRIE, forestType.WETPRAIRIE],
-    image: "/plant_photos/betula-nigra_river-birch.jpg",
+    image: "plant_photos/betula-nigra_river-birch.jpg",
     imgAttribution: "",
 };
 
@@ -1286,7 +1286,7 @@ let bitternutHickory = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.WETPRAIRIE],
-    image: "/plant_photos/carya-cordiformis_bitternut-hickory.jpg",
+    image: "plant_photos/carya-cordiformis_bitternut-hickory.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -1305,7 +1305,7 @@ let pignutHickory = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/carya-glabra_pignut-hickory.jpg",
+    image: "plant_photos/carya-glabra_pignut-hickory.jpg",
     imgAttribution: "Image by R. Schipper.",
 };
 
@@ -1324,7 +1324,7 @@ let butternut = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/juglans-cinerea_butternut.jpg",
+    image: "plant_photos/juglans-cinerea_butternut.jpg",
     imgAttribution: "",
 };
 
@@ -1334,7 +1334,7 @@ let whiteMulberry = {
     id: "white_mulberry",
     plantName: "White Mulberry",
     scientificName: "Morus alba",
-    notes: "Fertilized flowers on female trees produce sweet, edible blackberry-like fruits (cylindrical drupes to 1inch long) that mature in June. Fruits ripen to white or pink, but sometimes to darker reds or purple-blacks. Edible only when ripe; avoid touching or ingesting the latex-like white sap. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "Flowers on female trees produce sweet, edible blackberry-like fruits that mature in June. Fruits ripen to white or pink, but sometimes to darker reds or purple-blacks. Edible only when ripe; avoid touching or ingesting the latex-like white sap. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.TREE, plantType.PARTIALSHADE],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.CLAY, soilType.LOAM_SILT, soilType.SAND],
@@ -1343,7 +1343,7 @@ let whiteMulberry = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/morus-alba_white-mulberry.jpg",
+    image: "plant_photos/morus-alba_white-mulberry.jpg",
     imgAttribution: "",
 };
 
@@ -1362,7 +1362,7 @@ let honeyLocust = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/gleditsia-triacanthos_honey-locust.jpg",
+    image: "plant_photos/gleditsia-triacanthos_honey-locust.jpg",
     imgAttribution: "",
 };
 
@@ -1381,7 +1381,7 @@ let larch = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE],
-    image: "/plant_photos/larix-laricina_larch.jpg",
+    image: "plant_photos/larix-laricina_larch.jpg",
     imgAttribution: "",
 };
 
@@ -1400,7 +1400,7 @@ let ohioBuckeye = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/aesculus-glabra_ohio-buckeye.jpg",
+    image: "plant_photos/aesculus-glabra_ohio-buckeye.jpg",
     imgAttribution: "",
 };
 
@@ -1419,7 +1419,7 @@ let paperBirch = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE],
-    image: "/plant_photos/betula-papyrifera_paper-birch.jpg",
+    image: "plant_photos/betula-papyrifera_paper-birch.jpg",
     imgAttribution: "",
 };
 
@@ -1438,7 +1438,7 @@ let alternateleavedDogwood = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED],
-    image: "/plant_photos/cornus-alternifolia_alternate-leaved-dogwood.jpg",
+    image: "plant_photos/cornus-alternifolia_alternate-leaved-dogwood.jpg",
     imgAttribution: "Image by R. W. Smith.",
 };
 
@@ -1457,7 +1457,7 @@ let cockspurThorn = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.ALKALINE, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED],
-    image: "/plant_photos/crataegus-crus-galli_cockspur-thorn.jpg",
+    image: "plant_photos/crataegus-crus-galli_cockspur-thorn.jpg",
     imgAttribution: "Image by R. W. Smith.",
 };
 
@@ -1476,7 +1476,7 @@ let fleshyHawthorn = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.ALKALINE, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR, forestType.CHALLENGED],
-    image: "/plant_photos/crataegus-succulenta_hawthorn.jpg",
+    image: "plant_photos/crataegus-succulenta_hawthorn.jpg",
     imgAttribution: "Image by P. G. O'Hara.",
 };
 
@@ -1495,7 +1495,7 @@ let pinOak = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.WETPRAIRIE, forestType.DRYPRAIRIE],
-    image: "/plant_photos/quercus-palustris_pin-oak.jpg",
+    image: "plant_photos/quercus-palustris_pin-oak.jpg",
     imgAttribution: "",
 };
 
@@ -1514,7 +1514,7 @@ let shumardOak = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/quercus-shumardii_shumard-oak.jpg",
+    image: "plant_photos/quercus-shumardii_shumard-oak.jpg",
     imgAttribution: "",
 };
 
@@ -1533,7 +1533,7 @@ let sassafras = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/sassifras-albidum_sassafras.jpg",
+    image: "plant_photos/sassifras-albidum_sassafras.jpg",
     imgAttribution: "",
 };
 
@@ -1552,7 +1552,7 @@ let whiteCedar = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.CHALLENGED, forestType.DRYPRAIRIE],
-    image: "/plant_photos/thuja-occidentalis_arbor-vitae.jpg",
+    image: "plant_photos/thuja-occidentalis_arbor-vitae.jpg",
     imgAttribution: "",
 };
 
@@ -1571,7 +1571,7 @@ let basswood = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR],
-    image: "/plant_photos/tilia-americana_linden.jpg",
+    image: "plant_photos/tilia-americana_linden.jpg",
     imgAttribution: "",
 };
 
@@ -1590,7 +1590,7 @@ let hemlock = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/tsuga-canadensis_canada-hemlock.jpg",
+    image: "plant_photos/tsuga-canadensis_canada-hemlock.jpg",
     imgAttribution: "",
 };
 
@@ -1618,7 +1618,7 @@ let threeSeededMercury = {
     id: "three_seeded_mercury",
     plantName: "Three-Seeded Mercury",
     scientificName: "Acalypha rhomboidea",
-    notes: "This plant has tiny flowers with large lobed bracts in summer to fall and freely self-seeds. The sap of this plant is clear rather than milky as most spurges have. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This plant has tiny flowers with large lobed bracts in summer to fall and freely self-seeds. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.PARTIALSHADE, sunType.FULLSUN],
     soilType: [soilType.LOAM_SILT, soilType.CLAY, soilType.SHALLOWROCKY],
@@ -1627,7 +1627,7 @@ let threeSeededMercury = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/acalypha-rhomboidea_three-seeded-mercury.jpg",
+    image: "plant_photos/acalypha-rhomboidea_three-seeded-mercury.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -1646,7 +1646,7 @@ let fieldThistle = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL, soilpH.ALKALINE],
     forestType: [forestType.OAKFOREST, forestType.DRYPRAIRIE, forestType.POLLINATOR],
-    image: "/plant_photos/cirsium-discolor_field-thistle.jpg",
+    image: "plant_photos/cirsium-discolor_field-thistle.jpg",
     imgAttribution: "",
 };
 
@@ -1665,7 +1665,7 @@ let cuckooFlower = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.DRYPRAIRIE],
-    image: "/plant_photos/cardamine-pratensis_cuckoo-flower.jpg",
+    image: "plant_photos/cardamine-pratensis_cuckoo-flower.jpg",
     imgAttribution: "",
 };
 
@@ -1684,7 +1684,7 @@ let beechDrops = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/epifagus-virginiana_beach-drops.jpg",
+    image: "plant_photos/epifagus-virginiana_beach-drops.jpg",
     imgAttribution: "",
 };
 
@@ -1694,7 +1694,7 @@ let joePyeWeed = {
     id: "joe_pye_weed",
     plantName: "Joe-Pye Weed",
     scientificName: "Eutrochium maculatum",
-    notes: "Eutrochium maculatum is an herbaceous native perennial wildflower, commonly known as Joe Pye Weed or Queen of the Meadow, that is useful as a tall plant in wet spaces. It displays clusters of purple blossoms through summer into fall. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This is an herbaceous native perennial wildflower that is useful as a tall plant in wet spaces. It displays clusters of purple blossoms through summer into fall. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.PARTIALSHADE, sunType.FULLSUN],
     soilType: [soilType.HIGHORGANICMATTER, soilType.CLAY, soilType.LOAM_SILT],
@@ -1703,7 +1703,7 @@ let joePyeWeed = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE],
     forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/eutrochium-maculatum_joe-pye-weed.jpg",
+    image: "plant_photos/eutrochium-maculatum_joe-pye-weed.jpg",
     imgAttribution: "Image by R. W. Smith.",
 };
 
@@ -1722,7 +1722,7 @@ let maidenhairFern = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL, soilpH.ACID],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/adiantum-pedatum_maidenhair-fern.jpg",
+    image: "plant_photos/adiantum-pedatum_maidenhair-fern.jpg",
     imgAttribution: "",
 };
 
@@ -1732,7 +1732,7 @@ let interruptedFern = {
     id: "interrupted_fern",
     plantName: "Interrupted Fern",
     scientificName: "Claytosmunda claytoniana",
-    notes: " Interrupted Fern is one of the first ferns to grow in the spring and spreads slowly by horizontal rhizomes. It has fertile leaflets that develop in the middle of fronds. When the fertile leaflets appear in spring, their unusual appearance can make the plant look like it is afflicted with a disease. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "Interrupted Fern is one of the first ferns to grow in the spring. When the fertile leaflets appear in spring, their unusual appearance can make the plant look like it is afflicted with a disease. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.DEEPSHADE, sunType.DAPPLEDSUNLIGHT, sunType.PARTIALSHADE],
     soilType: [soilType.CLAY, soilType.LOAM_SILT, soilType.SAND],
@@ -1741,7 +1741,7 @@ let interruptedFern = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/claytosmunda-claytoniana_interrupted-fern.jpg",
+    image: "plant_photos/claytosmunda-claytoniana_interrupted-fern.jpg",
     imgAttribution: "",
 };
 
@@ -1760,7 +1760,7 @@ let newYorkFern = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/thelypteris-novaboracensis_new-york-fern.jpg",
+    image: "plant_photos/thelypteris-novaboracensis_new-york-fern.jpg",
     imgAttribution: "",
 };
 
@@ -1779,7 +1779,7 @@ let cottongrass = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.WETPRAIRIE],
-    image: "/plant_photos/eriophorum-virginicum_cottongrass.jpg",
+    image: "plant_photos/eriophorum-virginicum_cottongrass.jpg",
     imgAttribution: "",
 };
 
@@ -1799,7 +1799,7 @@ let bromelikeSedge = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ALKALINE, soilpH.NEUTRAL],
     forestType: [forestType.WETPRAIRIE],
-    image: "/plant_photos/carex-bromoides_brome-like-sedge.jpg",
+    image: "plant_photos/carex-bromoides_brome-like-sedge.jpg",
     imgAttribution: "Image by R. Schipper.",
 };
 
@@ -1809,7 +1809,7 @@ let purpleLovegrass = {
     id: "purple_lovegrass",
     plantName: "Purple Lovegrass",
     scientificName: "Eragrostis spectabilis",
-    notes: "Purple love grass is a small, perennial, well-behaved ornamental grass in the Poaceae (grass family).  This warm-season grass is native to central and eastern North America and is found naturally in sandy fields, along roadsides, and in woodlands. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "Purple love grass is a small, perennial, well-behaved ornamental grass in the Poaceae (grass family). This warm-season grass is native to central and eastern North America. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN],
     soilType: [soilType.LOAM_SILT, soilType.CLAY, soilType.SAND],
@@ -1818,7 +1818,7 @@ let purpleLovegrass = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/eragrostis-spectabilis_purple-lovegrass.jpg",
+    image: "plant_photos/eragrostis-spectabilis_purple-lovegrass.jpg",
     imgAttribution: "",
 };
 
@@ -1838,7 +1838,7 @@ let commonReed = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL],
     forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/phragmites-australis_common-reed.jpg",
+    image: "plant_photos/phragmites-australis_common-reed.jpg",
     imgAttribution: "",
 };
 
@@ -1847,7 +1847,7 @@ let sweetFlag = {
     id: "sweet_flag",
     plantName: "Sweet Flag / Calamus",
     scientificName: "Acorus calamus",
-    notes: "Basal leaves emerge directly from a spreading rootstock, erect and sword-shaped, 3/4 of an inch wide and typically growing up to 30 inches tall. Leaves and rhizomes are sweetly scented when crushed, hence the common name. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This plant typically grows up to 30 inches tall. Leaves and rhizomes are sweetly scented when crushed, hence the common name. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.LOAM_SILT, soilType.CLAY],
@@ -1856,7 +1856,7 @@ let sweetFlag = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE, soilpH.ACID],
     forestType: [forestType.WETPRAIRIE],
-    image: "/plant_photos/acorus-calamus_sweet-flag.jpg",
+    image: "plant_photos/acorus-calamus_sweet-flag.jpg",
     imgAttribution: "Image by B. S. Walters.",
 };
 
@@ -1876,7 +1876,7 @@ let commonHops = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.NEUTRAL, soilpH.ALKALINE, soilpH.ACID],
     forestType: [forestType.WETPRAIRIE],
-    image: "/plant_photos/humulus-lupulus_common-hops.jpg",
+    image: "plant_photos/humulus-lupulus_common-hops.jpg",
     imgAttribution: "",
 };
 
@@ -1886,7 +1886,7 @@ let glaucousHoneysuckle = {
     id: "glaucous_honeysuckle",
     plantName: "Glaucous Honeysuckle / Red Honeysuckle",
     scientificName: "Lonicera dioica",
-    notes: "This honeysuckle is low climbing with branches arching or twining 3 to 10 feet from the plant. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "This honeysuckle is low climbing with branches arching or twining 3 to 10 feet. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE, sunType.DAPPLEDSUNLIGHT],
     soilType: [soilType.LOAM_SILT, soilType.SAND, soilType.SHALLOWROCKY],
@@ -1905,7 +1905,7 @@ let blueFlagIris = {
     id: "blue_flag_iris",
     plantName: "Blue Flag Iris",
     scientificName: "Iris virginica",
-    notes: "Reaching a height of 2 to 2.5 feet clumps of bright green, somewhat droopy, strap shaped leaves are topped with light blue to violet flowers borne on naked stems in late spring.  The falls are marked with white and can be crested with yellow frill. Do not consume. Toxic to humans and pets. (Source: North Carolina Extension Gardener Plant Toolbox).",
+    notes: "Reaching a height of 2 to 2.5 feet clumps of bright green, somewhat droopy, strap shaped leaves are topped with light blue to violet flowers. Do not consume. Toxic to humans and pets. (Source: North Carolina Extension Gardener Plant Toolbox).",
     plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.SAND, soilType.HIGHORGANICMATTER],
@@ -1914,7 +1914,7 @@ let blueFlagIris = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.WETPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/iris-virginica_blue-iris.jpg",
+    image: "plant_photos/iris-virginica_blue-iris.jpg",
     imgAttribution: "",
 };
 
@@ -1934,7 +1934,7 @@ let witchHazel = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID],
     forestType: [forestType.OAKFOREST],
-    image: "/plant_photos/hamamelis-virginiana_witch-hazel.jpg",
+    image: "plant_photos/hamamelis-virginiana_witch-hazel.jpg",
     imgAttribution: "",
 };
 
@@ -1952,7 +1952,7 @@ let redbud = {
     edible: [edible.PARTSEDIBLE],
     soilpH: [soilpH.ACID, soilpH.ALKALINE, soilpH.NEUTRAL],
     forestType: [forestType.OAKFOREST, forestType.POLLINATOR],
-    image: "/plant_photos/cercis-canadensis_redbud.jpg",
+    image: "plant_photos/cercis-canadensis_redbud.jpg",
     imgAttribution: "",
 };
 
@@ -1971,7 +1971,7 @@ let commonHopSedge = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.WETPRAIRIE, forestType.OAKFOREST, forestType.CHALLENGED],
-    image: "/plant_photos/carex-lupulina_common-hop-sedge.jpg",
+    image: "plant_photos/carex-lupulina_common-hop-sedge.jpg",
     imgAttribution: "Image by R. W. Smith.",
 };
 
@@ -1990,7 +1990,7 @@ let woolGrass = {
     edible: [edible.NOTEDIBLE],
     soilpH: [soilpH.ACID, soilpH.NEUTRAL],
     forestType: [forestType.WETPRAIRIE, forestType.DRYPRAIRIE, forestType.CHALLENGED],
-    image: "/plant_photos/scirpus-cyperinus_cottongrass-bulrush.jpg",
+    image: "plant_photos/scirpus-cyperinus_cottongrass-bulrush.jpg",
     imgAttribution: "",
 };
 

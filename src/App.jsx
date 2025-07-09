@@ -3,7 +3,7 @@
 
 
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import About from './pages/About';
 import Guide from './pages/Guide';
@@ -20,7 +20,7 @@ import AutoTop from './components/AutoTop';
 
 const App = () => {
   return (
-    <Router>
+    <>
       <AutoTop />
       <Routes>
         <Route path="/" element={<About />} />
@@ -34,7 +34,7 @@ const App = () => {
         <Route path="/step3" element={<Step3 />} />
         <Route path="/plant-calculator" element={<PlantCalculator />} />
       </Routes>
-    </Router>
+    </>
   );
 };
 

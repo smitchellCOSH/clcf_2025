@@ -37,6 +37,8 @@ import BasicButton from "../components/BasicButton";
 import GeneratePDFButton from "../components/GeneratePDFButton";
 import logoBase64 from '../data/logoBase64';
 import ScrollToTop from "../components/ScrollToTop";
+import { useEffect } from 'react';
+
 
 
 
@@ -51,6 +53,13 @@ export default function PlantCalculator() {
   const [squareFootage, setSquareFootage] = useState(0); // Square footage.
   const [selectedProfile, setSelectedProfile] = useState(null); // Selected forest profile.
   const [selectedPlants, setSelectedPlants] = useState({}); // Selected plants.
+
+  /* Clears selected plants whenever the user changes their selected Forest Type. */
+  useEffect(() => {
+
+    setSelectedPlants({});
+  }, [selectedProfile]);
+
 
 
 /* ********************************************************************* */
@@ -283,7 +292,21 @@ export default function PlantCalculator() {
       <div className={styles.about_content}>
         <div className={styles.subheader}>Plant Calculator</div>
 
-          <div style={{ marginBottom: "0.8rem", padding: "0.2rem" }}>
+        <p>
+          Choose the forest type that interests you and best suits your space.
+        </p>
+
+
+        <div style={{padding: "20px"}}>
+        <ForestProfileSelector
+          profiles={sortedProfiles}
+          selected={selectedProfile}
+          onSelect={setSelectedProfile}
+        />
+        </div>
+
+
+        <div style={{ marginBottom: "0.8rem", padding: "0.2rem" }}>
             Input the square footage of your Pocket Forest:
             <input className={styles.inputBox}
               type="number"
@@ -304,19 +327,6 @@ export default function PlantCalculator() {
             {" "}
             square feet.
           </div>
-
-        <p>
-          Now, choose the forest type that interests you and best suits your space.
-        </p>
-
-
-        <div style={{padding: "20px"}}>
-        <ForestProfileSelector
-          profiles={sortedProfiles}
-          selected={selectedProfile}
-          onSelect={setSelectedProfile}
-        />
-        </div>
 
 
         <div className={styles.result_content}>
@@ -360,6 +370,11 @@ export default function PlantCalculator() {
           Additionally, ensure that your plants are thoroughly cleaned before eating.
         </p>
 
+        <div style={{ marginTop: "2rem" }}>
+          <GeneratePDFButton onClick={clearSelections}>
+            Clear Selections
+          </GeneratePDFButton>
+        </div>
 
         {/* Shows how many plants are recommended for each forest type once 
         selected based on the inputted square footage. Includes them in the layout. */}
@@ -375,9 +390,9 @@ export default function PlantCalculator() {
 
         )}
 
-        <div style={{ marginTop: "1rem" }}>
+        <div style={{ marginTop: "2rem" }}>
           <GeneratePDFButton onClick={clearSelections}>
-            Clear All Selections
+            Clear Selections
           </GeneratePDFButton>
         </div>
 
@@ -393,7 +408,7 @@ export default function PlantCalculator() {
           )}
 
         <div style={{ marginTop: "2rem" }}>
-          <BasicButton to="/Resources">Resources</BasicButton>
+          <BasicButton to="/plot">Plot your forest</BasicButton>
           <ScrollToTop />
         </div>
       </div>

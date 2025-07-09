@@ -34,6 +34,14 @@
 }
 
 
+@media (max-width: 640px) {
+  .plantImage {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
 
 /* ************* PLANT CARD ************** */
 
@@ -44,7 +52,7 @@
   padding: 1rem;
   background-color: #fdfff6;
   width: auto;
-  height: 550px;
+  height: 460px;
   overflow: hidden;
   position: relative;
 }
@@ -73,6 +81,8 @@ Includes the image attributions */
 .plantNotes {
   font-size: 0.9rem;
   color: #383838;
+  overflow-y: auto;
+  max-height: 450px;
 }
 
 
@@ -126,6 +136,27 @@ Includes the image attributions */
   font-size: 1rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
+
+/* **************************TESTING ***************************/
+/* **************************TESTING ***************************/
+/* **************************TESTING ***************************/
+/* **************************TESTING ***************************/
+/* **************************TESTING ***************************/
+
+.globalFloatingCounter {
+  position: fixed;
+  top: 80px;           /* adjust based on your header */
+  right: 20px;
+  background-color: #c3e344;
+  color: #383838;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+}
+
 
 
 

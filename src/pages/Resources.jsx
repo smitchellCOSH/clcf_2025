@@ -261,7 +261,7 @@ const Resources = () => {
 
           {/* Image */}
           <FrostedImage
-          src="/photos/resource_image_001.jpg"
+          src="photos/resource_image_001.jpg"
           alt="Tallgrass Prairie"
           attribution="Tallgrass Prairie - Forest Service, Eastern Region"
           />

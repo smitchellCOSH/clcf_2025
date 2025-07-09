@@ -40,8 +40,6 @@ export default function PlantSelector({ categorizedPlants, selectedPlants, onCha
             </div>
 
 
-
-
             <div className={styles.gridContainer}>
               {plants.map((plant) => {
                 const qty = (selectedPlants[type] && selectedPlants[type][plant.id]) || 0;

@@ -65,7 +65,7 @@ const Step1 = () => {
         </p>
 
         <FrostedImage
-          src="/photos/step1_image_001.jpg"
+          src="photos/step1_image_001.jpg"
           alt="Step 1: Photo 001"
           attribution="Iris virginica – Blue flag iris"
           style={{width: "35%"}}
@@ -99,7 +99,7 @@ const Step1 = () => {
         </p>
 
         <FrostedImage
-          src="/photos/step1_image_002.jpg"
+          src="photos/step1_image_002.jpg"
           alt="Step 1: Photo 002"
           attribution="Cercis canadensis – Redbud."
         />
@@ -154,7 +154,7 @@ const Step1 = () => {
 
 
         <FrostedImage
-          src="/photos/step1_image_003.jpg"
+          src="photos/step1_image_003.jpg"
           alt="Step 1: Photo 003"
           attribution="Root system in soil."
         />
@@ -201,7 +201,7 @@ const Step1 = () => {
         </p>
 
         <FrostedImage
-          src="/photos/step1_image_004.jpg"
+          src="photos/step1_image_004.jpg"
           alt="Step 1: Photo 004"
           attribution="Sprouts growing in wet soil."
         />
@@ -354,7 +354,7 @@ const Step1 = () => {
 
 
         <FrostedImage
-          src="/photos/step1_image_005.jpg"
+          src="photos/step1_image_005.jpg"
           alt="Step 1: Photo 005"
           attribution="Gardener removing weeds from soil."
         />

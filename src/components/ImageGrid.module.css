@@ -3,6 +3,8 @@
 /* Contains styling for the ImageGrid component (ImageGrid.jsx). */
 
 
+
+
 /* Creates container to hold the grid elements */
 .gridContainer {
   display: grid;

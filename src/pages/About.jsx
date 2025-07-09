@@ -59,7 +59,7 @@ const About = () => {
         </p>
 
         <FrostedImage
-        src="/photos/about_image_001.jpg"
+        src="photos/about_image_001.jpg"
         alt="Pocket forest"
         attribution="Liriodendron tulipifera – Tulip tree."
         />
@@ -125,7 +125,7 @@ const About = () => {
         </p>
 
         <FrostedImage
-          src="/photos/akira_miyawaki.jpg"
+          src="photos/akira_miyawaki.jpg"
           alt="Akira Miyawaki"
           attribution="Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka."
           />
@@ -239,7 +239,7 @@ const About = () => {
           </p>
 
           <FrostedImage
-            src="/photos/about_image_004.jpg"
+            src="photos/about_image_004.jpg"
             alt="Sterling Heights' Pocket Forest"
             attribution="Sterling Heights' Pocket Forest at James C. Nelson Park."
           />
@@ -317,7 +317,7 @@ const About = () => {
 
 
         <FrostedImage
-        src="/photos/about_image_002.jpg"
+        src="photos/about_image_002.jpg"
         alt="Pocket forest"
         attribution="A lush Oak forest."
         />

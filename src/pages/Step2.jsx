@@ -83,7 +83,7 @@ const Step2 = () => {
           </p>
 
           <FrostedImage
-            src="/photos/step2_image_001.jpg"
+            src="photos/step2_image_001.jpg"
             alt="Step 2: Photo 001"
             attribution="A deer grazes in a field of shrubs."
           />
@@ -142,7 +142,7 @@ const Step2 = () => {
         </p>
 
         <FrostedImage
-          src="/photos/step2_image_002.jpg"
+          src="photos/step2_image_002.jpg"
           alt="Step 2: Photo 002"
           attribution="A gardener holds small plants in clumps of soil."
         />
