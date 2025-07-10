@@ -26,6 +26,7 @@ import FrostedImage from '../components/FrostedImage';
 import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 import { Link } from 'react-router-dom';
+import InlineImageText from '../components/InlineImageText';
 
 
 /* Content */
@@ -71,25 +72,32 @@ const Step2 = () => {
               > Deerbusters</a>.
           </p>
 
+        
+
+        <InlineImageText
+          imageSrc="photos/step2_image_001.jpg"
+          imageAlt="Step 2: Photo 001"
+          attribution="A deer grazes in a field of shrubs."
+          >
+
           <p>
               Another consideration is that some plants are naturally deer resistant. Some plants have strong scents that deer avoid, 
               others affect a deer’s skin or respiratory tract, and others deer simply don’t want to eat. 
               To find out which plants are deer resistant, consult our plant calculator.
           </p>
 
+
+        </InlineImageText>
+
+
           <p>
               As a last step before you begin planting, make sure that you have access to and from your site both by foot and by vehicle. 
-              Be prepared to water your plants and do a final sweep of your site for lingering weeds or obstructions
+              Be prepared to water your plants and do a final sweep of your site for lingering weeds or obstructions.
           </p>
 
-          <FrostedImage
-            src="photos/step2_image_001.jpg"
-            alt="Step 2: Photo 001"
-            attribution="A deer grazes in a field of shrubs."
-          />
 
           <p>
-              Finally, it’s time to plant. Optionally, use our <Link to="/PlotYourForest" className={styles.other_links}>layout tool</Link> to understand where 
+              Finally, it’s time to plant. Optionally, use our <Link to="/plant-calculator" className={styles.other_links}>layout tool</Link> to decide where 
               to plant each of your plants. Once you’re ready, follow the steps below to plant your forest.
           </p>
 
@@ -103,10 +111,20 @@ const Step2 = () => {
         </p>
       </div>
 
-        <p>
+
+      <InlineImageText
+          imageSrc="photos/step2_image_002.jpg"
+          imageAlt="Step 2: Photo 002"
+          attribution="A gardener holds small plants in clumps of soil."
+          >
+
+          <p>
           Since your plants should all be relatively young and should fit in a planting container that is no larger than 
           5 gallons, planting should be the same for most, if not all, of your plants. 
         </p>
+
+
+        </InlineImageText>
 
         <p>
           If you used the “cover and smother” method of weeding, you will need to first choose 
@@ -140,12 +158,6 @@ const Step2 = () => {
           your plant without mulch, in order to prevent accidentally suppressing your plants. The space you leave around the base of your plant 
           should be as wide as your berms, if you add berms to your forest. You will want to apply at least 2 inches of mulch to cover your forest floor.
         </p>
-
-        <FrostedImage
-          src="photos/step2_image_002.jpg"
-          alt="Step 2: Photo 002"
-          attribution="A gardener holds small plants in clumps of soil."
-        />
 
 
       <div className={styles.result_content}>

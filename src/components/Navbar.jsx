@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className={styles["dropdown-container"]} onMouseEnter={toggleGuide} onMouseLeave={toggleGuide}>
 
       <Link to="/guide" className={styles["nav-link"]}>
-        <img src="icons/book-open-page_blue.svg" alt="Guide icon" className={styles["nav-icon"]} /> Guide
+        <img src="icons/book-open-page_blue.svg" alt="Build your forest Icon" className={styles["nav-icon"]} /> Build your forest
       </Link>
 
       {showGuideDropdown && (
@@ -78,8 +78,8 @@ const Navbar = () => {
       </Link>
 
 
-      <Link to="/plot" className={styles["nav-link"]}>
-        <img src="icons/bee-flower_blue.svg" alt="Plot Your Forest icon" className={styles["nav-icon"]} /> Plot Your Forest
+      <Link to="/plant-calculator" className={styles["nav-link"]}>
+        <img src="icons/bee-flower_blue.svg" alt="Tools Icon" className={styles["nav-icon"]} /> Tools
       </Link>
     </nav>
   );

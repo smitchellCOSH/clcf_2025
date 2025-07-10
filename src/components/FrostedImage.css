@@ -13,18 +13,20 @@ attribution is shown (FrostedImage.jsx).
 /* Container for the frosting component */
 .frosted-container {
   position: relative;
-  width: 45%;
+  max-width: 400px;
   margin: 50px auto;
   border-radius: 10px;
   overflow: hidden;
+  height: auto;
 }
 
 /* Transition specifications for frosting the image */
 .frosted-image {
   width: 100%;
+  border-radius: 10px;
   height: auto;
-  display: block;
   transition: filter 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  display: block;
 }
 
 
@@ -56,4 +58,10 @@ attribution is shown (FrostedImage.jsx).
 
 .frosted-container:hover .frosted-overlay {
   opacity: 1;
+}
+
+
+/* Specifies image size for larger images. */
+.frosted-container.large {
+  max-width: 700px;
 }

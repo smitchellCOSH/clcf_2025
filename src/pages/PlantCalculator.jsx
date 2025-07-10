@@ -307,10 +307,10 @@ export default function PlantCalculator() {
 
 
         <div style={{ marginBottom: "0.8rem", padding: "0.2rem" }}>
-            Input the square footage of your Pocket Forest:
+            Input the square footage of your Pocket Forest (minimum 30 sq. ft):
             <input className={styles.inputBox}
               type="number"
-              min="0"
+              min="30"
               placeholder="Enter square footage"
               value={squareFootage}
               onChange={(e) => {
@@ -324,8 +324,6 @@ export default function PlantCalculator() {
 
                 setSquareFootage(cleanedStr)}}
             />
-            {" "}
-            square feet.
           </div>
 
 
@@ -345,7 +343,7 @@ export default function PlantCalculator() {
               </div>
 
             </div>
-              
+
 
         <div className={styles.subheader}>
           Choose your plants
@@ -390,15 +388,13 @@ export default function PlantCalculator() {
 
         )}
 
-        <div style={{ marginTop: "2rem" }}>
-          <GeneratePDFButton onClick={clearSelections}>
-            Clear Selections
-          </GeneratePDFButton>
-        </div>
-
 
         {Object.keys(selectedPlants).length > 0 && (
             <div style={{ marginTop: "2rem" }}>
+
+              <GeneratePDFButton onClick={clearSelections}>
+                Clear Selections
+              </GeneratePDFButton>
 
               <GeneratePDFButton onClick={generatePDF}>
                 Download your plant list as a PDF

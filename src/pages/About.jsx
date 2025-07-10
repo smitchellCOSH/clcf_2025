@@ -26,6 +26,8 @@ import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 import { Link } from 'react-router-dom';
 import ImageGrid from '../components/ImageGrid';
+import InlineImageText from '../components/InlineImageText';
+
 
 
 
@@ -49,20 +51,26 @@ const About = () => {
           </p>
         </div>
 
-        <p>
+        <InlineImageText
+          imageSrc="photos/about_image_001.jpg"
+          imageAlt="Pocket Forest"
+          attribution="Liriodendron tulipifera – Tulip tree."
+        >
+          <p>
           <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forests</span>, otherwise known as{" "}
           <span style={{ fontStyle: "italic", color: "#0057b8" }}>Microforests </span> or{" "}
           <span style={{ fontStyle: "italic", color: "#0057b8" }}>Miniforests</span> are areas of densely-packed,
-          highly biodiverse vegetation. Pocket forests are a tool in urban forestry used to combat deforestation and
-          provide ecological benefits, such as lowering an urban area’s heat index (in other words, cooling off a city during
-           the hot summer months), improving air quality, and removing carbon from the atmosphere.&nbsp;
-        </p>
+          highly biodiverse vegetation. These forests are unique, because they grow very quickly and require little maintenance,
+          making them great for beginner gardeners.
+          </p>
 
-        <FrostedImage
-        src="photos/about_image_001.jpg"
-        alt="Pocket forest"
-        attribution="Liriodendron tulipifera – Tulip tree."
-        />
+        </InlineImageText>
+
+        <p>
+          Pocket forests are a tool in urban forestry used to combat deforestation and
+          provide ecological benefits, such as lowering an urban area’s heat index (in other words, cooling off a city during
+          the hot summer months), improving air quality, and removing carbon from the atmosphere.&nbsp; 
+        </p>
 
         <p>
           This website builds off of the work of Akira Miyawaki, a botanist and ecologist who pioneered the Miyawaki Method which
@@ -105,7 +113,16 @@ const About = () => {
           >
           passed a millage</a> {" "} that includes efforts to promote reforestation. 
           As a community with one of the lowest tree canopies in the state, prioritizing quick tree growth and increasing 
-          biodiversity to prevent further deforestation is essential. That’s where Pocket Forests come into play. 
+          biodiversity to prevent further deforestation is essential. 
+        </p>
+
+        <InlineImageText
+          imageSrc="photos/akira_miyawaki.jpg"
+          imageAlt="Akira Miyawaki"
+          attribution="Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka."
+        >
+          <p>
+          That’s where Pocket Forests come into play. 
           Pioneered by the renowned botanist Akira Miyawaki, Pocket Forests use the Miyawaki Method to plant small, dense, and highly 
           biodiverse forests that grow up to {" "}
 
@@ -121,17 +138,11 @@ const About = () => {
           competitive nature resulting from their density. Another benefit of Pocket Forests is that they quickly become self-sustaining, 
           meaning that they can be cultivated with only about a year of maintenance. Pocket Forests also feature all-native plants, 
           helping to restore ecological balance in different communities.
+          </p>
 
-        </p>
-
-        <FrostedImage
-          src="photos/akira_miyawaki.jpg"
-          alt="Akira Miyawaki"
-          attribution="Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka."
-          />
+        </InlineImageText>
 
 
-        
 
 
         {/* Section 2: What is a Pocket Forest? */}
@@ -167,7 +178,8 @@ const About = () => {
         src="photos/plant_height_dg_003.png"
         alt="Plant Height Diagram"
         attribution="Relative heights of different plants."
-        style={{ width: "80%" }}
+        style={{ width: "700px" }}
+        className="large"
         />
 
 
@@ -213,7 +225,8 @@ const About = () => {
         src="photos/forest_comp_003.png"
         alt="Forest Composition Table"
         attribution="Attributes of various forests."
-        style={{width: "80%"}}
+        style={{ width: "700px" }}
+        className="large"
         />
 
 
@@ -238,12 +251,12 @@ const About = () => {
           pollinators and small animal life.
           </p>
 
-          <FrostedImage
-            src="photos/about_image_004.jpg"
-            alt="Sterling Heights' Pocket Forest"
-            attribution="Sterling Heights' Pocket Forest at James C. Nelson Park."
-          />
-
+          <InlineImageText
+          imageSrc="photos/about_image_004.jpg"
+          imageAlt="Sterling Heights' Pocket Forest"
+          attribution="Sterling Heights' Pocket Forest at James C. Nelson Park."
+          >
+          
           <p>
             To learn more about the Pocket Forest and Community Gardens, visit the <a
               className={styles.other_links}
@@ -253,6 +266,11 @@ const About = () => {
               Community Garden</a> webpage. You can also visit the 
             Pocket Forest in person at the James C. Nelson Park during visiting hours.
           </p>
+
+        </InlineImageText>
+
+
+
 
 
 
@@ -308,19 +326,26 @@ const About = () => {
           rel="noopener noreferrer">
           Sterling Heights 2025 Climate Action Plan</a>
 
-        .{" "} Pocket Forests also improve air quality, manage carbon dioxide levels, provide habitats for local animals, 
-        and add natural beauty. Since Pocket Forests can grow in a variety of landscapes and layouts, they can be 
-        used to reforest areas that might be otherwise unsuitable for traditional forestry. Check out the 
-        <span style={{ fontWeight: "bold", color: "#0057b8" }}> Plot your forest</span> tool to learn more about Pocket Forest design.
+        .{" "}
         </p>
 
 
+        <InlineImageText
+          imageSrc="photos/about_image_002.jpg"
+          imageAlt="Oak Forest"
+          attribution="A lush Oak forest."
+          >
+          
+          <p>
+            Pocket Forests also improve air quality, manage carbon dioxide levels, provide habitats for local animals, 
+            and add natural beauty. Since Pocket Forests can grow in a variety of landscapes and layouts, they can be 
+            used to reforest areas that might be otherwise unsuitable for traditional forestry. Check out the 
+            <a className={styles.other_links}> Plot your forest</a> tool to learn more about Pocket Forest design.
+          </p>
 
-        <FrostedImage
-        src="photos/about_image_002.jpg"
-        alt="Pocket forest"
-        attribution="A lush Oak forest."
-        />
+        </InlineImageText>
+
+
 
 
 

@@ -26,6 +26,7 @@ import FrostedImage from '../components/FrostedImage';
 import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 import { Link } from 'react-router-dom';
+import InlineImageText from '../components/InlineImageText';
 
 
 
@@ -65,11 +66,23 @@ const Step3 = () => {
           </span>
         </p>
         
-        <p>
+
+        <InlineImageText
+          imageSrc="photos/step3_image_001.jpg"
+          imageAlt="Step 3: Photo 001"
+          attribution="A gardener removing weeds."
+          >
+
+          <p>
             Frequent and diligent weeding is recommended for your Pocket Forest in the first 1-2 years of 
             establishment. Weeds take up nutrients and space, making it harder for your plants to grow. 
-            Many of them are also not native and may also be invasive. 
-        </p>
+            Many of them are not native and may also be invasive. 
+          </p>
+
+
+        </InlineImageText>
+
+
 
         <p>
             It is best to prevent weeds from growing in the first place by limiting their ability to seed. 
@@ -108,12 +121,24 @@ const Step3 = () => {
             gradually decreasing watering sessions as your Pocket Forest gets older.
         </p>
 
-        <p>
+
+        <InlineImageText
+          imageSrc="photos/step3_image_003.jpg"
+          imageAlt="Step 3: Photo 003"
+          attribution="A sprinkler providing water."
+          >
+
+          <p>
             For all Pocket Forests, it is important to provide watering support during particularly dry periods. 
             If there hasn’t been significant rain in your area for 2-3 weeks, a thorough watering is crucial to
             your forests’ survival. Take care to monitor weather in your area, particularly during the hottest 
             part of your summer, and especially while your plants are still young.
-        </p>
+          </p>
+
+
+        </InlineImageText>
+
+
 
         <p>
             It is also important to check in with your plants at least once a week during the first 6 months 
@@ -134,11 +159,23 @@ const Step3 = () => {
           </span>
         </p>
 
-        <p>
+
+        <InlineImageText
+          imageSrc="photos/step3_image_004.jpg"
+          imageAlt="Step 3: Photo 004"
+          attribution="A deer wandering in a clearing."
+          >
+
+          <p>
             Check on your fencing every once in a while, making sure that it cannot be easily breached 
             by deer or other large grazing animals. Walk the perimeter of your fencing every once in a 
             while to look for problems and amend them if necessary.
-        </p>
+          </p>
+
+
+        </InlineImageText>
+
+
 
         <p>
             You may also choose to monitor for pests. Again, herbicides are strongly discouraged, 
@@ -168,13 +205,23 @@ const Step3 = () => {
             and that the plants that survive will be strong and hearty. 
         </p>
 
-        <p>
+
+        <InlineImageText
+          imageSrc="photos/step3_image_005.jpg"
+          imageAlt="Step 3: Photo 005"
+          attribution="A leaf with an unknown disease."
+          >
+
+          <p>
             Monitor your plants for problems, but don’t feel the need to keep an overly watchful eye. 
             To learn more about common plant diseases, see <a className={styles.other_links}
                 href="https://www.proflowers.com/blog/plant-diseases"
                 target="_blank"
                 rel="noopener noreferrer">this article</a>.
-        </p>
+          </p>
+
+
+        </InlineImageText>
 
 
 

@@ -24,6 +24,7 @@ import HeaderComp from '../components/HeaderComp';
 import FrostedImage from '../components/FrostedImage';
 import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
+import InlineImageText from '../components/InlineImageText';
 
 
 /* Content */
@@ -54,22 +55,32 @@ const Step1 = () => {
             Before you start planting, you’ll want to carefully assess your planting space and understand the maintenance requirements 
             for your unique Pocket Forest. Some things you’ll want to consider might include the soil type of your 
             plot area, the shape and size of your plot area, any preexisting plants in your planting area, 
-            underground utilities and obstructions within your plot area. Pocket Forests are very resilient, and as 
-            long as you have about 10 square feet of space, with 10 contiguous square feet of space in any direction, you can create a
-            Pocket Forest. It is recommended, however, to have about 125 square feet of space for best results.
+            underground utilities and obstructions within your plot area. 
         </p>
+
+
+        <InlineImageText
+          imageSrc="photos/step1_image_001.jpg"
+          imageAlt="Step 1: Photo 001"
+          attribution="Iris virginica – Blue flag iris"
+          style={{width: "35%"}}
+          >
+
+          <p>
+            Pocket Forests are very resilient, and as 
+            long as you have about 30 square feet of space, with 10 contiguous square feet of space in any direction, you can create a
+            Pocket Forest. It is recommended, however, to have about 125 square feet of space for best results.
+          </p>
+
+        </InlineImageText>
+
+
 
         <p className={ styles.note_content }>
             Some of the Forest Types you can choose from in our Plant Calculator will have more trees than others.
             Make sure to choose the Forest Type that best suits your needs!
         </p>
 
-        <FrostedImage
-          src="photos/step1_image_001.jpg"
-          alt="Step 1: Photo 001"
-          attribution="Iris virginica – Blue flag iris"
-          style={{width: "35%"}}
-        />
 
 
       {/* Step 1: Choosing your site */}
@@ -91,18 +102,22 @@ const Step1 = () => {
           but make sure to check for any restrictions in your area that may apply to your planting site.
         </p>
 
-        <p>
+        <InlineImageText
+          imageSrc="photos/step1_image_002.jpg"
+          imageAlt="Step 1: Photo 002"
+          attribution="Cercis canadensis – Redbud."
+          >
+
+          <p>
           Next, you’ll want to assess the specific conditions of your planting site. What is the soil type? 
           How much sunlight does your forest get? Is there enough room for a buffer between your home or any 
           other buildings on your property and the planting site? What is the soil type? How well does the soil 
           drain? This will help you to determine which plants will grow best in your forest.
-        </p>
+          </p>
 
-        <FrostedImage
-          src="photos/step1_image_002.jpg"
-          alt="Step 1: Photo 002"
-          attribution="Cercis canadensis – Redbud."
-        />
+        </InlineImageText>
+
+  
 
 
 
@@ -124,11 +139,18 @@ const Step1 = () => {
         <p>
             You can get a good idea about your soil type by inspecting the soil visually. First, you’ll want to dig 
             into your soil about 4 to 10 inches deep. Deeper is best, ensuring that any organic matter on the soil’s 
-            surface doesn’t affect your assessment of the soil type. Think about it – your trees roots will be digging 
-            down far deeper than you will!
+            surface doesn’t affect your assessment of the soil type. Think about it – your tree's roots will be digging 
+            deeper than you will!
         </p>
 
-        <p>
+
+        <InlineImageText
+          imageSrc="photos/step1_image_003.jpg"
+          imageAlt="Step 1: Photo 003"
+          attribution="Root system in soil."
+          >
+
+          <p>
             For an easy way to evaluate your soil type, you can read {" "}
             <a
               className={styles.other_links}
@@ -139,7 +161,11 @@ const Step1 = () => {
             which lists several tests to help you determine whether your soil is clay, chalk, peat, silt, 
             sand, or loam. Sterling Heights has diverse soil types, so it is important to know which 
             trees and shrubs will grow best on your land.
-        </p>
+          </p>
+
+        </InlineImageText>
+
+
 
         <p>
             You can also purchase a soil test from {" "}
@@ -149,18 +175,7 @@ const Step1 = () => {
               target="_blank"
               rel="noopener noreferrer"
             > Michigan State University Extension</a>,
-            where samples mailed to the university will be processed for detailed assessment and results. 
-        </p>
-
-
-        <FrostedImage
-          src="photos/step1_image_003.jpg"
-          alt="Step 1: Photo 003"
-          attribution="Root system in soil."
-        />
-
-        <p>
-            Finally, if you would like to learn more details about your soil type, you can also use {" "}
+            where samples mailed to the university will be processed for detailed assessment and results. Finally, if you would like to learn more details about your soil type, you can also use {" "}
             <a
               className={styles.other_links}
               href="https://umich.maps.arcgis.com/apps/mapviewer/index.html?layers=06e5fd61bdb6453fb16534c676e1c9b9"
@@ -191,20 +206,21 @@ const Step1 = () => {
         </p>
 
 
-        <p>
+        <InlineImageText
+          imageSrc="photos/step1_image_004.jpg"
+          imageAlt="Step 1: Photo 004"
+          attribution="Sprouts growing in wet soil."
+          >
+
+          <p>
             Another important aspect of your soil is its ability to drain water. Because plants have 
             different moisture needs, understanding soil drainage is important in building your forest. 
+            Testing soil drainage is also easy. Follow the steps below to figure out how your soil drains.
         </p>
 
-        <p>
-          Testing soil drainage is also easy. Follow the steps below to figure out how your soil drains.
-        </p>
+        </InlineImageText>
 
-        <FrostedImage
-          src="photos/step1_image_004.jpg"
-          alt="Step 1: Photo 004"
-          attribution="Sprouts growing in wet soil."
-        />
+
 
         <p>
         <span style={{fontWeight: "bold", color: "#0057b8" }}>First</span>, in your forest plot, dig a hole that is at least 12 
@@ -353,17 +369,20 @@ const Step1 = () => {
       </div>
 
 
-        <FrostedImage
-          src="photos/step1_image_005.jpg"
-          alt="Step 1: Photo 005"
+        <InlineImageText
+          imageSrc="photos/step1_image_005.jpg"
+          imageAlt="Step 1: Photo 005"
           attribution="Gardener removing weeds from soil."
-        />
+          >
 
-        <p>After choosing your plants, there are still a few things you need to do before planting day.</p>
+          <p>After choosing your plants, there are still a few things you need to do before planting day.</p>
 
-        <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>First</span>, mark your planting area. 
-        You can use simple wooden pegs or grass spray. This will ensure that you maintain a buffer zone 
-        between your Pocket Forest and any obstructions on your property and make it easier to properly space your plants.</p>
+          <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>First</span>, mark your planting area. 
+          You can use simple wooden pegs or grass spray. This will ensure that you maintain a buffer zone 
+          between your Pocket Forest and any obstructions on your property and make it easier to properly space your plants.</p>
+
+        </InlineImageText>
+
 
         <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Then</span>, you’ll want to weed your planting area. 
         Herbicides are strictly not recommended for Pocket Forests. Not only does the use of herbicides require more maintenance, 

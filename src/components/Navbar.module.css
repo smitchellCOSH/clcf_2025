@@ -85,6 +85,7 @@
   transition: background-color 0.3s ease, color 0.3s ease;
   font-size: large;
   border-bottom: 0.2px solid #c3e344;
+  border-radius: 10px;
 }
 
 
@@ -92,4 +93,5 @@
 .dropdown-link:hover {
   background-color: #e8f5c8;
   color: #0057b8;
+  border-radius: 10px;
 }
