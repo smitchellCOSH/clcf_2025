@@ -38,6 +38,8 @@ import GeneratePDFButton from "../components/GeneratePDFButton";
 import logoBase64 from '../data/logoBase64';
 import ScrollToTop from "../components/ScrollToTop";
 import { useEffect } from 'react';
+import PlantLayout from '../components/PlantLayout';
+
 
 
 
@@ -53,6 +55,11 @@ export default function PlantCalculator() {
   const [squareFootage, setSquareFootage] = useState(0); // Square footage.
   const [selectedProfile, setSelectedProfile] = useState(null); // Selected forest profile.
   const [selectedPlants, setSelectedPlants] = useState({}); // Selected plants.
+  const [plotShape, setPlotShape] = useState("square"); // Set default plot shape.
+  const pixelsPerFoot = 5;  // Conversion for placing a grid on the plot.
+  const layoutSize = Math.sqrt(squareFootage) * pixelsPerFoot; // Creates layout size.
+
+
 
   /* Clears selected plants whenever the user changes their selected Forest Type. */
   useEffect(() => {
@@ -389,6 +396,7 @@ export default function PlantCalculator() {
         )}
 
 
+
         {Object.keys(selectedPlants).length > 0 && (
             <div style={{ marginTop: "2rem" }}>
 
@@ -400,14 +408,49 @@ export default function PlantCalculator() {
                 Download your plant list as a PDF
               </GeneratePDFButton>
 
+              <ScrollToTop />
+
+
             </div>
           )}
 
-        <div style={{ marginTop: "2rem" }}>
-          <BasicButton to="/plot">Plot your forest</BasicButton>
-          <ScrollToTop />
+
+        <div className={styles.subheader}>
+          Create your layout
         </div>
+
+
+          {/* ************************* PLOTTING *************************** */}
+          {Object.keys(selectedPlants).length > 0 && (
+            <>
+
+              <p>Visualize how your forest will be arranged based on your chosen square footage and plants.</p>
+
+              <div>
+                <label>Choose plot shape: </label>
+                {["square", "rectangle", "circle"].map((s) => (
+                  <GeneratePDFButton key={s} onClick={() => setPlotShape(s)}>
+                    {s}
+                  </GeneratePDFButton>
+                ))}
+              </div>
+
+              <PlantLayout
+                selectedPlants={selectedPlants}
+                plantCounts={plantCounts}
+                squareFootage={squareFootage}
+                shape={plotShape}
+              />
+            </>
+          )}
+
+
+
       </div>
+
+
+
+
 
 
       <FooterComp />

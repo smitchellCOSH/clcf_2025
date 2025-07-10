@@ -21,7 +21,7 @@
 }
 
 /* Styles for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 910px) {
   .gridContainer {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -145,7 +145,7 @@ Includes the image attributions */
 
 .globalFloatingCounter {
   position: fixed;
-  top: 80px;           /* adjust based on your header */
+  top: 80px;
   right: 20px;
   background-color: #c3e344;
   color: #383838;
