@@ -1,7 +1,7 @@
 
 
 /* Imports */
-import { Stage, Layer, Circle, Text, Rect } from 'react-konva'; // Konva components.
+import { Stage, Layer, Circle, Text, Rect, Line } from 'react-konva'; // Konva components.
 import { useEffect, useState, useMemo } from 'react';
 import { plants } from '../data/plants';
 import GeneratePDFButton from './GeneratePDFButton';
@@ -73,14 +73,17 @@ export function generatePlantLayout({
 }
 
 export function getColorForPlantId(plantId) {
-  // Hash-based color generator for consistent color per plant.
+  // Use golden angle to ensure spread
+  const goldenAngle = 137.508;
   let hash = 0;
   for (let i = 0; i < plantId.length; i++) {
     hash = plantId.charCodeAt(i) + ((hash << 5) - hash);
   }
-  const hue = hash % 360;
-  return `hsl(${hue}, 60%, 60%)`;
+
+  const hue = (hash * goldenAngle) % 360;
+  return `hsl(${hue}, 70%, 50%)`; // Higher contrast than 60/60
 }
+
 
 
 
@@ -109,15 +112,38 @@ function isTreeType(a, b) {
 }
 
 function getScaledRadius(type, squareFootage) {
-  const scaleFactor = Math.max(0.5, 1 - squareFootage / 2000); // Reduce dot size as squareFootage increases
   const baseSize = getRadiusForType(type);
-  return Math.max(2, baseSize * scaleFactor);
+
+  // Assume 30–1000 sq ft range
+  const minSize = 2.5;
+  const maxSize = 8;
+
+  const clamped = Math.min(1000, Math.max(30, squareFootage));
+  const factor = 1 - (clamped - 30) / (1000 - 30); // from 1 to 0
+  const scaledSize = minSize + (maxSize - minSize) * factor;
+
+  return Math.max(1, baseSize * (scaledSize / maxSize));
 }
 
 
 
 
+
 const PlantLayout = forwardRef(({ width, height, plotShape, plantPoints }, ref) => {
+  const plantIdToNumber = useMemo(() => {
+    const map = {};
+    let num = 1;
+    for (const point of plantPoints) {
+      if (!map[point.plantId]) {
+        map[point.plantId] = num++;
+      }
+    }
+    return map;
+  }, [plantPoints]);
+
+
+
+
   return (
     <Stage ref={ref} width={width} height={height}>
       <Layer>
@@ -141,14 +167,40 @@ const PlantLayout = forwardRef(({ width, height, plotShape, plantPoints }, ref) 
 
         {/* Plants */}
         {plantPoints.map((plant, i) => (
-          <Circle
-          key={i}
-          x={plant.x}
-          y={plant.y}
-          radius={plant.radius}
-          fill={plant.color}
-          />
-        ))}
+  <React.Fragment key={i}>
+    <Circle
+      x={plant.x}
+      y={plant.y}
+      radius={plant.radius}
+      fill={plant.color}
+      stroke="#383838" // dark border for contrast
+      strokeWidth={1}
+    />
+    {/* Annotation line: from plant center to text */}
+    <Line
+      points={[plant.x, plant.y, plant.x + 8, plant.y + 8]}
+      stroke="#383838"
+      strokeWidth={1}
+      lineCap="round"
+      lineJoin="round"
+      dash={[4, 2]}
+    />
+
+    <Text
+      text={`${plantIdToNumber[plant.plantId]}`}
+      x={plant.x + 5}
+      y={plant.y + 5}
+      fontSize={Math.max(plant.radius * 2, 15)} // ensures legibility
+      fontStyle="bold"
+      fill="#383838"
+      stroke="#3838383"
+      strokeWidth={0.5}
+      align="center"
+    />
+  </React.Fragment>
+))}
+
+
       </Layer>
     </Stage>
   );

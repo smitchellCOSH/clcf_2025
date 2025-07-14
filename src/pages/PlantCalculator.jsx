@@ -446,6 +446,21 @@ useEffect(() => {
 }, [squareFootage]);
 
 
+/* Unique number for each plant on legend. */
+
+const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =>
+  Object.entries(plantMap).map(([plantId, plantData]) => {
+    const plant = plants.find(p => p.id === plantId);
+    return {
+      plantId,
+      plantName: plant?.plantName || 'Unknown',
+      quantity: plantData || 0,  // quantity per plant
+      color: getColorForPlantId(plantId),
+    };
+  })
+);
+
+
 
 
 /* ********************************************************************* */
@@ -481,6 +496,7 @@ useEffect(() => {
             <input className={styles.inputBox}
               type="number"
               min="30"
+              max="1000"
               placeholder="Enter square footage"
               value={squareFootage}
               onChange={(e) => {
@@ -488,7 +504,9 @@ useEffect(() => {
                 usrinp = Math.abs(usrinp);
                 usrinp = Number.parseFloat(usrinp, 10);
                 if (!isNaN(usrinp) && usrinp >= 0) {
-                setSquareFootage(usrinp.toString());
+                  if (usrinp < 30) usrinp = 30;
+                  else if (usrinp > 1000) usrinp = 1000;
+                  setSquareFootage(usrinp.toString());
               }
                 let cleanedStr = usrinp.toString().replace(/^0+(?=\d)/, "");
 
@@ -603,8 +621,7 @@ useEffect(() => {
               <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
               <div
                   style={{
-                    padding: "1rem",
-                    border: "1px solid #ccc",
+                    border: "1px solid #383838",
                     background: plotShape === "circle" ? "transparent" : "#fdfff6",
                     borderRadius: plotShape === "circle" ? "50%" : "0"
                   }}
@@ -631,32 +648,47 @@ useEffect(() => {
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "left",
-                paddingLeft: "1rem",
-                gap: "1rem"
+                padding: "20px",
+                gap: "1rem",
+                pageBreakInside: "avoid"
               }}>
-                {Object.entries(selectedPlants).flatMap(([type, plantMap]) =>
-                  Object.entries(plantMap).map(([plantId, qty]) => {
-                    const plant = plants.find((p) => p.id === plantId);
-                    if (!plant) return null;
-                    const color = getColorForPlantId(plantId);
-
-                    return (
-                      <div key={plantId} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-                        <div style={{
+                <div>
+                  {uniquePlants.map(({ plantId, plantName, quantity, color }, index) => (
+                    <div
+                      key={plantId}
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "0.5rem",
+                        marginBottom: "0.5rem",
+                        padding: "1rem",
+                        pageBreakInside: "avoid",
+                      }}
+                    >
+                      <div
+                        style={{
                           width: "14px",
                           height: "14px",
                           borderRadius: "50%",
                           backgroundColor: color,
-                          border: "1px solid #333"
-                        }}></div>
-                        <span>{plant.plantName} — {qty}</span>
+                          border: "1px solid #383838",
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center",
+                          color: "#fdfff6",
+                          fontWeight: "bold",
+                          fontSize: "12px",
+                        }}
+                      >
+                        {index + 1}
                       </div>
-                    );
-                  })
-                )}
+                      <span>{plantName} ( — {quantity})</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+          </div>
 
             <GeneratePDFButton onClick={exportLayoutToPDF}>
               Download layout
