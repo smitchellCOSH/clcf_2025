@@ -39,6 +39,10 @@ import logoBase64 from '../data/logoBase64';
 import ScrollToTop from "../components/ScrollToTop";
 import { useEffect } from 'react';
 import PlantLayout from '../components/PlantLayout';
+import { generatePlantLayout } from '../components/PlantLayout';
+import { getColorForPlantId } from '../components/PlantLayout';
+import { useMemo } from 'react';
+
 
 
 
@@ -286,6 +290,77 @@ export default function PlantCalculator() {
   };
 
 
+/* ********************************************************************* */
+
+  /* Generates the plant layout and saves the render. */
+  const plantLayoutPoints = useMemo(() => {
+  return generatePlantLayout({
+    width: 600,
+    height: 600,
+    plotShape, // this MUST be dynamic for shape filtering
+    squareFootage,
+    selectedPlants,
+    spacingRules: {
+      minSpacing: 20,
+      sameTypeSpacing: {
+        CANOPY: 50,
+        TREE: 50,
+        SUBTREE: 10,
+        SHRUB: 5
+      },
+      treeToTree: 50
+    }
+  });
+}, [selectedPlants, squareFootage, plotShape]); // <--- include it here!
+
+
+
+/* ********************************************************************* */
+
+/* Caches the layout shape and generated points to prevent changes when switching
+plot shapes. Maintains consistency until refreshing the page. */
+const [generatedShape, setGeneratedShape] = useState("square");
+const [cachedPoints, setCachedPoints] = useState([]);
+
+useEffect(() => {
+  const points = generatePlantLayout({
+    width: 600,
+    height: 600,
+    plotShape,
+    squareFootage,
+    selectedPlants,
+    spacingRules: {
+      minSpacing: 20,
+      sameTypeSpacing: {
+        CANOPY: 50,
+        TREE: 50,
+        SUBTREE: 10,
+        SHRUB: 5
+      },
+      treeToTree: 50
+    }
+  });
+  setCachedPoints(points);
+  setGeneratedShape(plotShape);
+}, [selectedPlants, squareFootage, plotShape]);
+
+
+
+
+
+/* ********************************************************************* */
+
+  /* Downloads the layout content as an image. */
+  const downloadLayoutAsImage = () => {
+    const stage = document.querySelector('canvas'); // gets canvas
+    const dataURL = stage.toDataURL('image/png');
+
+    const link = document.createElement('a');
+    link.download = 'forest-layout.png';
+    link.href = dataURL;
+    link.click();
+  };
+
 
 
   /* Rendered layout */
@@ -391,6 +466,7 @@ export default function PlantCalculator() {
               onChangeQuantity={handleChangeQuantity}
               plantCounts={plantCounts}
             />
+
           </>
 
         )}
@@ -430,17 +506,80 @@ export default function PlantCalculator() {
                 <label>Choose plot shape: </label>
                 {["square", "rectangle", "circle"].map((s) => (
                   <GeneratePDFButton key={s} onClick={() => setPlotShape(s)}>
-                    {s}
+                    {s.charAt(0).toUpperCase() + s.slice(1)}
                   </GeneratePDFButton>
                 ))}
               </div>
 
-              <PlantLayout
+              {/* <PlantLayout
                 selectedPlants={selectedPlants}
                 plantCounts={plantCounts}
                 squareFootage={squareFootage}
                 shape={plotShape}
+              /> */}
+
+              <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+              <div
+                  style={{
+                    padding: "1rem",
+                    border: "1px solid #ccc",
+                    background: plotShape === "circle" ? "transparent" : "#fdfff6",
+                    borderRadius: plotShape === "circle" ? "50%" : "0"
+                  }}
+                >
+          
+
+              <PlantLayout
+                width={600}
+                height={600}
+                plotShape={plotShape}
+                plantPoints={cachedPoints}
               />
+
+            </div>
+            </div>
+
+            {/* Legend */}
+            <div style={{ textAlign: "center", marginTop: "1rem" }}>
+              <h4>Legend</h4>
+              <div style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "left",
+                paddingLeft: "1rem",
+                gap: "1rem"
+              }}>
+                {Object.entries(selectedPlants).flatMap(([type, plantMap]) =>
+                  Object.entries(plantMap).map(([plantId, qty]) => {
+                    const plant = plants.find((p) => p.id === plantId);
+                    if (!plant) return null;
+                    const color = getColorForPlantId(plantId);
+
+                    return (
+                      <div key={plantId} style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                        <div style={{
+                          width: "14px",
+                          height: "14px",
+                          borderRadius: "50%",
+                          backgroundColor: color,
+                          border: "1px solid #333"
+                        }}></div>
+                        <span>{plant.plantName} — {qty}</span>
+                      </div>
+                    );
+                  })
+                )}
+              </div>
+            </div>
+
+            <GeneratePDFButton onClick={downloadLayoutAsImage}>
+              Download layout as image
+            </GeneratePDFButton>
+
+
+
+
+
             </>
           )}
 

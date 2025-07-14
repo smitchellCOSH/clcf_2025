@@ -66,7 +66,7 @@ const Navbar = () => {
         <Link to="/Step1" className={styles["dropdown-link"]}>Before Planting</Link>
             <Link to="/Step2" className={styles["dropdown-link"]}>Planting Day</Link>
             <Link to="/Step3" className={styles["dropdown-link"]}>After Planting</Link>
-            <Link to="/plant-calculator" className={styles["dropdown-link"]}>Plant Calculator</Link>
+            {/* <Link to="/plant-calculator" className={styles["dropdown-link"]}>Plant Calculator</Link> */}
           </div>
 
         )}
