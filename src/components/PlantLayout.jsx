@@ -5,6 +5,8 @@ import { Stage, Layer, Circle, Text, Rect } from 'react-konva'; // Konva compone
 import { useEffect, useState, useMemo } from 'react';
 import { plants } from '../data/plants';
 import GeneratePDFButton from './GeneratePDFButton';
+import React, { forwardRef } from 'react';
+
 
 
 
@@ -115,9 +117,9 @@ function getScaledRadius(type, squareFootage) {
 
 
 
-const PlantLayout = ({ width, height, plotShape, plantPoints }) => {
+const PlantLayout = forwardRef(({ width, height, plotShape, plantPoints }, ref) => {
   return (
-    <Stage width={width} height={height}>
+    <Stage ref={ref} width={width} height={height}>
       <Layer>
         {/* Background Plot Shape */}
         {plotShape === "square" && (
@@ -150,7 +152,7 @@ const PlantLayout = ({ width, height, plotShape, plantPoints }) => {
       </Layer>
     </Stage>
   );
-};
+});
 
 export default PlantLayout;
 

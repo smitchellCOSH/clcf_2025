@@ -42,6 +42,8 @@ import PlantLayout from '../components/PlantLayout';
 import { generatePlantLayout } from '../components/PlantLayout';
 import { getColorForPlantId } from '../components/PlantLayout';
 import { useMemo } from 'react';
+import { useRef } from 'react';
+
 
 
 
@@ -279,6 +281,37 @@ export default function PlantCalculator() {
   doc.save("your_plant_list.pdf");
 };
 
+/* ********************************************************************* */
+
+  /* Converts the layout and legend to PDF format. */
+  const exportLayoutToPDF = async () => {
+  const stage = svgRef.current;
+  const legendElement = legendRef.current;
+
+  if (!stage || !legendElement) return;
+
+  // Get image data from Konva stage
+  const dataURL = stage.toDataURL({ pixelRatio: 2 });
+
+  // Create PDF
+  const pdf = new jsPDF('portrait', 'pt', [stage.width(), stage.height() + 200]);
+
+  // Add the layout image
+  pdf.addImage(dataURL, 'PNG', 0, 0, stage.width(), stage.height());
+
+  // Render the legend into the PDF using html2canvas
+  await pdf.html(legendElement, {
+    x: 20,
+    y: stage.height() + 20,
+    html2canvas: { scale: 1 },
+    callback: () => {
+      pdf.save("plant-layout.pdf");
+    }
+  });
+};
+
+
+
 
 
 
@@ -365,6 +398,12 @@ useEffect(() => {
 
 
 
+/* ********************************************************************* */
+
+  /* Defines state for converting the Konva canvases to SVGs for the PDF. */
+  const svgRef = useRef(null);
+  const legendRef = useRef(null);
+
 
 
 
@@ -372,8 +411,11 @@ useEffect(() => {
 
   /* Downloads the layout content as an image. */
   const downloadLayoutAsImage = () => {
-    const stage = document.querySelector('canvas'); // gets canvas
-    const dataURL = stage.toDataURL('image/png');
+    const stage = svgRef.current;
+    if (!stage) return;
+
+    const dataURL = stage.toDataURL({ pixelRatio: 2 }); // Higher quality export
+
 
     const link = document.createElement('a');
     link.download = 'forest-layout.png';
@@ -381,6 +423,32 @@ useEffect(() => {
     link.click();
   };
 
+
+/* ********************************************************************* */
+
+
+  /* Clears the user's selections when the user changes their square footage input. */
+  useEffect(() => {
+  // Clear plant selections
+  setSelectedPlants({});
+
+  // Clear layout cache or points
+  setLayoutCache({
+    square: [],
+    rectangle: [],
+    circle: []
+  });
+
+  // Optionally reset cachedPoints or generatedShape if you want:
+  setCachedPoints([]);
+  setGeneratedShape("square");
+
+}, [squareFootage]);
+
+
+
+
+/* ********************************************************************* */
 
 
   /* Rendered layout */
@@ -544,6 +612,7 @@ useEffect(() => {
           
 
               <PlantLayout
+                ref={svgRef}
                 width={600}
                 height={600}
                 plotShape={plotShape}
@@ -555,6 +624,8 @@ useEffect(() => {
 
             {/* Legend */}
             <div style={{ textAlign: "center", marginTop: "1rem" }}>
+              <div ref={legendRef} style={{ textAlign: "center", marginTop: "1rem" }}>
+
               <h4>Legend</h4>
               <div style={{
                 display: "flex",
@@ -583,18 +654,20 @@ useEffect(() => {
                     );
                   })
                 )}
+                </div>
               </div>
             </div>
 
-            <GeneratePDFButton onClick={downloadLayoutAsImage}>
-              Download layout as image
+            <GeneratePDFButton onClick={exportLayoutToPDF}>
+              Download layout
             </GeneratePDFButton>
 
 
-
-
-
             </>
+
+
+
+
           )}
 
 

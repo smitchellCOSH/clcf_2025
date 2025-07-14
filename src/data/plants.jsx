@@ -653,7 +653,7 @@ let smoothBlueAster = {
     plantName: "Smooth Blue Aster",
     scientificName: "Symphyotrichum laeve",
     notes: "Smooth Aster is a herbaceous perennial in the aster family that is native to central and eastern USA. It is a must-have for the garden due to the late-season blooms and the many pollinators it attracts. (Source: North Carolina Extension Gardener Plant Toolbox).",
-    plantType: [plantType.TREE, plantType.CANOPY],
+    plantType: [plantType.SHRUB],
     sunType: [sunType.FULLSUN, sunType.PARTIALSHADE],
     soilType: [soilType.CLAY, soilType.LOAM_SILT, soilType.SAND],
     soilDrainage: [soilDrainage.MOIST, soilDrainage.OCCASIONALLYDRY, soilDrainage.GOODDRAINAGE],
