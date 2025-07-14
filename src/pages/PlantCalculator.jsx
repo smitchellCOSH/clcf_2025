@@ -43,10 +43,7 @@ import { generatePlantLayout } from '../components/PlantLayout';
 import { getColorForPlantId } from '../components/PlantLayout';
 import { useMemo } from 'react';
 import { useRef } from 'react';
-
-
-
-
+import QuantityTracker from '../components/QuantityTracker';
 
 
 
@@ -164,9 +161,13 @@ export default function PlantCalculator() {
 
 
   /* Calls the calculation function for each plant type. */
-  const plantCounts = handleCalculate();
+  const [plantCounts, setPlantCounts] = useState({});
 
 
+  useEffect(() => {
+  const newCounts = handleCalculate();
+  setPlantCounts(newCounts);
+  }, [squareFootage, selectedProfile]);
 
   /* ********************************************************************* */
 
@@ -473,6 +474,7 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
       <HeaderComp />
       <Navbar />
 
+      <QuantityTracker plantCounts={plantCounts} orderedTypes={orderedTypes} selectedPlants={selectedPlants} />
 
       <div className={styles.about_content}>
         <div className={styles.subheader}>Plant Calculator</div>
@@ -489,6 +491,7 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
           onSelect={setSelectedProfile}
         />
         </div>
+
 
 
         <div style={{ marginBottom: "0.8rem", padding: "0.2rem" }}>
