@@ -317,32 +317,52 @@ export default function PlantCalculator() {
 
 /* ********************************************************************* */
 
+  /* Initializes the layout cache states. */
+  const [layoutCache, setLayoutCache] = useState({
+    square: [],
+    rectangle: [],
+    circle: []
+  });
+
+
+
+
+/* ********************************************************************* */
+
 /* Caches the layout shape and generated points to prevent changes when switching
 plot shapes. Maintains consistency until refreshing the page. */
 const [generatedShape, setGeneratedShape] = useState("square");
 const [cachedPoints, setCachedPoints] = useState([]);
 
 useEffect(() => {
-  const points = generatePlantLayout({
-    width: 600,
-    height: 600,
-    plotShape,
-    squareFootage,
-    selectedPlants,
-    spacingRules: {
-      minSpacing: 20,
-      sameTypeSpacing: {
-        CANOPY: 50,
-        TREE: 50,
-        SUBTREE: 10,
-        SHRUB: 5
-      },
-      treeToTree: 50
-    }
-  });
-  setCachedPoints(points);
-  setGeneratedShape(plotShape);
-}, [selectedPlants, squareFootage, plotShape]);
+  const shapes = ["square", "rectangle", "circle"];
+  const newCache = {};
+
+  for (const shape of shapes) {
+    const points = generatePlantLayout({
+      width: 600,
+      height: 600,
+      plotShape: shape,
+      squareFootage,
+      selectedPlants,
+      spacingRules: {
+        minSpacing: 20,
+        sameTypeSpacing: {
+          CANOPY: 50,
+          TREE: 50,
+          SUBTREE: 10,
+          SHRUB: 5
+        },
+        treeToTree: 50
+      }
+    });
+
+    newCache[shape] = points;
+  }
+
+  setLayoutCache(newCache);
+}, [selectedPlants, squareFootage]);
+
 
 
 
@@ -511,12 +531,6 @@ useEffect(() => {
                 ))}
               </div>
 
-              {/* <PlantLayout
-                selectedPlants={selectedPlants}
-                plantCounts={plantCounts}
-                squareFootage={squareFootage}
-                shape={plotShape}
-              /> */}
 
               <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
               <div
@@ -533,7 +547,7 @@ useEffect(() => {
                 width={600}
                 height={600}
                 plotShape={plotShape}
-                plantPoints={cachedPoints}
+                plantPoints={layoutCache[plotShape] || []}
               />
 
             </div>
