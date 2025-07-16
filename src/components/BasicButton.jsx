@@ -15,8 +15,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from './BasicButton.module.css';
 
 const BasicButton = ({ to, children }) => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Links to specified page.
 
+  /* Controls actions upon clicking. */
   const handleClick = (e) => {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });

@@ -289,7 +289,7 @@ const About = () => {
           {/* Content */}
 
           There are many plants in our Pocket Forest. You'll be able to choose these plants using the plant calculator. 
-          Here is a peak at what these plants may look like once they are full grown. Note that this is not all of the plants
+          Here is a peek at what these plants may look like once they are full grown. Note that this is not all of the plants
           available in our plant calculator — there are plenty more to choose from!
 
           <ImageGrid />

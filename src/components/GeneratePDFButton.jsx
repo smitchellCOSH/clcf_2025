@@ -1,7 +1,8 @@
 /* 
 
-Generate PDF button specifications. This button is on the Plant Calculator
-page and generates a PDF list of selected plants when clicked.
+Generate PDF button specifications. This button is used for actions
+that are not navigational (i.e., actions that do not link between
+pages or to external links).
 
 */
 
@@ -16,8 +17,10 @@ import styles from './BasicButton.module.css';
 /* Content */
 const GeneratePDFButton = ({ onClick, children }) => {
 
+  /* Performs whatever action is specified by "onClick".
+  Mostly used for PDF generation. */
   return (
-    <button onClick={onClick} className={styles.basicButton}>
+    <button onClick={onClick} className={styles.basicButton}> 
       {children}
     </button>
   );

@@ -45,5 +45,6 @@ shadow, and transition details */
 .caption {
   margin-top: 10px;
   font-size: 1rem;
-  color: #333;
+  color: #383838;
+  font-weight: bold;
 }
