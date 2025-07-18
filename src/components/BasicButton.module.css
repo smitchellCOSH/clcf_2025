@@ -22,3 +22,27 @@
 .basicButton:hover {
   background-color: #006747;
 }
+
+/* Special buttons for emphasis - used for Plant Calculator button. */
+.highlightedButton {
+  display: inline-block; /* Places the button centrally inside the divider block. */
+  padding: 2rem 3rem; /* Padding around the button. */
+  background-image: url("photos/about_image_003.jpg");
+  color: #fdfff6;
+  border-radius: 999px; /* Creates rounded button shape. */
+  text-decoration: none; /* Turns off the underline symbol for text in the link. */
+  font-weight: bold;
+  font-size: 1.5rem;
+  transition: background-color 0.3s ease; /* Creates a smooth color transition during mouse hover. */
+  margin-right: 0.5rem;
+  border: none;
+  cursor: pointer;
+  background-repeat: repeat;
+  background-size: 990px;
+  background-position: 0%;
+  background-blend-mode: multiply;
+}
+
+.highlightedButton:hover {
+  background-color: #c3e344;
+}

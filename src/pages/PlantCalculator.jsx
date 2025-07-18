@@ -208,13 +208,10 @@ export default function PlantCalculator() {
     const pageWidth = doc.internal.pageSize.getWidth(); // Gets the width of the page for centering.
     let y = 0.2;
 
-    // Adds the logo to the top of the PDF.
-    doc.addImage(logoBase64, "PNG", 0.5, y, 2.5, 1); // (x, y, width, height)
-
     // Adds the title to the top of the PDF.
     doc.setFontSize(28);
     doc.setFont("helvetica", "bold");
-    doc.text("Pocket Forests Project", 3.8, y + 0.6); // Sets the x and y position.
+    doc.text("Pocket Forests Project", 2.1, y + 0.6); // Sets the x and y position.
 
     doc.line(0, 1.3, 8.5, 1.3, "F")
     y += 1.5;
@@ -285,31 +282,96 @@ export default function PlantCalculator() {
 /* ********************************************************************* */
 
   /* Converts the layout and legend to PDF format. */
-  const exportLayoutToPDF = async () => {
+//   const exportLayoutToPDF = async () => {
+//     const stage = svgRef.current;
+//     const legendElement = legendRef.current;
+
+//     if (!stage || !legendElement) return;
+
+//   // Get image data from Konva stage
+//   const dataURL = stage.toDataURL({ pixelRatio: 2 });
+
+//   // Create PDF
+//   const pdf = new jsPDF('portrait', 'pt', [stage.width(), stage.height() + 200]);
+
+//   // Add the layout image
+//   pdf.addImage(dataURL, 'PNG', 0, 0, stage.width(), stage.height());
+
+//   // Render the legend into the PDF using html2canvas
+//   await pdf.html(legendElement, {
+//     x: 20,
+//     y: stage.height() + 20,
+//     html2canvas: { scale: 1 },
+//     callback: () => {
+//       pdf.save("plant-layout.pdf");
+//     }
+//   });
+// };
+
+
+const exportLayoutToPDF = async () => {
   const stage = svgRef.current;
-  const legendElement = legendRef.current;
+  if (!stage) return;
 
-  if (!stage || !legendElement) return;
-
-  // Get image data from Konva stage
   const dataURL = stage.toDataURL({ pixelRatio: 2 });
 
-  // Create PDF
   const pdf = new jsPDF('portrait', 'pt', [stage.width(), stage.height() + 200]);
 
-  // Add the layout image
+  // Add layout image to first page
   pdf.addImage(dataURL, 'PNG', 0, 0, stage.width(), stage.height());
 
-  // Render the legend into the PDF using html2canvas
-  await pdf.html(legendElement, {
-    x: 20,
-    y: stage.height() + 20,
-    html2canvas: { scale: 1 },
-    callback: () => {
-      pdf.save("plant-layout.pdf");
+  // --- Start legend on new page ---
+  pdf.addPage();
+
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(14);
+
+  let y = 40;
+  const xStart = 50;
+  const lineHeight = 24;
+
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(18);
+  pdf.text("Legend", xStart, y);
+  y += 30;
+
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(12);
+
+  uniquePlants.forEach(({ plantName, quantity, color }, index) => {
+    if (y + lineHeight > pdf.internal.pageSize.getHeight() - 40) {
+      pdf.addPage();
+      y = 40;
     }
+
+    // Draw the circle
+    const circleX = xStart;
+    const circleY = y - 6;
+    const radius = 6;
+
+    pdf.setDrawColor(56, 56, 56); // border color
+    pdf.setFillColor(color); // fill color
+    pdf.circle(circleX, circleY, radius, 'FD');
+
+    // Draw the number (centered)
+    pdf.setTextColor(255, 255, 255); // white text
+    pdf.setFontSize(10);
+    const numberText = String(index + 1);
+    const textX = circleX - (pdf.getTextWidth(numberText) / 2);
+    pdf.text(numberText, textX + 0.5, circleY + 2);
+
+    // Draw the label
+    pdf.setTextColor(0, 0, 0);
+    pdf.setFontSize(12);
+    const label = `${plantName} (${quantity})`;
+    pdf.text(label, xStart + 20, y);
+
+    y += lineHeight;
   });
+
+  pdf.save("plant-layout.pdf");
 };
+
 
 
 
@@ -325,13 +387,23 @@ export default function PlantCalculator() {
 
 
 /* ********************************************************************* */
+  const shapeDimensions = {
+    square: { width: 600, height: 600 },
+    rectangle: { width: 800, height: 400 },
+    circle: { width: 600, height: 600 }
+  };
+
+  const { width, height } = shapeDimensions[plotShape];
+
+
+
 
   /* Generates the plant layout and saves the render. */
   const plantLayoutPoints = useMemo(() => {
   return generatePlantLayout({
-    width: 600,
-    height: 600,
-    plotShape, // this MUST be dynamic for shape filtering
+    width,
+    height,
+    plotShape,
     squareFootage,
     selectedPlants,
     spacingRules: {
@@ -345,7 +417,7 @@ export default function PlantCalculator() {
       treeToTree: 50
     }
   });
-}, [selectedPlants, squareFootage, plotShape]); // <--- include it here!
+}, [selectedPlants, squareFootage, plotShape]); 
 
 
 
@@ -365,17 +437,19 @@ export default function PlantCalculator() {
 
 /* Caches the layout shape and generated points to prevent changes when switching
 plot shapes. Maintains consistency until refreshing the page. */
-const [generatedShape, setGeneratedShape] = useState("square");
-const [cachedPoints, setCachedPoints] = useState([]);
+
 
 useEffect(() => {
   const shapes = ["square", "rectangle", "circle"];
   const newCache = {};
 
   for (const shape of shapes) {
+    const { width, height } = shapeDimensions[shape];
+
+  for (const shape of shapes) {
     const points = generatePlantLayout({
-      width: 600,
-      height: 600,
+      width,
+      height,
       plotShape: shape,
       squareFootage,
       selectedPlants,
@@ -393,7 +467,7 @@ useEffect(() => {
 
     newCache[shape] = points;
   }
-
+  }
   setLayoutCache(newCache);
 }, [selectedPlants, squareFootage]);
 
@@ -441,8 +515,8 @@ useEffect(() => {
   });
 
   // Optionally reset cachedPoints or generatedShape if you want:
-  setCachedPoints([]);
-  setGeneratedShape("square");
+  // setCachedPoints([]);
+  // setGeneratedShape("square");
 
 }, [squareFootage]);
 
@@ -552,7 +626,8 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
           help protect your plants from disease and will make for a more natural forest.
         </p>
 
-        <p className={styles.note_content}>
+        <p>
+          <img src="icons/information-box-outline.svg" style={{width: "4vh"}}></img>
           Some of the plants listed require special care, or have notes on their edibility
           and potential risk to pets. Please make note of which plants have special 
           features, and do additional research before consuming any of the plants in your forest.
@@ -583,7 +658,13 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
 
 
         {Object.keys(selectedPlants).length > 0 && (
-            <div style={{ marginTop: "2rem" }}>
+            <div style={{
+                marginTop: "2rem",
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: "0.5rem"
+              }}>
 
               <GeneratePDFButton onClick={clearSelections}>
                 Clear Selections
@@ -611,7 +692,13 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
 
               <p>Visualize how your forest will be arranged based on your chosen square footage and plants.</p>
 
-              <div>
+              <div style={{
+                marginTop: "2rem",
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+                gap: "0.5rem"
+              }}> 
                 <label>Choose plot shape: </label>
                 {["square", "rectangle", "circle"].map((s) => (
                   <GeneratePDFButton key={s} onClick={() => setPlotShape(s)}>
@@ -633,8 +720,8 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
 
               <PlantLayout
                 ref={svgRef}
-                width={600}
-                height={600}
+                width={width}
+                height={height}
                 plotShape={plotShape}
                 plantPoints={layoutCache[plotShape] || []}
               />
@@ -685,7 +772,7 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
                       >
                         {index + 1}
                       </div>
-                      <span>{plantName} ( — {quantity})</span>
+                      <span>{plantName} ({quantity})</span>
                     </div>
                   ))}
                 </div>
@@ -693,10 +780,21 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
             </div>
           </div>
 
-            <GeneratePDFButton onClick={exportLayoutToPDF}>
-              Download layout
-            </GeneratePDFButton>
+            <div style={{
+              marginTop: "2rem",
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "0.5rem"
+            }}>
 
+              <GeneratePDFButton onClick={exportLayoutToPDF}>
+                Download layout
+              </GeneratePDFButton>
+
+              <ScrollToTop />
+
+            </div>
 
             </>
 
@@ -714,9 +812,7 @@ const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =
 
 
 
-      <FooterComp />
+      <FooterComp id="footer"/>
     </div>
   );
 }
-
-

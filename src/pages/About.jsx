@@ -31,7 +31,7 @@ import InlineImageText from '../components/InlineImageText';
 
 
 
-
+/* Content */
 const About = () => {
   return (
     <div>
@@ -57,11 +57,11 @@ const About = () => {
           attribution="Liriodendron tulipifera – Tulip tree."
         >
           <p>
-          <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forests</span>, otherwise known as{" "}
-          <span style={{ fontStyle: "italic", color: "#0057b8" }}>Microforests </span> or{" "}
-          <span style={{ fontStyle: "italic", color: "#0057b8" }}>Miniforests</span> are areas of densely-packed,
-          highly biodiverse vegetation. These forests are unique, because they grow very quickly and require little maintenance,
-          making them great for beginner gardeners.
+            <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forests</span>, otherwise known as{" "}
+            <span style={{ fontStyle: "italic", color: "#0057b8" }}>Microforests </span> or{" "}
+            <span style={{ fontStyle: "italic", color: "#0057b8" }}>Miniforests</span> are areas of densely-packed,
+            highly biodiverse vegetation. These forests are unique, because they grow very quickly and require little maintenance,
+            making them great for beginner gardeners.
           </p>
 
         </InlineImageText>
@@ -86,10 +86,6 @@ const About = () => {
           <Link to="/plot" className={styles["other_links"]}>Plot your forest</Link> page to design a layout of
           your Pocket Forest.
         </p>
-
-
-
-
 
 
         {/* Section 1: Background */}
@@ -134,10 +130,24 @@ const About = () => {
           >
           10 times as quickly
           </a>
-          {" "} as a regular forest. Their quick growth is attributed to the
-          competitive nature resulting from their density. Another benefit of Pocket Forests is that they quickly become self-sustaining, 
-          meaning that they can be cultivated with only about a year of maintenance. Pocket Forests also feature all-native plants, 
-          helping to restore ecological balance in different communities.
+            {" "} as a regular forest. Their quick growth is attributed to the
+            competitive nature resulting from their density. Another benefit of Pocket Forests is that they quickly become self-sustaining, 
+            meaning that they can be cultivated with only about a year of maintenance. Weeding, watering, and protecting
+            your forest from deer and other grazing animals is recommended for at least a year, though your forest can benefit
+            from maintenance for 2 years. After that, your Pocket Forest will be mostly self-sustaining, though you may prefer
+            to add additional maintenance into your routine as your forest grows for sustainability and beautification. 
+          </p>
+
+          <p>
+            Aside from being easy to maintain, Pocket Forests also feature all-native plants, helping to restore ecological 
+            balance in different communities. This guide features plants that are native across Southeast Michigan,
+            so this website can be used by anyone in the region. Just make sure to check the status of native plants in your
+            county using the <a
+              className={styles.other_links}
+              href="https://www.michiganflora.net/search"
+              target="_blank"
+              rel="noopener noreferrer">
+              Michigan Flora database</a>!
           </p>
 
         </InlineImageText>
@@ -190,34 +200,24 @@ const About = () => {
         </p>
 
 
+        <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>What makes a Michigan Pocket Forest?</span>
 
 
-        {/* Section 3: What makes a Michigan Pocket Forest? */}
-
-        {/* Subheader */}
-        <div className={styles.subheader} id="michigan_forest">
-        <p>
-          What makes a Michigan Pocket Forest?
-        </p>
-        </div>
-
-
-
-        {/* Content */}
+        
 
         <p>
-        Pocket Forests in Michigan are slightly different from a typical forest constructed with the Miyawaki method. 
-        The Miyawaki method was first introduced in Japan, where ecological conditions vary from Michigan. 
-        Though there are some similarities, Pocket Forests in Michigan have some differences. 
-        The most major difference is in planting density. Miyawaki method forests are typically planted at a 
-        density of 3 to 7 plants per 10 square feet. In a Miyawaki forest, this results in about a 40% die-off rate, 
-        where 40% of plants competing for nutrients will die off during their establishment period. In Michigan, it is 
-        recommended to plant trees at a slightly lower density, between 3 - 5 plants per 10 square feet, in order to lower 
-        die-off rates and initial planting costs.
+          Pocket Forests in Michigan are slightly different from a typical forest constructed with the Miyawaki method. 
+          The Miyawaki method was first introduced in Japan, where ecological conditions vary from Michigan. 
+          Though there are some similarities, Pocket Forests in Michigan have some differences. 
+          The most major difference is in planting density. Miyawaki method forests are typically planted at a 
+          density of 3 to 7 plants per 10 square feet. In a Miyawaki forest, this results in about a 40% die-off rate, 
+          where 40% of plants competing for nutrients will die off during their establishment period. In Michigan, it is 
+          recommended to plant trees at a slightly lower density, between 3 - 5 plants per 10 square feet, in order to lower 
+          die-off rates and initial planting costs.
         </p>
 
         <p>
-        Below, take a closer look at the differences between a commercial forest, a Miyawaki forest, and a Michigan Pocket Forest.
+          Below, take a closer look at the differences between a commercial forest, a Miyawaki forest, and a Michigan Pocket Forest.
         </p>
 
 
@@ -230,31 +230,19 @@ const About = () => {
         />
 
 
-
-
-        {/* Section 4: Sterling Heights' Pocket Forest */}
-
-        {/* Subheader */}
-        <div className={styles.subheader} id="sh_forest">
-        <p>
-          Sterling Heights' Pocket Forest
-        </p>
-        </div>
-
-
-          {/* Content */}
+        <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>Sterling Heights' Pocket Forest</span>
 
           <p>
-          You can visit Sterling Heights’ very own Pocket Forest at James C. Nelson Park, part of Sterling Heights’ 
-          Community Garden. The Pocket Forest was planted in April of 2025 and is one of the steps the city is taking to 
-          improve reforestation. Housed next to the Butterfly Garden, the Pocket Forest will one day be a refuge for 
-          pollinators and small animal life.
+            You can visit Sterling Heights’ very own Pocket Forest at James C. Nelson Park, part of Sterling Heights’ 
+            Community Garden. The Pocket Forest was planted in April of 2025 and is one of the steps the city is taking to 
+            improve reforestation. Housed next to the Butterfly Garden, the Pocket Forest will one day be a refuge for 
+            pollinators and small animal life.
           </p>
 
           <InlineImageText
           imageSrc="photos/about_image_004.jpg"
           imageAlt="Sterling Heights' Pocket Forest"
-          attribution="Sterling Heights' Pocket Forest at James C. Nelson Park."
+          attribution="Sterling Heights' Pocket Forest."
           >
           
           <p>
@@ -271,36 +259,19 @@ const About = () => {
 
 
 
+        <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>What's in our forest?</span>
 
-
-
-
-        {/* Section 5: What's in our forest? */}
-
-        {/* Subheader */}
-        <div className={styles.subheader} id="sh_comp">
-        <p>
-          What's in our forest?
-        </p>
-
-        </div>
-
-
-          {/* Content */}
-
+       
+          <div>
           There are many plants in our Pocket Forest. You'll be able to choose these plants using the plant calculator. 
           Here is a peek at what these plants may look like once they are full grown. Note that this is not all of the plants
           available in our plant calculator — there are plenty more to choose from!
 
           <ImageGrid />
 
+          </div>
 
-
-
-
-
-
-        {/* Section 6: Benefits and Challenges */}
+        {/* Section 3: Benefits and Challenges */}
 
         {/* Subheader */}
         <div className={styles.subheader} id="benefits_challenges">
@@ -311,7 +282,6 @@ const About = () => {
 
 
         {/* Content */}
-
 
         <p>
         Aside from restoring native plants and increasing quick tree growth, reforestation will also help to lower Sterling Heights’ 
@@ -351,7 +321,7 @@ const About = () => {
 
 
 
-        {/* Section 7: Next Steps */}
+        {/* Section 4: Next Steps */}
 
         {/* Subheader */}
         <div className={styles.subheader} id="next_steps">

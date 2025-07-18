@@ -3,31 +3,51 @@
 /* Contains styling for the Navigation Bar component (Navbar.jsx). */
 
 
+/* Wrapper nav element */
+.navWrapper {
+  position: relative;
+  background-color: #fdfff6;
+  border-top: 2px solid #c3e344;
+  border-bottom: 2px solid #c3e344;
+  padding: 0.75rem 1rem;
+  font-family: "Nunito Sans", sans-serif;
+}
 
-/* Navbar block styling */
+
+/* Flex nav menu (links) */
 .navbar {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
-  padding: 0.75rem;
-  background-color: #fdfff6;
-  border-top: 2px solid #c3e344;
-  border-bottom: 2px solid #c3e344;
-  font-family: "Nunito Sans", sans-serif;
-  margin: 2%
+  transition: all 0.3s ease-in-out;
 }
 
+/* Add hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #383838;
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  z-index: 2000;
+}
 
-/* Navbar link styling */
+/* Nav links */
 .nav-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   text-decoration: none;
   color: #383838;
-  transition: color 0.3s ease;
   font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.3s ease;
 }
 
 /* Hover controls the color of the link when hovering with the mouse. */
@@ -39,21 +59,44 @@
 .nav-icon {
   width: 25px;
   height: 25px;
-  vertical-align: middle;
 }
+
+
 
 /* Mobile screen size styling */
 @media (max-width: 600px) {
+  .navWrapper {
+    padding-top: 2.2rem; /* More space for hamburger */
+  }
   .navbar {
+    display: none;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
+    padding: 1rem;
+  }
+  .navbar.showMenu {
+    display: flex !important;
+  }
+  .hamburger {
+    display: block;
+  }
+  /* Adjust dropdown on mobile */
+  .dropdown {
+    position: static !important;
+    box-shadow: none !important;
+    border: none !important;
+    background-color: transparent !important;
+  }
+  .dropdown-link {
+    padding-left: 1.5rem;
   }
 }
 
 
 
-/* ****** DROPDOWN MENUS ****** /
 
+/* ****** DROPDOWN MENUS ****** /
 
 /* Dropdown container that positions the dropdown menu. */
 .dropdown-container {
@@ -95,3 +138,6 @@
   color: #0057b8;
   border-radius: 10px;
 }
+
+
+

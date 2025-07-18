@@ -16,7 +16,7 @@ import styles from './HeaderComp.module.css';
 
 
 
-
+/* Content */
 const HeaderComp = () => {
   return (
     <header className={styles.HeaderComp}>
@@ -24,13 +24,12 @@ const HeaderComp = () => {
       {/* Logo */}
         <img
           src="photos/sh_logo_003.png"
-          className="App-logo"
-          alt="sh-logo"
-          style={{ width: "10.5rem", height: "4rem", padding: "10px"}}
+          className={styles.HeaderImg}
+          alt="Sterling Heights Logo"
         />
 
         {/* Title */}
-        <h1 style={{ margin: 0, fontSize: "3rem" }}>
+        <h1 style={{ margin: 0, fontSize: "clamp(1.5rem, 5vw, 3rem)" }}>
           Pocket Forests of{" "}
           <span style={{ color: "#383838" }}>
             Sterling Heights

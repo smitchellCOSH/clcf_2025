@@ -5,7 +5,7 @@
 .subheader {
   background-color: #c3e344;
   border-radius: 10px;
-  padding: 0.5rem;
+  padding: 1vh;
   margin: 2rem 0;
   font-weight: bold;
   font-size: 2.5rem;
@@ -19,7 +19,7 @@
   /* Adds background image to subheader block components */
   background-image: url("/photos/about_image_003.jpg");
   background-repeat: repeat;
-  background-size: 1400px;
+  background-size: 1800px;
   background-blend-mode: multiply;
 }
 
@@ -71,12 +71,11 @@ light-blue background. */
 /* Content for the Resource page, or any left-justified content */
 .resource_content {
   justify-content: "left";
-
 }
 
 
 /* Styles the notes on the guide pages */
-.note_content {
+/* .note_content {
     border-radius: 10px;
     background-color: #0057b8;
     padding: 3%;
@@ -85,8 +84,21 @@ light-blue background. */
     display: inline-block;
     width: 70%;
     font-size: 1.3rem
-}
+} */
 
+.note_content {
+  background-color: #0057b8;
+  color: #fdfff6;
+  padding: 20px 30px;
+  border-radius: 999px;
+  display: inline-block;
+  box-sizing: border-box;
+
+  max-width: 50ch;          /* Constrains width to ~40 characters */
+  white-space: normal;      /* Allows wrapping */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
 
 
 /* Styles the results sections on various pages,
@@ -136,3 +148,54 @@ the main content. */
 }
 
 
+
+/* Styles images side-by-side. Example: logos on the contact page. */
+.imageContainer {
+  text-align: center;
+}
+
+.imageContainer img {
+  display: inline-block;
+  margin: 0 1% 0 1%;
+}
+
+.imageContainer img:nth-child(1) {
+  max-width: 20%;
+}
+
+.imageContainer img:nth-child(2) {
+  max-width: 30%;
+}
+
+.imageContainer img:nth-child(3) {
+  max-width: 30%;
+  vertical-align: 10px;
+}
+
+
+@media (max-width: 600px) {
+  .subheader {
+    padding: 3%;
+    font-size: 1.5rem;
+  }
+  .imageContainer img {
+    display: inline-block;
+    margin: 0 1% 0 1%;
+  }
+
+  .imageContainer img:nth-child(1) {
+    max-width: 80%;
+    padding-bottom: 3%;
+  }
+
+  .imageContainer img:nth-child(2) {
+    max-width: 80%;
+    padding-bottom: 3%;
+  }
+
+  .imageContainer img:nth-child(3) {
+    max-width: 80%;
+    vertical-align: 10px;
+    padding-bottom: 5%;
+  }
+}

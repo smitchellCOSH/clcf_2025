@@ -45,13 +45,26 @@ export function generatePlantLayout({
     /* Loop that attempts to place a plant randomly within the canvas area. */
     while (placed < qty && attempts < 10000) {
       attempts++;
-      const x = Math.random() * (width - 2 * buffer * pixelsPerFoot) + buffer * pixelsPerFoot;
-      const y = Math.random() * (height - 2 * buffer * pixelsPerFoot) + buffer * pixelsPerFoot;
+      const radius = getScaledRadius(type, squareFootage);
+      const x = Math.random() * (width - 2 * (buffer * pixelsPerFoot + radius)) + (buffer * pixelsPerFoot + radius);
+      const y = Math.random() * (height - 2 * (buffer * pixelsPerFoot + radius)) + (buffer * pixelsPerFoot + radius);
+
 
       /* Checks that points are within the bounds of the circular plot. */
-      const isInPlot = plotShape === "circle"
-        ? distance({ x, y }, { x: width / 2, y: height / 2 }) <= width / 2 - buffer * pixelsPerFoot
-        : true;
+      const isInPlot = (() => {
+        if (plotShape === "circle") {
+          return distance({ x, y }, { x: width / 2, y: height / 2 }) <= width / 2 - buffer * pixelsPerFoot - radius;
+        } else if (plotShape === "rectangle" || plotShape === "square") {
+          return (
+            x >= buffer * pixelsPerFoot + radius &&
+            x <= width - buffer * pixelsPerFoot - radius &&
+            y >= buffer * pixelsPerFoot + radius &&
+            y <= height - buffer * pixelsPerFoot - radius
+          );
+        }
+        return true;
+      })();
+
 
       /* Only continues if the dot is within the bounds of the plot. */
       if (!isInPlot) continue;
@@ -87,6 +100,7 @@ export function generatePlantLayout({
     number of attempts. */
     if (placed < qty) {
       for (let i = placed; i < qty; i++) {
+        const radius = getScaledRadius(type, squareFootage);
         let x, y;
         let attempts = 0;
 

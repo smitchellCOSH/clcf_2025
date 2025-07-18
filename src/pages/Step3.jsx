@@ -251,7 +251,13 @@ const Step3 = () => {
 
 
 
-        <div style={{ marginTop: "2rem" }}>
+        <div style={{
+          marginTop: "2rem",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "1rem"
+        }}>
           <BasicButton to="/FAQ">Frequently Asked Questions</BasicButton>
           <ScrollToTop />
         </div>

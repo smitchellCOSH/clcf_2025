@@ -15,8 +15,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './FooterComp.module.css';
 
-const FooterComp = () => {
+const FooterComp = ({ id }) => {
   return (
+    <footer id={id}>
     <div className={styles.footer_links}>
       <p>
 
@@ -45,6 +46,7 @@ const FooterComp = () => {
         </a>
       </p>
     </div>
+    </footer>
   );
 };
 

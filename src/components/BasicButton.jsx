@@ -14,7 +14,7 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './BasicButton.module.css';
 
-const BasicButton = ({ to, children }) => {
+const BasicButton = ({ to, children, variant }) => {
   const navigate = useNavigate(); // Links to specified page.
 
   /* Controls actions upon clicking. */
@@ -24,8 +24,12 @@ const BasicButton = ({ to, children }) => {
     navigate(to);
   };
 
+    const buttonClass =
+    variant === "highlighted" ? styles.highlightedButton : styles.basicButton;
+
+
   return (
-    <button onClick={handleClick} className={styles.basicButton}>
+    <button onClick={handleClick} className={buttonClass}>
       {children}
     </button>
   );

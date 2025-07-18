@@ -18,6 +18,7 @@
 /* Creates an individual item in the grid */
 .gridItem {
   text-align: center;
+  text-decoration: none;
 }
 
 
@@ -47,4 +48,12 @@ shadow, and transition details */
   font-size: 1rem;
   color: #383838;
   font-weight: bold;
+}
+
+
+@media (max-width: 600px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }

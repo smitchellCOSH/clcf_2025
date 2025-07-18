@@ -11,6 +11,17 @@
     justify-content: center;
     gap: 1rem;
     max-width: 100%;
-    margin: 0 auto;
+    margin: 1rem auto;
     max-height: 10%;
+}
+
+.HeaderImg {
+    width: 10.5rem;
+    height: 4rem;
+}
+
+.HeaderTitle {
+  margin: 0;
+  font-size: 3rem;
+  color: #383838;
 }

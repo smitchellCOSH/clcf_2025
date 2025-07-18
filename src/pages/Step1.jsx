@@ -340,7 +340,7 @@ const Step1 = () => {
 
 
         {/* Links to the Plant Calculator tool on a separate page */}
-        <BasicButton to="/plant-calculator">Plant calculator</BasicButton>
+        <BasicButton to="/plant-calculator" variant="highlighted">Plant calculator</BasicButton>
 
 
         <p>
@@ -416,7 +416,13 @@ const Step1 = () => {
         </p>
 
 
-      <div style={{ marginTop: "2rem" }}>
+      <div style={{
+          marginTop: "2rem",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "0.5rem"
+        }}>
           <BasicButton to="/Step2">Step 2: Planting day</BasicButton>
           <ScrollToTop />
       </div>

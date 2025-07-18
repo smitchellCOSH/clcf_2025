@@ -251,7 +251,13 @@ const Step2 = () => {
         </p>
 
 
-        <div style={{ marginTop: "2rem" }}>
+        <div style={{
+          marginTop: "2rem",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "1rem"
+        }}>
           <BasicButton to="/Step3">Step 3: Maintenance</BasicButton>
           <ScrollToTop />
         </div>

@@ -27,13 +27,14 @@
   }
 }
 
+/* Styles for largest screens. */
 @media (min-width: 1200px) {
   .gridContainer {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-
+/* Styles the plant image for smaller screens. */
 @media (max-width: 640px) {
   .plantImage {
     width: 50px;
@@ -123,6 +124,13 @@ Includes the image attributions */
   align-items: center;
   margin-bottom: 1rem;
   margin-top: 30px;
+
+  width: 100%;
+  padding: 1rem;
+  background-color: #fdfff6;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border: 1px solid #383838;
 }
 
 .catCount {
@@ -134,15 +142,10 @@ Includes the image attributions */
   border-radius: 999px;
   font-weight: bold;
   font-size: 1rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-/* **************************TESTING ***************************/
-/* **************************TESTING ***************************/
-/* **************************TESTING ***************************/
-/* **************************TESTING ***************************/
-/* **************************TESTING ***************************/
 
+/* Styles the floating counter that hovers on the page globally. */
 .globalFloatingCounter {
   position: fixed;
   top: 80px;
@@ -156,7 +159,6 @@ Includes the image attributions */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   z-index: 999;
 }
-
 
 
 
