@@ -167,7 +167,7 @@ const Step2 = () => {
 
         <p>
             Next, fill in your second largest set of plants, your trees. Spread your trees equally between the canopy trees, leaving at 
-            least 5 feet of space between the trees and canopy plantings. Again, it is best if you leave a buffer between your trees and any 
+            least 5 feet of space between other tree types and 10 feet of space between canopy plantings. Again, it is best if you leave a buffer between your trees and any 
             sidewalks, roads, or buildings.
         </p>
 

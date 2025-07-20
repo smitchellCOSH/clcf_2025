@@ -12,6 +12,7 @@ user's input square footage and plant selections.
 import { Stage, Layer, Circle, Text, Rect, Line } from 'react-konva'; // Konva components.
 import { useEffect, useState, useMemo } from 'react';
 import React, { forwardRef } from 'react';
+import { getColorForPlantId } from './colorUtils';
 
 
 
@@ -142,20 +143,20 @@ export function generatePlantLayout({
   return plantDots;
 }
 
-  /* Helper function that selects a color to represent a plant on the layout 
-  based on each plant's ID. */
-  export function getColorForPlantId(plantId) {
+  // /* Helper function that selects a color to represent a plant on the layout 
+  // based on each plant's ID. */
+  // export function getColorForPlantId(plantId) {
     
-    /* Ensures a range of colors. */
-    const goldenAngle = 137.508;
-    let hash = 0;
-    for (let i = 0; i < plantId.length; i++) {
-      hash = plantId.charCodeAt(i) + ((hash << 5) - hash);
-    }
+  //   /* Ensures a range of colors. */
+  //   const goldenAngle = 137.508;
+  //   let hash = 0;
+  //   for (let i = 0; i < plantId.length; i++) {
+  //     hash = plantId.charCodeAt(i) + ((hash << 5) - hash);
+  //   }
 
-    const hue = (hash * goldenAngle) % 360;
-    return `hsl(${hue}, 70%, 50%)`; // Ensures contrast between colors.
-  }
+  //   const hue = (hash * goldenAngle) % 360;
+  //   return `hsl(${hue}, 70%, 50%)`; // Ensures contrast between colors.
+  // }
 
 
   /* Assigns a radius for each plant type. */
@@ -236,6 +237,8 @@ const PlantLayout = forwardRef(({ width, height, plotShape, plantPoints }, ref) 
 
       {/* Render plant dots with proper placement. */}
       {plantPoints.map((plant, i) => (
+
+        
       <React.Fragment key={i}>
         <Circle
           x={plant.x}
@@ -267,6 +270,7 @@ const PlantLayout = forwardRef(({ width, height, plotShape, plantPoints }, ref) 
           stroke="#383838"
           strokeWidth={0.5}
           align="center"
+          opacity={0.85} // Add a small amount of transparency for legibility when there are many plants.
         />
       </React.Fragment>
       ))}

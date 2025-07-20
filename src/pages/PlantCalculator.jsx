@@ -336,13 +336,42 @@ const exportLayoutToPDF = async () => {
   const stage = svgRef.current;
   if (!stage) return;
 
+  const canvasWidth = stage.width();
+  const canvasHeight = stage.height();
+
   const dataURL = stage.toDataURL({ pixelRatio: 2 });
 
-  /* Create PDF with enough height to fit the layout + legend (adjust as needed). */
-  const pdf = new jsPDF('portrait', 'pt', [stage.width(), stage.height() + 400]);
+  /* Determine page orientation based on the layout shape. */
+  const isLandscape = canvasWidth > canvasHeight;
+
+  // Use standard Letter dimensions (612 x 792 pt) in portrait by default
+  const pdf = new jsPDF({
+    orientation: isLandscape ? 'landscape' : 'portrait',
+    unit: 'pt',
+    format: 'letter',
+  });
+
+  const pageWidth = pdf.internal.pageSize.getWidth();
+  const pageHeight = pdf.internal.pageSize.getHeight();
+
+  /* Scale the layout to fit within page while preserving aspect ratio. */
+  const margin = 40;
+  const availableWidth = pageWidth - margin * 2;
+  const availableHeight = pageHeight - margin * 2;
+
+  const widthRatio = availableWidth / canvasWidth;
+  const heightRatio = availableHeight / canvasHeight;
+  const scale = Math.min(widthRatio, heightRatio);
+
+  const imageWidth = canvasWidth * scale;
+  const imageHeight = canvasHeight * scale;
+
+  const imageX = (pageWidth - imageWidth) / 2;
+  const imageY = margin;
 
   /* Add layout image to first page. */
-  pdf.addImage(dataURL, 'PNG', 0, 0, stage.width(), stage.height());
+  pdf.addImage(dataURL, 'PNG', imageX, imageY, imageWidth, imageHeight);
+
 
   /* Start legend on new page. */
   pdf.addPage();
@@ -445,24 +474,6 @@ function hslToRgb(h, s, l) {
 
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 }
-
-function rgbToHex([r, g, b]) {
-  return "#" + [r, g, b].map(x => x.toString(16).padStart(2, "0")).join("");
-}
-
-// function generateDistinctColors(n) {
-//   const colors = [];
-//   const saturation = 0.7;
-//   const lightness = 0.5;
-
-//   for (let i = 0; i < n; i++) {
-//     const hue = (i * 360 / n) % 360;
-//     const rgb = hslToRgb(hue, saturation, lightness);
-//     colors.push(rgbToHex(rgb));
-//   }
-//   return colors;
-// }
-
 
 /* ********************************************************************* */
 
@@ -693,7 +704,7 @@ const [showHelp, setShowHelp] = useState(false);
           {/* Dropdown Help Section */}
           <div className={styles.dropdownHelp}>
             <button onClick={() => setShowHelp(!showHelp)} className={styles.dropdownHelp}>
-              {showHelp ? 'Hide' : 'Having trouble choosing plants?'}
+              {showHelp ? 'Hide' : 'Having trouble choosing plants? (Show)'}
             </button>
             {showHelp && (
               <div className={styles.dropdownContent}>
@@ -791,6 +802,28 @@ const [showHelp, setShowHelp] = useState(false);
           Create your layout
         </div>
 
+          {/* Dropdown Help Section */}
+          <div className={styles.dropdownHelp}>
+            <button onClick={() => setShowHelp(!showHelp)} className={styles.dropdownHelp}>
+              {showHelp ? 'Hide' : 'Having trouble placing your plants? (Show)'}
+            </button>
+            {showHelp && (
+              <div className={styles.dropdownContent}>
+                <p>
+                  To learn more about how to properly space your plants, refer to the 'Planting Day'
+                  section of the guide, or refer to the rules below.
+                </p>
+                <FrostedImage
+                  src="photos/spacing_rules.jpg"
+                  alt="Plant Help Diagram"
+                  attribution="How many different plants should I choose?"
+                  style={{ width: "1100px" }}
+                  className="xlarge"
+                  />
+              </div>
+            )}
+            </div>
+
 
           {/* ************************* PLOTTING *************************** */}
           {Object.keys(selectedPlants).length > 0 && (
@@ -804,7 +837,7 @@ const [showHelp, setShowHelp] = useState(false);
                 flexWrap: "wrap",
                 justifyContent: "center",
                 gap: "0.5rem"
-              }}> 
+              }}>
                 <label>Choose plot shape: </label>
                 {["square", "rectangle", "circle"].map((s) => (
                   <GeneratePDFButton key={s} onClick={() => setPlotShape(s)}>
@@ -860,7 +893,7 @@ const [showHelp, setShowHelp] = useState(false);
                       height: 12,
                       backgroundColor: plant.color,
                       borderRadius: '50%',
-                      marginRight: 6
+                      marginRight: 6,
                     }} />
                     <span>{plant.number}. {plant.plantName} ({plant.quantity})</span>
                   </div>

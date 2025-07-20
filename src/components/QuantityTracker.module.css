@@ -12,19 +12,28 @@
 .tracker {
   position: fixed;
   bottom: 20px;
-  left: 25%;
+  left: 50%;
   transform: translateX(-50%);
   background-color: #c3e344;
   border: 1px solid #383838;
   border-radius: 10px;
-  padding: 1rem;
-  width: 550px;
-  height: 55px;
+  padding: 0.75rem 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.15);
   z-index: 9999;
   font-family: sans-serif;
-  padding-bottom: 10px;
+  
+  /* Responsive width */
+  width: 90vw;
+  max-width: 600px;
+  min-width: 320px;
+
+  height: auto; /* Allow it to grow with content */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 
 
 /* Styles the tracker title. */
@@ -40,8 +49,9 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding-left: 3.2%;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
 }
 
 .tracker p {
@@ -54,10 +64,8 @@
 }
 
 .tracker li {
-  margin-bottom: 0;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   white-space: nowrap;
-  margin-left: 3%;
 }
 
 
@@ -68,9 +76,7 @@
 
 @media (max-width: 1050px) {
   .tracker {
-    left: 50%;
-    width: 395px;
-    height: 45px;
+    padding: 0.5rem 0.75rem;
   }
   .tracker h4 {
   font-size: medium;
@@ -85,12 +91,7 @@
     font-size: smaller;
   }
   .tracker li {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    font-size: 1.75vh;
-    padding-left: 2.2%;
-    font-size: x-small;
+    font-size: 0.7rem;
   }
 
 }
