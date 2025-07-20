@@ -28,6 +28,9 @@ export function generatePlantLayout({
   /* Set constants. */
   const buffer = 5; // 5 square foot buffer around plot.
   const pixelsPerFoot = 5; // Converts feet to pixels for square footage conversions.
+  const rectPixelsPerFoot = plotShape === "rectangle" // Calculates pixels per foot for the rectangle plot.
+    ? Math.sqrt((width * height) / squareFootage)
+    : pixelsPerFoot;
   const plantDots = []; // Initializes plant positions list.
 
   const distance = (a, b) => Math.hypot(a.x - b.x, a.y - b.y); // Helper function for Euclidean distance between 2 points.
@@ -45,24 +48,29 @@ export function generatePlantLayout({
     /* Loop that attempts to place a plant randomly within the canvas area. */
     while (placed < qty && attempts < 10000) {
       attempts++;
-      const radius = getScaledRadius(type, squareFootage);
-      const x = Math.random() * (width - 2 * (buffer * pixelsPerFoot + radius)) + (buffer * pixelsPerFoot + radius);
-      const y = Math.random() * (height - 2 * (buffer * pixelsPerFoot + radius)) + (buffer * pixelsPerFoot + radius);
-
+      const x = Math.random() * (width - 2 * buffer * pixelsPerFoot) + buffer * pixelsPerFoot;
+      const y = Math.random() * (height - 2 * buffer * pixelsPerFoot) + buffer * pixelsPerFoot;
 
       /* Checks that points are within the bounds of the circular plot. */
       const isInPlot = (() => {
         if (plotShape === "circle") {
-          return distance({ x, y }, { x: width / 2, y: height / 2 }) <= width / 2 - buffer * pixelsPerFoot - radius;
-        } else if (plotShape === "rectangle" || plotShape === "square") {
+          return distance({ x, y }, { x: width / 2, y: height / 2 }) <= width / 2 - buffer * pixelsPerFoot;
+        } else if (plotShape === "rectangle") {
           return (
-            x >= buffer * pixelsPerFoot + radius &&
-            x <= width - buffer * pixelsPerFoot - radius &&
-            y >= buffer * pixelsPerFoot + radius &&
-            y <= height - buffer * pixelsPerFoot - radius
+            x >= buffer * pixelsPerFoot &&
+            x <= width - buffer * pixelsPerFoot &&
+            y >= buffer * pixelsPerFoot &&
+            y <= height - buffer * pixelsPerFoot
+          );
+        } else if (plotShape === "square") {
+          // Same logic as rectangle, but may help future-proof changes.
+          return (
+            x >= buffer * pixelsPerFoot &&
+            x <= width - buffer * pixelsPerFoot &&
+            y >= buffer * pixelsPerFoot &&
+            y <= height - buffer * pixelsPerFoot
           );
         }
-        return true;
       })();
 
 
@@ -100,7 +108,6 @@ export function generatePlantLayout({
     number of attempts. */
     if (placed < qty) {
       for (let i = placed; i < qty; i++) {
-        const radius = getScaledRadius(type, squareFootage);
         let x, y;
         let attempts = 0;
 

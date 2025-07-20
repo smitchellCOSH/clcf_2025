@@ -148,6 +148,18 @@ the main content. */
 }
 
 
+.dropdownHelp {
+  background-color: #0057b8;
+  color: #fdfff6;
+  border: 999px;
+  padding: 0.7rem 1.2rem;
+  border-radius: 10px;
+  font-family: 'Nunito Sans';
+  font-size: medium;
+  font-weight: bold;
+}
+
+
 
 /* Styles images side-by-side. Example: logos on the contact page. */
 .imageContainer {
@@ -197,5 +209,11 @@ the main content. */
     max-width: 80%;
     vertical-align: 10px;
     padding-bottom: 5%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .subheader {
+    background-size: 2200px;
   }
 }

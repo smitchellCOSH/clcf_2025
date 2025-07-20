@@ -59,27 +59,27 @@ const Step1 = () => {
         </p>
 
 
-        <InlineImageText
-          imageSrc="photos/step1_image_001.jpg"
-          imageAlt="Step 1: Photo 001"
-          attribution="Iris virginica – Blue flag iris"
-          style={{width: "35%"}}
-          >
-
           <p>
             Pocket Forests are very resilient, and as 
             long as you have about 30 square feet of space, with 10 contiguous square feet of space in any direction, you can create a
             Pocket Forest. It is recommended, however, to have about 125 square feet of space for best results.
           </p>
 
-        </InlineImageText>
 
-
-
-        <p className={ styles.note_content }>
-            Some of the Forest Types you can choose from in our Plant Calculator will have more trees than others.
-            Make sure to choose the Forest Type that best suits your needs!
+        {/* Note */}
+        {/* <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/step1_image_001.jpg" alt="Step 1: Photo 001" />
+              <div className="frosted-overlay">Iris virginica – Blue flag iris.</div>
+        </div> */}
+        <p style={{ width: "80%", display: "inline-block", backgroundColor: "#c3e344", borderRadius: "10px", outline: "solid 2px", outlineColor: "#0057b8" }}>
+          <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
+          <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
+          Some of the Forest Types you can choose from in our Plant Calculator will have more trees than others.
+          Make sure to choose the Forest Type that best suits your needs!
+          </li>
         </p>
+
+        <div style={{ clear: "both" }}></div>
 
 
 
@@ -97,16 +97,14 @@ const Step1 = () => {
             any restrictions on what you can plant on your land.
         </p>
 
-        <p className={styles.note_content}>
+        {/* Note */}
+        <p style={{ width: "80%", display: "inline-block", backgroundColor: "#c3e344", borderRadius: "10px", outline: "solid 2px", outlineColor: "#0057b8" }}>
+          <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
+          <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
           Note that while planting a Pocket Forest with native plants might expand planting options on your property, 
           but make sure to check for any restrictions in your area that may apply to your planting site.
+          </li>
         </p>
-
-        <InlineImageText
-          imageSrc="photos/step1_image_002.jpg"
-          imageAlt="Step 1: Photo 002"
-          attribution="Cercis canadensis – Redbud."
-          >
 
           <p>
           Next, you’ll want to assess the specific conditions of your planting site. What is the soil type? 
@@ -115,7 +113,6 @@ const Step1 = () => {
           drain? This will help you to determine which plants will grow best in your forest.
           </p>
 
-        </InlineImageText>
 
   
 
@@ -143,14 +140,12 @@ const Step1 = () => {
             deeper than you will!
         </p>
 
-
-        <InlineImageText
-          imageSrc="photos/step1_image_003.jpg"
-          imageAlt="Step 1: Photo 003"
-          attribution="Root system in soil."
-          >
-
           <p>
+            <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/step1_image_003.jpg" alt="Step 1: Photo 003" />
+              <div className="frosted-overlay">Root system in soil.</div>
+            </div>
+
             For an easy way to evaluate your soil type, you can read {" "}
             <a
               className={styles.other_links}
@@ -162,9 +157,6 @@ const Step1 = () => {
             sand, or loam. Sterling Heights has diverse soil types, so it is important to know which 
             trees and shrubs will grow best on your land.
           </p>
-
-        </InlineImageText>
-
 
 
         <p>
@@ -187,14 +179,14 @@ const Step1 = () => {
 
 
 
-
-        {/* Special note */}
-        <div className={ styles.note_content }>
-          <p>
-              Note that beginner foresters might find the map tool confusing, but don’t worry! 
-              A simple soil test is good enough to determine which plants are best suited for your Pocket Forest.
-          </p>
-        </div>
+        {/* Note */}
+        <p style={{ width: "80%", display: "inline-block", backgroundColor: "#c3e344", borderRadius: "10px", outline: "solid 2px", outlineColor: "#0057b8" }}>
+          <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
+          <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
+          Note that beginner foresters might find the map tool confusing, but don’t worry! 
+          A simple soil test is good enough to determine which plants are best suited for your Pocket Forest.
+          </li>
+        </p>
 
 
 
@@ -206,19 +198,11 @@ const Step1 = () => {
         </p>
 
 
-        <InlineImageText
-          imageSrc="photos/step1_image_004.jpg"
-          imageAlt="Step 1: Photo 004"
-          attribution="Sprouts growing in wet soil."
-          >
-
           <p>
             Another important aspect of your soil is its ability to drain water. Because plants have 
             different moisture needs, understanding soil drainage is important in building your forest. 
             Testing soil drainage is also easy. Follow the steps below to figure out how your soil drains.
-        </p>
-
-        </InlineImageText>
+          </p>
 
 
 
@@ -369,19 +353,19 @@ const Step1 = () => {
       </div>
 
 
-        <InlineImageText
-          imageSrc="photos/step1_image_005.jpg"
-          imageAlt="Step 1: Photo 005"
-          attribution="Gardener removing weeds from soil."
-          >
 
-          <p>After choosing your plants, there are still a few things you need to do before planting day.</p>
+          <p>
+            <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/step1_image_005.jpg" alt="Step 1: Photo 005" />
+              <div className="frosted-overlay">Gardener removing weeds from soil.</div>
+            </div>
+            After choosing your plants, there are still a few things you need to do before planting day.
+          </p>
 
           <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>First</span>, mark your planting area. 
           You can use simple wooden pegs or grass spray. This will ensure that you maintain a buffer zone 
           between your Pocket Forest and any obstructions on your property and make it easier to properly space your plants.</p>
 
-        </InlineImageText>
 
 
         <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Then</span>, you’ll want to weed your planting area. 

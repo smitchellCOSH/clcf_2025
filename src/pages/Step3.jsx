@@ -66,31 +66,20 @@ const Step3 = () => {
           </span>
         </p>
         
-
-        <InlineImageText
-          imageSrc="photos/step3_image_001.jpg"
-          imageAlt="Step 3: Photo 001"
-          attribution="A gardener removing weeds."
-          >
-
-          <p>
-            Frequent and diligent weeding is recommended for your Pocket Forest in the first 1-2 years of 
-            establishment. Weeds take up nutrients and space, making it harder for your plants to grow. 
-            Many of them are not native and may also be invasive. 
-          </p>
-
-
-        </InlineImageText>
-
+        <p>
+          Frequent and diligent weeding is recommended for your Pocket Forest in the first 1-2 years of 
+          establishment. Weeds take up nutrients and space, making it harder for your plants to grow. 
+          Many of them are not native and may also be invasive. 
+        </p>
 
 
         <p>
-            It is best to prevent weeds from growing in the first place by limiting their ability to seed. 
-            The “cover and smother” method described in the <Link to="/Step1" className={styles.other_links}>Before you plant</Link> 
-            {" "} section will take care of your weeds’ ability to seed in your soil. Additionally, the burlap you use in your Pocket Forest will
-            last and degrade naturally during your plants’ establishment period. However, this method is imperfect. 
-            It is recommended to check frequently for new weeds and remove them promptly. This is especially true 
-            during warm periods where weed growth is at its peak.
+          It is best to prevent weeds from growing in the first place by limiting their ability to seed. 
+          The “cover and smother” method described in the <Link to="/Step1" className={styles.other_links}>Before you plant</Link> 
+          {" "} section will take care of your weeds’ ability to seed in your soil. Additionally, the burlap you use in your Pocket Forest will
+          last and degrade naturally during your plants’ establishment period. However, this method is imperfect. 
+          It is recommended to check frequently for new weeds and remove them promptly. This is especially true 
+          during warm periods where weed growth is at its peak.
         </p>
 
         <p>
@@ -99,12 +88,12 @@ const Step3 = () => {
         </p>
 
         <p>
-            For more information about identifying weeds in your forest, take a look at Michigan State University’s Department of Plant, 
-            Soil and Microbial Sciences {" "}
-            <a className={styles.other_links}
-                href="https://www.dammannsgardenco.com/blog/how-to-identify-soil-types#:~:text=THE%20SQUISH%20TEST,have%20a%20high%20silt%20percentage"
-                target="_blank"
-                rel="noopener noreferrer">Michigan’s Worst Weeds</a> article.
+          For more information about identifying weeds in your forest, take a look at Michigan State University’s Department of Plant, 
+          Soil and Microbial Sciences {" "}
+          <a className={styles.other_links}
+              href="https://www.dammannsgardenco.com/blog/how-to-identify-soil-types#:~:text=THE%20SQUISH%20TEST,have%20a%20high%20silt%20percentage"
+              target="_blank"
+              rel="noopener noreferrer">Michigan’s Worst Weeds</a> article.
         </p>
 
         <p>
@@ -122,13 +111,11 @@ const Step3 = () => {
         </p>
 
 
-        <InlineImageText
-          imageSrc="photos/step3_image_003.jpg"
-          imageAlt="Step 3: Photo 003"
-          attribution="A sprinkler providing water."
-          >
-
           <p>
+            <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/step3_image_003.jpg" alt="Step 3: Photo 003" />
+              <div className="frosted-overlay">A sprinkler providing water.</div>
+            </div>
             For all Pocket Forests, it is important to provide watering support during particularly dry periods. 
             If there hasn’t been significant rain in your area for 2-3 weeks, a thorough watering is crucial to
             your forests’ survival. Take care to monitor weather in your area, particularly during the hottest 
@@ -136,7 +123,6 @@ const Step3 = () => {
           </p>
 
 
-        </InlineImageText>
 
 
 
@@ -160,21 +146,11 @@ const Step3 = () => {
         </p>
 
 
-        <InlineImageText
-          imageSrc="photos/step3_image_004.jpg"
-          imageAlt="Step 3: Photo 004"
-          attribution="A deer wandering in a clearing."
-          >
-
           <p>
             Check on your fencing every once in a while, making sure that it cannot be easily breached 
             by deer or other large grazing animals. Walk the perimeter of your fencing every once in a 
             while to look for problems and amend them if necessary.
           </p>
-
-
-        </InlineImageText>
-
 
 
         <p>
@@ -198,6 +174,10 @@ const Step3 = () => {
         </p>
 
         <p>
+          <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/step3_image_005.jpg" alt="Step 3: Photo 005" />
+              <div className="frosted-overlay">A leaf with an unknown disease.</div>
+          </div>
             Symptoms of plant disease can be alarming, but it is helpful to remember that your 
             plants are strong and resilient. Furthermore, it is expected that some of the plants 
             in your Pocket Forest will die off before your forest grows to maturity. Not only is 
@@ -206,22 +186,17 @@ const Step3 = () => {
         </p>
 
 
-        <InlineImageText
-          imageSrc="photos/step3_image_005.jpg"
-          imageAlt="Step 3: Photo 005"
-          attribution="A leaf with an unknown disease."
-          >
-
           <p>
             Monitor your plants for problems, but don’t feel the need to keep an overly watchful eye. 
             To learn more about common plant diseases, see <a className={styles.other_links}
                 href="https://www.proflowers.com/blog/plant-diseases"
                 target="_blank"
-                rel="noopener noreferrer">this article</a>.
+                rel="noopener noreferrer">this article from Proflowers.com</a>. Some plants will require
+            more care than others, so make sure to choose your plants with your ability to provide ongoing
+            care in mind.
           </p>
 
-
-        </InlineImageText>
+          <div style={{ clear: "both" }}></div>
 
 
 

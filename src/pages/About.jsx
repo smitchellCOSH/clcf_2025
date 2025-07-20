@@ -51,20 +51,17 @@ const About = () => {
           </p>
         </div>
 
-        <InlineImageText
-          imageSrc="photos/about_image_001.jpg"
-          imageAlt="Pocket Forest"
-          attribution="Liriodendron tulipifera – Tulip tree."
-        >
           <p>
+            <div className="frosted-container float-right">
+              <img className="frosted-image" src="photos/about_image_001.jpg" alt="Pocket Forest" />
+              <div className="frosted-overlay">Liriodendron tulipifera - Tulip tree.</div>
+            </div>
             <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forests</span>, otherwise known as{" "}
             <span style={{ fontStyle: "italic", color: "#0057b8" }}>Microforests </span> or{" "}
             <span style={{ fontStyle: "italic", color: "#0057b8" }}>Miniforests</span> are areas of densely-packed,
             highly biodiverse vegetation. These forests are unique, because they grow very quickly and require little maintenance,
             making them great for beginner gardeners.
           </p>
-
-        </InlineImageText>
 
         <p>
           Pocket forests are a tool in urban forestry used to combat deforestation and
@@ -112,12 +109,11 @@ const About = () => {
           biodiversity to prevent further deforestation is essential. 
         </p>
 
-        <InlineImageText
-          imageSrc="photos/akira_miyawaki.jpg"
-          imageAlt="Akira Miyawaki"
-          attribution="Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka."
-        >
           <p>
+            <div className="frosted-container float-right portrait-image" >
+              <img className="frosted-image" src="photos/akira_miyawaki.jpg" alt="Akira Miyawaki" />
+              <div className="frosted-overlay">Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka.</div>
+            </div>
           That’s where Pocket Forests come into play. 
           Pioneered by the renowned botanist Akira Miyawaki, Pocket Forests use the Miyawaki Method to plant small, dense, and highly 
           biodiverse forests that grow up to {" "}
@@ -131,7 +127,10 @@ const About = () => {
           10 times as quickly
           </a>
             {" "} as a regular forest. Their quick growth is attributed to the
-            competitive nature resulting from their density. Another benefit of Pocket Forests is that they quickly become self-sustaining, 
+            competitive nature resulting from their density. 
+          </p>
+
+          <p>Another benefit of Pocket Forests is that they quickly become self-sustaining, 
             meaning that they can be cultivated with only about a year of maintenance. Weeding, watering, and protecting
             your forest from deer and other grazing animals is recommended for at least a year, though your forest can benefit
             from maintenance for 2 years. After that, your Pocket Forest will be mostly self-sustaining, though you may prefer
@@ -150,7 +149,7 @@ const About = () => {
               Michigan Flora database</a>!
           </p>
 
-        </InlineImageText>
+        <div style={{ clear: "both" }}></div>
 
 
 
@@ -233,18 +232,17 @@ const About = () => {
         <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>Sterling Heights' Pocket Forest</span>
 
           <p>
+            <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/about_image_004.jpg" alt="Sterling Heights' Pocket Forest" />
+              <div className="frosted-overlay">Sterling Heights' Pocket Forest.</div>
+            </div>
             You can visit Sterling Heights’ very own Pocket Forest at James C. Nelson Park, part of Sterling Heights’ 
             Community Garden. The Pocket Forest was planted in April of 2025 and is one of the steps the city is taking to 
             improve reforestation. Housed next to the Butterfly Garden, the Pocket Forest will one day be a refuge for 
-            pollinators and small animal life.
+            pollinators and small animal life.<br></br>
           </p>
 
-          <InlineImageText
-          imageSrc="photos/about_image_004.jpg"
-          imageAlt="Sterling Heights' Pocket Forest"
-          attribution="Sterling Heights' Pocket Forest."
-          >
-          
+
           <p>
             To learn more about the Pocket Forest and Community Gardens, visit the <a
               className={styles.other_links}
@@ -254,22 +252,17 @@ const About = () => {
               Community Garden</a> webpage. You can also visit the 
             Pocket Forest in person at the James C. Nelson Park during visiting hours.
           </p>
+        
+        <div>
+          <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>What's in our forest?</span>
+            <div>
+            There are many plants in our Pocket Forest. You'll be able to choose these plants using the plant calculator. 
+            Here is a peek at what these plants may look like once they are full grown. Note that this is not all of the plants
+            available in our plant calculator — there are plenty more to choose from!
+            <ImageGrid />
+            </div>
 
-        </InlineImageText>
-
-
-
-        <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>What's in our forest?</span>
-
-       
-          <div>
-          There are many plants in our Pocket Forest. You'll be able to choose these plants using the plant calculator. 
-          Here is a peek at what these plants may look like once they are full grown. Note that this is not all of the plants
-          available in our plant calculator — there are plenty more to choose from!
-
-          <ImageGrid />
-
-          </div>
+        </div>
 
         {/* Section 3: Benefits and Challenges */}
 
@@ -284,6 +277,11 @@ const About = () => {
         {/* Content */}
 
         <p>
+
+        <div className="frosted-container float-left">
+          <img className="frosted-image" src="photos/about_image_002.jpg" alt="Oak forest" />
+          <div className="frosted-overlay">A lush Oak forest.</div>
+        </div>
         Aside from restoring native plants and increasing quick tree growth, reforestation will also help to lower Sterling Heights’ 
         Urban Heat Index, a phenomenon that describes when urban areas become hotter than surrounding rural regions 
         due to urban architecture trapping heat and a lack of vegetation to cool things off. By increasing urban vegetation, 
@@ -299,26 +297,12 @@ const About = () => {
         .{" "}
         </p>
 
-
-        <InlineImageText
-          imageSrc="photos/about_image_002.jpg"
-          imageAlt="Oak Forest"
-          attribution="A lush Oak forest."
-          >
-          
           <p>
             Pocket Forests also improve air quality, manage carbon dioxide levels, provide habitats for local animals, 
             and add natural beauty. Since Pocket Forests can grow in a variety of landscapes and layouts, they can be 
             used to reforest areas that might be otherwise unsuitable for traditional forestry. Check out the 
             <a className={styles.other_links}> Plot your forest</a> tool to learn more about Pocket Forest design.
           </p>
-
-        </InlineImageText>
-
-
-
-
-
 
 
         {/* Section 4: Next Steps */}

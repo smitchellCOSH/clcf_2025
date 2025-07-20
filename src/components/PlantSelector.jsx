@@ -88,8 +88,42 @@ export default function PlantSelector({ categorizedPlants, selectedPlants, onCha
                         disabled={qty === 0}
                       >-</button>
 
-                      <span>{qty}</span>
+                      <input
+                        type="text"
+                        value={qty.toString()}
+                        onChange={(e) => {
+                          let val = e.target.value;
 
+                          // Allow only digits, remove everything else (including '-')
+                          val = val.replace(/[^0-9]/g, '');
+
+                          // Remove leading zeros but allow '0' itself
+                          val = val.replace(/^0+(?=\d)/, '');
+
+                          // Parse int or default to 0 if empty
+                          const intVal = val === '' ? 0 : parseInt(val, 10);
+
+                          // Calculate current total excluding this plant’s qty
+                          const currentTotalExcludingThis = totalSelected - qty;
+
+                          // Clamp so total doesn't exceed maxAllowed
+                          let clampedVal = intVal;
+                          if (currentTotalExcludingThis + intVal > maxAllowed) {
+                            clampedVal = maxAllowed - currentTotalExcludingThis;
+                            if (clampedVal < 0) clampedVal = 0;
+                          }
+
+                          onChangeQuantity(type, plant.id, clampedVal - qty);
+                        }}
+                        style={{
+                          width: '2.5rem',
+                          textAlign: 'center',
+                          borderRadius: '10px',
+                          border: '1px solid #383838',
+                          padding: '0.2rem 0.3rem',
+                          fontSize: '1rem',
+                        }}
+                      />
                       <button
                         /* Increases the quantity but only if the quantity is less than the maximum allowed. */
                         onClick={() => onChangeQuantity(type, plant.id, 1)}

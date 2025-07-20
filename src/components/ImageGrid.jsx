@@ -67,11 +67,11 @@ function ImageGrid() {
           rel="noopener noreferrer"
           className={styles.gridItem}
         >
-      <img src={img.src} alt={`${img.common} - ${img.scientific}`} className={styles.imageCircle} />
-      <div className={styles.caption}>
-        {img.common} - <em>{img.scientific}</em>
-      </div>
-    </a>
+        <img src={img.src} alt={`${img.common} - ${img.scientific}`} className={styles.imageCircle} />
+        <div className={styles.caption}>
+          {img.common} - <em>{img.scientific}</em>
+        </div>
+        </a>
       ))}
     </div>
   );

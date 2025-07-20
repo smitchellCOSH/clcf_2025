@@ -59,11 +59,8 @@ const Step2 = () => {
               Before you start planting, you will want to consider methods for protecting your plants from deer. You can protect your 
               plants by using fencing. Though any fencing will act as a deterrent to deer, it is recommended to use sturdy fencing that 
               is at least 6 feet tall to prevent deer grazing. Whether you build your fencing before or after you plant your forest, 
-              make sure you adequately protect your forest while it is in the establishment period, for at least one year. 
-          </p>
-
-          <p>
-              For resources on suitable fencing products, see {" "}
+              make sure you adequately protect your forest while it is in the establishment period, for at least one year. For resources 
+              on suitable fencing products, see {" "}
               <a
                 className={styles.other_links}
                 href="https://www.dammannsgardenco.com/blog/how-to-identify-soil-types#:~:text=THE%20SQUISH%20TEST,have%20a%20high%20silt%20percentage"
@@ -72,22 +69,12 @@ const Step2 = () => {
               > Deerbusters</a>.
           </p>
 
-        
-
-        <InlineImageText
-          imageSrc="photos/step2_image_001.jpg"
-          imageAlt="Step 2: Photo 001"
-          attribution="A deer grazes in a field of shrubs."
-          >
 
           <p>
               Another consideration is that some plants are naturally deer resistant. Some plants have strong scents that deer avoid, 
               others affect a deer’s skin or respiratory tract, and others deer simply don’t want to eat. 
               To find out which plants are deer resistant, consult our plant calculator.
           </p>
-
-
-        </InlineImageText>
 
 
           <p>
@@ -111,42 +98,28 @@ const Step2 = () => {
         </p>
       </div>
 
-
-      <InlineImageText
-          imageSrc="photos/step2_image_002.jpg"
-          imageAlt="Step 2: Photo 002"
-          attribution="A gardener holds small plants in clumps of soil."
-          >
-
           <p>
-          Since your plants should all be relatively young and should fit in a planting container that is no larger than 
-          5 gallons, planting should be the same for most, if not all, of your plants. 
+            <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/step2_image_002.jpg" alt="Step 2: Photo 002" />
+              <div className="frosted-overlay">A gardener holds small plants in clumps of soil.</div>
+            </div>
+            Since your plants should all be relatively young and should fit in a planting container that is no larger than 
+            5 gallons, planting should be the same for most, if not all, of your plants. 
         </p>
 
-
-        </InlineImageText>
 
         <p>
           If you used the “cover and smother” method of weeding, you will need to first choose 
           where to place your plant, and cut a hole in the burlap large enough to dig a hole to fit the plant. 
           The hole should be deep enough to cover the root-ball of your plant and twice as wide as the depth. 
           Start digging and set your soil to the side, using a tarp if necessary to protect nearby plants
-        </p>
-
-        <p>
           Only after preparing your hole should you remove your plant from its planting container. Gently loosen the roots in their 
           potted soil, spreading them naturally. 
         </p>
 
         <p>
           Place your plant gently into the hole you dug. The base of your plant should be at or slightly above grade (higher than the surrounding soil). 
-        </p>
-
-        <p>
           Using the soil you set to the side, gently refill the hole, covering the roots up to the base of the plant. 
-        </p>
-
-        <p>
           Optionally, you can create a berm around your plant – a slight cup shape of soil a few inches from your plant – to help retain water 
           during your watering phase. Unless your soil is particularly dry or fast-draining, this step is not necessary and all berms will need 
           to be leveled after the maintenance period.
