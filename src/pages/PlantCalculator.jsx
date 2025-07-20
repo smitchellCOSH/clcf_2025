@@ -33,18 +33,16 @@ import FooterComp from '../components/FooterComp';
 import HeaderComp from '../components/HeaderComp';
 import styles from '../mystyle.module.css';
 import { jsPDF } from "jspdf";
-import BasicButton from "../components/BasicButton";
 import GeneratePDFButton from "../components/GeneratePDFButton";
-import logoBase64 from '../data/logoBase64';
 import ScrollToTop from "../components/ScrollToTop";
 import { useEffect } from 'react';
 import PlantLayout from '../components/PlantLayout';
 import { generatePlantLayout } from '../components/PlantLayout';
-import { getColorForPlantId } from '../components/PlantLayout';
 import { useMemo } from 'react';
 import { useRef } from 'react';
 import QuantityTracker from '../components/QuantityTracker';
 import FrostedImage from '../components/FrostedImage';
+import { getColorForPlantId } from '../components/colorUtils';
 
 
 
@@ -64,6 +62,23 @@ export default function PlantCalculator() {
   const pixelsPerFoot = 5;  // Conversion for placing a grid on the plot.
   const layoutSize = Math.sqrt(squareFootage) * pixelsPerFoot; // Creates layout size.
 
+
+/* ********************************************************************* */
+
+  /* Generate a consistent colormap for selected plants in the layout. */
+  const colorMap = useMemo(() => {
+    const map = {};
+    for (const [type, plantMap] of Object.entries(selectedPlants)) {
+      for (const plantId of Object.keys(plantMap)) {
+        map[plantId] = getColorForPlantId(plantId); // Consistent and deterministic
+      }
+    }
+    return map;
+  }, [selectedPlants]);
+
+
+
+/* ********************************************************************* */
   /* Clears selected plants whenever the user changes their selected Forest Type. */
   useEffect(() => {
 
@@ -71,12 +86,10 @@ export default function PlantCalculator() {
   }, [selectedProfile]);
 
 /* ********************************************************************* */
-
   /* Ensures the plantTypes are ordered by their height ranges */
   const orderedTypes = Object.entries(plantType)
       .sort((a, b) => a[1] - b[1]) // Sorts the plantTypes by numeric order.
       .map(([type]) => type);      // Extracts the keys.
-
 
   /* Ensures the Forest Profiles are displayed in a specific order. */
     /* Defines the order to display. */
@@ -95,7 +108,6 @@ export default function PlantCalculator() {
 
 
 /* ********************************************************************* */
-  
   /* Tracks the number of plants selected for each plant type and allows
   the user to increment or decrement the number of plants chosen.
   Prevents the user from going below 0 plants selected and from going over
@@ -132,8 +144,6 @@ export default function PlantCalculator() {
 
 
 /* ********************************************************************* */
-
-
   /* Handles the plant recommendation calculations using the plant density
   for each forest type and the inputted square footage */
   const handleCalculate = () => {
@@ -185,17 +195,6 @@ export default function PlantCalculator() {
     });
   }
 
-  /* ********************************************************************* */
-  const plantColors = useMemo(() => {
-    if (!Array.isArray(selectedPlants)) return {};
-
-      const colors = generateDistinctColors(selectedPlants.length);
-      const map = {};
-      selectedPlants.forEach((plant, i) => {
-        map[plant.plantName] = colors[i];
-    });
-    return map;
-  }, [selectedPlants]);
 
 
   /* ********************************************************************* */
@@ -284,8 +283,7 @@ export default function PlantCalculator() {
 };
 
 /* ********************************************************************* */
-
-// Helper: convert HSL to RGB (all in 0-1 range)
+/* Helper: convert colors from HSL to RGB. */
 function hslToRgb(h, s, l) {
   h /= 360;
   let r, g, b;
@@ -313,28 +311,15 @@ function hslToRgb(h, s, l) {
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 }
 
-// Helper: convert RGB array to hex string
+/* Helper: Convert colors from RGB to Hexcode. */
 function rgbToHex([r, g, b]) {
   return "#" + [r, g, b].map(x => x.toString(16).padStart(2, "0")).join("");
 }
 
-// Generate n distinct hex colors evenly spaced around the H (hue) circle
-function generateDistinctColors(n) {
-  const colors = [];
-  const saturation = 0.7;  // 70% saturation
-  const lightness = 0.5;   // 50% lightness
-
-  for (let i = 0; i < n; i++) {
-    const hue = (i * 360 / n) % 360;
-    const rgb = hslToRgb(hue, saturation, lightness);
-    colors.push(rgbToHex(rgb));
-  }
-  return colors;
-}
-
+/* Helper: Convert colors from Hexcode to RGB. */
 function hexToRgb(hex) {
   hex = hex.replace(/^#/, '');
-  if (hex.length !== 6) return [0, 0, 0]; // fallback to black
+  if (hex.length !== 6) return [0, 0, 0]; 
 
   const bigint = parseInt(hex, 16);
   const r = (bigint >> 16) & 255;
@@ -345,22 +330,21 @@ function hexToRgb(hex) {
 }
 
 
-
-
+/* ********************************************************************* */
+/* Export the layout to the PDF. */
 const exportLayoutToPDF = async () => {
-  // Make sure you have your svgRef and stage if you want to add image
   const stage = svgRef.current;
   if (!stage) return;
 
   const dataURL = stage.toDataURL({ pixelRatio: 2 });
 
-  // Create PDF with enough height to fit the layout + legend (adjust as needed)
+  /* Create PDF with enough height to fit the layout + legend (adjust as needed). */
   const pdf = new jsPDF('portrait', 'pt', [stage.width(), stage.height() + 400]);
 
-  // Add layout image to first page
+  /* Add layout image to first page. */
   pdf.addImage(dataURL, 'PNG', 0, 0, stage.width(), stage.height());
 
-  // Start legend on new page
+  /* Start legend on new page. */
   pdf.addPage();
 
   pdf.setFont("helvetica", "bold");
@@ -376,41 +360,57 @@ const exportLayoutToPDF = async () => {
   pdf.setFont("helvetica", "normal");
   pdf.setFontSize(12);
 
-  // Generate unique colors for all plants
-  const colors = generateDistinctColors(uniquePlants.length);
 
-  uniquePlants.forEach(({ plantName, quantity }, index) => {
-    const hexColor = colors[index] || "#000000";
-    const [r, g, b] = hexToRgb(hexColor); // <-- convert to [r, g, b]
+  /* Loop over the selected plants using consistent colormapping. */
+  uniquePlants.forEach(({ plantId, plantName, quantity, number }, index) => {
+    const hslColor = colorMap[plantId] || "hsl(0, 0%, 0%)";
+    function parseHSL(hsl) {
+    const match = hsl.match(/hsl\(\s*(-?[\d.]+)(deg)?[,\s]+([\d.]+)%?[,\s]+([\d.]+)%?\)/i);
+    if (!match) {
+      console.warn("Failed to parse HSL:", hsl);
+      return [0, 0, 0];
+    }
+    let hue = Number(match[1]);
+    const saturation = Number(match[3]);
+    const lightness = Number(match[4]);
+
+    // Normalize negative hue values
+    if (hue < 0) {
+      hue = (hue % 360) + 360;
+    }
+
+    return [hue, saturation, lightness];
+  }
+
+
+    console.log(`Plant ID: ${plantId}, Color string: "${hslColor}"`);
+
+    const [hue, sat, light] = parseHSL(hslColor);
+    const [r, g, b] = hslToRgb(hue, sat / 100, light / 100);
 
     if (y + lineHeight > pdf.internal.pageSize.getHeight() - 40) {
       pdf.addPage();
       y = 40;
     }
 
-    //const hexColor = colors[index];
-
-    // Draw circle
     const circleX = xStart;
     const circleY = y - 6;
     const radius = 6;
 
     pdf.setDrawColor(56, 56, 56);
-    console.log("Color for", plantName, "is", hexColor, "=>", [r, g, b]);
     pdf.setFillColor(r, g, b);
     pdf.circle(circleX, circleY, radius, 'FD');
 
-    // Draw number centered inside circle
+
     pdf.setTextColor(255, 255, 255);
     pdf.setFontSize(10);
-    const numberText = String(index + 1);
+    const numberText = String(number);
     const textX = circleX - (pdf.getTextWidth(numberText) / 2);
     pdf.text(numberText, textX + 0.5, circleY + 2);
 
-    // Draw label
     pdf.setTextColor(0, 0, 0);
     pdf.setFontSize(12);
-    pdf.text(`${plantName} (${quantity})`, xStart + 20, y);
+    pdf.text(`${index + 1}. ${plantName} (${quantity})`, xStart + 20, y);
 
     y += lineHeight;
   });
@@ -418,7 +418,7 @@ const exportLayoutToPDF = async () => {
   pdf.save("plant-layout.pdf");
 };
 
-
+/* Helper: Convert colors from HSL to RGB. */
 function hslToRgb(h, s, l) {
   h /= 360;
   let r, g, b;
@@ -450,18 +450,18 @@ function rgbToHex([r, g, b]) {
   return "#" + [r, g, b].map(x => x.toString(16).padStart(2, "0")).join("");
 }
 
-function generateDistinctColors(n) {
-  const colors = [];
-  const saturation = 0.7;
-  const lightness = 0.5;
+// function generateDistinctColors(n) {
+//   const colors = [];
+//   const saturation = 0.7;
+//   const lightness = 0.5;
 
-  for (let i = 0; i < n; i++) {
-    const hue = (i * 360 / n) % 360;
-    const rgb = hslToRgb(hue, saturation, lightness);
-    colors.push(rgbToHex(rgb));
-  }
-  return colors;
-}
+//   for (let i = 0; i < n; i++) {
+//     const hue = (i * 360 / n) % 360;
+//     const rgb = hslToRgb(hue, saturation, lightness);
+//     colors.push(rgbToHex(rgb));
+//   }
+//   return colors;
+// }
 
 
 /* ********************************************************************* */
@@ -470,6 +470,26 @@ function generateDistinctColors(n) {
   const clearSelections = () => {
     setSelectedPlants({});
   };
+
+/* ********************************************************************* */
+
+  /* Unique number for each plant on legend. */
+
+const uniquePlants = useMemo(() => {
+  let index = 1;
+  return Object.entries(selectedPlants).flatMap(([type, plantMap]) =>
+    Object.entries(plantMap).map(([plantId, quantity]) => {
+      const plant = plants.find(p => p.id === plantId);
+      return {
+        plantId,
+        plantName: plant?.plantName || 'Unknown',
+        quantity: quantity || 0,
+        color: colorMap[plantId] || '#000000',
+        number: index++
+      };
+    })
+  );
+}, [selectedPlants, colorMap, plants]);
 
 
 /* ********************************************************************* */
@@ -505,9 +525,10 @@ function generateDistinctColors(n) {
   });
   return layout.map(point => ({
     ...point,
-    color: plantColors[point.plantName] || "#000000"
+    color: colorMap[point.plantId] || "#000000"
+
   }));
-}, [selectedPlants, squareFootage, plotShape, plantColors]); 
+}, [selectedPlants, squareFootage, plotShape]); 
 
 /* ********************************************************************* */
 
@@ -592,19 +613,7 @@ useEffect(() => {
 }, [squareFootage]);
 
 
-/* Unique number for each plant on legend. */
 
-const uniquePlants = Object.entries(selectedPlants).flatMap(([type, plantMap]) =>
-  Object.entries(plantMap).map(([plantId, plantData]) => {
-    const plant = plants.find(p => p.id === plantId);
-    return {
-      plantId,
-      plantName: plant?.plantName || 'Unknown',
-      quantity: plantData || 0,  // quantity per plant
-      color: getColorForPlantId(plantId),
-    };
-  })
-);
 
 /* ********************************************************************* */
 const [showHelp, setShowHelp] = useState(false);
@@ -822,6 +831,7 @@ const [showHelp, setShowHelp] = useState(false);
                 height={height}
                 plotShape={plotShape}
                 plantPoints={layoutCache[plotShape] || []}
+                uniquePlants={uniquePlants}
               />
 
               </div>
@@ -843,38 +853,19 @@ const [showHelp, setShowHelp] = useState(false);
                 pageBreakInside: "avoid"
               }}>
                 <div>
-                  {uniquePlants.map(({ plantId, plantName, quantity, color }, index) => (
-                    <div
-                      key={plantId}
-                      style={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: "0.5rem",
-                        marginBottom: "0.5rem",
-                        padding: "1rem",
-                        pageBreakInside: "avoid",
-                      }}
-                    >
-                      <div
-                        style={{
-                          width: "14px",
-                          height: "14px",
-                          borderRadius: "50%",
-                          backgroundColor: color,
-                          border: "1px solid #383838",
-                          display: "flex",
-                          justifyContent: "center",
-                          alignItems: "center",
-                          color: "#fdfff6",
-                          fontWeight: "bold",
-                          fontSize: "12px",
-                        }}
-                      >
-                        {index + 1}
-                      </div>
-                      <span>{plantName} ({quantity})</span>
-                    </div>
-                  ))}
+                  {uniquePlants.map(plant => (
+                  <div key={plant.plantId} style={{ display: 'flex', alignItems: 'center' }}>
+                    <div style={{
+                      width: 12,
+                      height: 12,
+                      backgroundColor: plant.color,
+                      borderRadius: '50%',
+                      marginRight: 6
+                    }} />
+                    <span>{plant.number}. {plant.plantName} ({plant.quantity})</span>
+                  </div>
+                ))}
+
                 </div>
               </div>
             </div>
