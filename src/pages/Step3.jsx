@@ -101,6 +101,10 @@ const Step3 = () => {
         </p>
         
         <p>
+            <div className="frosted-container float-left">
+              <img className="frosted-image" src="photos/step3_image_003.jpg" alt="Step 3: Photo 003" />
+              <div className="frosted-overlay">A sprinkler providing water.</div>
+            </div>
             In general, Pocket Forests in Michigan do not require regular watering. However, depending on 
             your soil type, drainage speed, and general moisture level, you may want to develop a regular 
             watering schedule for the first 1-2 years, after which your plants will have established themselves. 
@@ -110,17 +114,11 @@ const Step3 = () => {
 
 
           <p>
-            <div className="frosted-container float-left">
-              <img className="frosted-image" src="photos/step3_image_003.jpg" alt="Step 3: Photo 003" />
-              <div className="frosted-overlay">A sprinkler providing water.</div>
-            </div>
             For all Pocket Forests, it is important to provide watering support during particularly dry periods. 
             If there hasn’t been significant rain in your area for 2-3 weeks, a thorough watering is crucial to
             your forests’ survival. Take care to monitor weather in your area, particularly during the hottest 
             part of your summer, and especially while your plants are still young.
           </p>
-
-
 
 
 
@@ -192,6 +190,11 @@ const Step3 = () => {
                 rel="noopener noreferrer">this article from Proflowers.com</a>. Some plants will require
             more care than others, so make sure to choose your plants with your ability to provide ongoing
             care in mind.
+          </p>
+
+          <p>Not all plant disease will require care. If disease is widespread across your plants,
+            consider contacting a professional service to evaluate the health of your plants and provide
+            rehabilitative care.
           </p>
 
           <div style={{ clear: "both" }}></div>

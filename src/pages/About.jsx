@@ -303,6 +303,9 @@ const About = () => {
             <a className={styles.other_links}> Plot your forest</a> tool to learn more about Pocket Forest design.
           </p>
 
+          <div style={{ clear: "both" }}></div>
+
+
 
         {/* Section 4: Next Steps */}
 
@@ -319,7 +322,6 @@ const About = () => {
         Now that you know a little more about Pocket Forests, take the next step by looking at the Pocket Forest Guide. 
         There, you’ll learn how to build your own Pocket Forest, including how much space you need, which plants qualify, 
         and methods for constructing your forest.
-
 
 
 

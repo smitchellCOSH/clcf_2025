@@ -30,7 +30,7 @@ const FAQ = () => {
       <Navbar />
 
       <h2>Frequently Asked Questions</h2>
-      <p>This is the FAQ page content.</p>
+      <p></p>
 
 
       <FooterComp />
