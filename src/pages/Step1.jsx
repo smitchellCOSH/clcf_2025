@@ -320,7 +320,7 @@ const Step1 = () => {
 
 
         {/* Links to the Plant Calculator tool on a separate page */}
-        <BasicButton to="/plant-calculator" variant="highlighted">Plant calculator</BasicButton>
+        <BasicButton to="/plant-calculator" variant="highlighted">Plant Calculator</BasicButton>
 
 
         <p>

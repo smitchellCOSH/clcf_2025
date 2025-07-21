@@ -105,7 +105,7 @@ const Navbar = () => {
       {/* Tools */}
       <Link to="/plant-calculator" className={styles["nav-link"]}>
         <img src="icons/sprout_blue.svg" alt="Tools icon" className={styles["nav-icon"]} />
-        Tools
+        Plant Calculator
       </Link>
     </div>
   </nav>

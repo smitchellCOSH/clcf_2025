@@ -1,8 +1,5 @@
 /* BasicButton.module.css */
-
 /* Contains styling for the Basic Button component (BasicButton.jsx). */
-
-
 
 .basicButton {
   display: inline-block; /* Places the button centrally inside the divider block. */
@@ -27,7 +24,7 @@
 .highlightedButton {
   display: inline-block; /* Places the button centrally inside the divider block. */
   padding: 2rem 3rem; /* Padding around the button. */
-  background-image: url("photos/about_image_003.jpg");
+  background-color: #0057b8;
   color: #fdfff6;
   border-radius: 999px; /* Creates rounded button shape. */
   text-decoration: none; /* Turns off the underline symbol for text in the link. */

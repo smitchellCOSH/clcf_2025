@@ -663,7 +663,7 @@ const [showHelp, setShowHelp] = useState(false);
           {/* Dropdown Help Section */}
           <div className={styles.dropdownHelp}>
             <button onClick={() => setShowHelp(!showHelp)} className={styles.dropdownHelp}>
-              {showHelp ? '(Hide)' : 'Having trouble choosing plants? (Show)'}
+              {showHelp ? '(Hide)' : 'Unsure how many different species you need? (Show)'}
             </button>
             {showHelp && (
               <div className={styles.dropdownContent}>
@@ -676,7 +676,7 @@ const [showHelp, setShowHelp] = useState(false);
                   src="photos/how-many-plants.jpg"
                   alt="Plant Help Diagram"
                   attribution="How many different plants should I choose?"
-                  style={{ width: "1100px" }}
+                  style={{ width: "1000px" }}
                   className="xlarge"
                   />
                   <p>
@@ -712,7 +712,7 @@ const [showHelp, setShowHelp] = useState(false);
 
 
         {/* Note. */}
-        <p style={{ width: "80%", display: "inline-block", backgroundColor: "#fdfff6", borderRadius: "10px", outline: "solid 2px", 
+        <p style={{ width: "80%", display: "inline-block", backgroundColor: "#c3e344", borderRadius: "10px", outline: "solid 2px", 
           outlineColor: "#0057b8" }}>
           <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
           <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
@@ -785,7 +785,7 @@ const [showHelp, setShowHelp] = useState(false);
                   src="photos/spacing_rules.jpg"
                   alt="Plant Help Diagram"
                   attribution="How many different plants should I choose?"
-                  style={{ width: "1100px" }}
+                  style={{ width: "1000px" }}
                   className="xlarge"
                 />
               </div>
