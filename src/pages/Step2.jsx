@@ -48,7 +48,6 @@ const Step2 = () => {
           </p>
         </div>
 
-
           <p>
               Preparation takes a lot of work. The good news is that once your preparation is complete, it’s time for fun – planting!
           </p>
@@ -108,26 +107,31 @@ const Step2 = () => {
 
         <p>
           If you used the “cover and smother” method of weeding, you will need to first choose 
-          where to place your plant, and cut a hole in the burlap large enough to dig a hole to fit the plant. 
-          The hole should be deep enough to cover the root-ball of your plant and twice as wide as the depth. 
-          Start digging and set your soil to the side, using a tarp if necessary to protect nearby plants
-          Only after preparing your hole should you remove your plant from its planting container. Gently loosen the roots in their 
+          where to place your plant and then cut a hole in the burlap. Make sure the hole is large 
+          enough to dig a hole to fit the plant. The hole should be deep enough to cover the root-ball of 
+          your plant and about twice as it is deep. 
+          Start digging and set your soil to the side, using a tarp if necessary to protect nearby plants.
+          Only after preparing the hole should you remove your plant from its planting container. Gently loosen the roots in their 
           potted soil, spreading them naturally. 
         </p>
 
         <p>
           Place your plant gently into the hole you dug. The base of your plant should be at or slightly above grade (higher than the surrounding soil). 
           Using the soil you set to the side, gently refill the hole, covering the roots up to the base of the plant. 
-          Optionally, you can create a berm around your plant – a slight cup shape of soil a few inches from your plant – to help retain water 
-          during your watering phase. Unless your soil is particularly dry or fast-draining, this step is not necessary and all berms will need 
+          Optionally, you can create a berm around your plant – a slight cup shape of soil a few inches from your plant – to help retain water.
+          Unless your soil is particularly dry or fast-draining, this step is not necessary and all berms will need 
           to be leveled after the maintenance period.
         </p>
 
         <p>
           Finally, after each planting, you will need to generously water your plant and, optionally, apply mulch. Watering and mulching can 
-          happen after each plant, or can occur after all of your plants are in the ground. When mulching, leave space around the base of 
-          your plant without mulch, in order to prevent accidentally suppressing your plants. The space you leave around the base of your plant 
-          should be as wide as your berms, if you add berms to your forest. You will want to apply at least 2 inches of mulch to cover your forest floor.
+          happen after each plant, or can occur after all of your plants are in the ground. When mulching, leave a few inches of space around the base of 
+          your plant without mulch in order to prevent accidentally suppressing your plants. The space you leave around the base of your plant 
+          should be as wide as your berms, if you do choose to add berms to your forest. You will want to apply at least 2 inches of mulch to cover your forest floor.
+        </p>
+
+        <p>
+          Now, you can prepare to place all of your plants in your plot.
         </p>
 
 
@@ -192,8 +196,8 @@ const Step2 = () => {
 
         <p>
             For the fourth and final step of planting, fill in the gaps in your planting site with the shrubs you have chosen, randomizing 
-            selection as much as possible. Depending on the species you choose, it may not always be possible to space them apart. 
-            Similar species may be planted close together in those cases.
+            selection as much as possible. Depending on the species you choose, it may not always be possible to space them apart from the same
+            species. Plants of the same species may be planted close together in such cases.
         </p>
 
         {/* TODO: ADD DIAGRAM */}
@@ -218,7 +222,7 @@ const Step2 = () => {
         </p>
 
         <p>
-            Finally, check out the final step of building your Pocket Forest: After planting & Maintenance.
+            Finally, check out the final step of building your Pocket Forest: Maintenance.
         </p>
 
 
@@ -232,15 +236,10 @@ const Step2 = () => {
           <BasicButton to="/Step3">Step 3: Maintenance</BasicButton>
           <ScrollToTop />
         </div>
-
       </div>
-
       <FooterComp />
-
     </div>
-
   </div>
-
   );
 };
 

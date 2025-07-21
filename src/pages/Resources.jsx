@@ -126,6 +126,15 @@ const Resources = () => {
             </span>
           </p>
 
+          <p>
+            <a
+              className={styles.other_links}
+              href="https://www.wildtypeplants.com/"
+              target="_blank"
+              rel="noopener noreferrer">
+            Wildtype Native Plants and Ecological Services
+            </a>
+          </p>
 
 
           <p>

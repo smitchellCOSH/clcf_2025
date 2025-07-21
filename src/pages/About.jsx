@@ -81,10 +81,8 @@ const About = () => {
 
         <p>
           On this website, read <span style={{ fontWeight: "bold", color: "#0057b8" }}>step-by-step instructions</span> for 
-          how to build a Pocket Forest, use our <Link to="/plant-calculator" className={styles["other_links"]}>Plant Calculator</Link> tool 
-          to pick out your plants and figure out how many you will need, and visit our {" "}
-          <Link to="/plot" className={styles["other_links"]}>Plot your forest</Link> page to design a layout of
-          your Pocket Forest.
+          how to build a Pocket Forest. You can also use our <Link to="/plant-calculator" className={styles["other_links"]}>Plant Calculator</Link> tool 
+          to pick out your plants and generate a layout for your forest.
         </p>
 
 
@@ -107,7 +105,7 @@ const About = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-          passed a millage</a> {" "} that includes efforts to promote reforestation. 
+          passed a millage</a> {" "} that includes efforts to promote reforestation across the city.
           As a community with one of the lowest tree canopies in the state, prioritizing quick tree growth and increasing 
           biodiversity to prevent further deforestation is essential. 
         </p>
@@ -129,21 +127,22 @@ const About = () => {
           >
           10 times as quickly
           </a>
-            {" "} as a regular forest. Their quick growth is attributed to the
-            competitive nature resulting from their density. 
+            {" "} as a regular forest. Their quick growth is attributed to competition between plants for nutrients
+            resulting from the planting density.
           </div>
 
-          <p>Another benefit of Pocket Forests is that they quickly become self-sustaining, 
+          <p>Another benefit of Pocket Forests is that they become self-sustaining relatively quickly, 
             meaning that they can be cultivated with only about a year of maintenance. Weeding, watering, and protecting
             your forest from deer and other grazing animals is recommended for at least a year, though your forest can benefit
-            from maintenance for 2 years. After that, your Pocket Forest will be mostly self-sustaining, though you may prefer
-            to add additional maintenance into your routine as your forest grows for sustainability and beautification. 
+            from maintenance for 2 years. After that, your Pocket Forest will continue to grow on its own, though you may prefer
+            to add additional maintenance into your routine as your forest grows for sustainability and beautification.
           </p>
 
           <p>
             Aside from being easy to maintain, Pocket Forests also feature all-native plants, helping to restore ecological 
-            balance in different communities. This guide features plants that are native across Southeast Michigan,
-            so this website can be used by anyone in the region. Just make sure to check the status of native plants in your
+            balance in different communities. Though this website is tailored for the City of Sterling Heights, it features plants that 
+            are native across Southeast Michigan, so this website can be used by anyone in the region. Just make sure to check the 
+            status of native plants in your
             county using the <a
               className={styles.other_links}
               href="https://www.michiganflora.net/search"
@@ -172,17 +171,15 @@ const About = () => {
         <p>
         Aside from being dense and highly biodiverse, a Pocket Forest at minimum requires three trees to be considered a forest, 
         as well as including only native species to the area they are planted in. 
-        </p>
-
-        <p>
-        A typical Miyawaki forest packs plants in a density of about 3 plants per 10 square feet, but different local 
+        A typical Miyawaki forest packs plants in a density of about <span style={{fontWeight: "bold", color: "#0057b8"}}>3 plants per 10 square feet</span>, but different local 
         climates might have different needs for best growing conditions.
 
         </p>
 
         <p>
-        Pocket Forests are also built out of plants of different sizes. Larger plants and trees provide 
+        Pocket Forests are also created out of plants of different sizes. Larger plants and trees provide 
         canopy and shade for sub-trees and shrubs. Smaller plants enrich the soil and contribute to soil drainage. 
+        Take a look at the different plant types in a Pocket Forest below.
         </p>
 
 
@@ -196,9 +193,9 @@ const About = () => {
 
 
         <p>
-        Because Pocket Forests are meant to be self-sustaining with little maintenance during the first year of planting, 
-        using fertilizers and pesticides is not recommended. The good news is that this makes starting your forest even easier, 
-        with fewer steps required to grow your forest.
+        Since Pocket Forests are meant to be self-sustaining with little maintenance during the first year of planting, 
+        using fertilizers and pesticides is not recommended. This also protects your native plants from
+        invasive weed growth, and it makes starting your forest even easier!
         </p>
 
 
@@ -212,9 +209,8 @@ const About = () => {
           The Miyawaki method was first introduced in Japan, where ecological conditions vary from Michigan. 
           Though there are some similarities, Pocket Forests in Michigan have some differences. 
           The most major difference is in planting density. Miyawaki method forests are typically planted at a 
-          density of 3 to 7 plants per 10 square feet. In a Miyawaki forest, this results in about a 40% die-off rate, 
-          where 40% of plants competing for nutrients will die off during their establishment period. In Michigan, it is 
-          recommended to plant trees at a slightly lower density, between 3 - 5 plants per 10 square feet, in order to lower 
+          density of 3 to 7 plants per 10 square feet. In a Miyawaki forest, this results in around 40% of plants dying off during their establishment period. 
+          In Michigan, it is recommended to plant trees at a slightly lower density, between 3 - 5 plants per 10 square feet, in order to lower 
           die-off rates and initial planting costs.
         </p>
 
@@ -240,8 +236,8 @@ const About = () => {
               <div className="frosted-overlay">Sterling Heights' Pocket Forest.</div>
             </div>
             You can visit Sterling Heights’ very own Pocket Forest at James C. Nelson Park, part of Sterling Heights’ 
-            Community Garden. The Pocket Forest was planted in April of 2025 and is one of the steps the city is taking to 
-            improve reforestation. Housed next to the Butterfly Garden, the Pocket Forest will one day be a refuge for 
+            Community Garden. The Pocket Forest was planted in April of 2025 and is just one of the steps the city is taking to 
+            improve reforestation across the city. Housed next to the Butterfly Garden, the Pocket Forest will one day be a refuge for 
             pollinators and small animal life.<br></br>
           </div>
 
@@ -252,15 +248,16 @@ const About = () => {
               href="https://www.sterlingheights.gov/2328/Community-Garden-at-Nelson-Park"
               target="_blank"
               rel="noopener noreferrer">
-              Community Garden</a> webpage. You can also visit the 
+              Community Garden</a> webpage. You can also visit the
             Pocket Forest in person at the James C. Nelson Park during visiting hours.
           </p>
         
         <div>
           <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>What's in our forest?</span>
             <div>
-            There are many plants in our Pocket Forest. You'll be able to choose these plants using the plant calculator. 
-            Here is a peek at what these plants may look like once they are full grown. Note that this is not all of the plants
+            There are many plants in the Sterling Heights Pocket Forest. You can choose from these plants and many more using the {" "}
+            <Link to="/plant-calculator" className={styles["other_links"]}>Plant Calculator</Link>.
+            Here is a peek at what these plants may look like once they are fully grown. Note that this is not all of the plants
             available in our plant calculator — there are plenty more to choose from!
             <ImageGrid />
             </div>
@@ -286,8 +283,8 @@ const About = () => {
           <div className="frosted-overlay">A lush Oak forest.</div>
         </div>
         Aside from restoring native plants and increasing quick tree growth, reforestation will also help to lower Sterling Heights’ 
-        Urban Heat Index, a phenomenon that describes when urban areas become hotter than surrounding rural regions 
-        due to urban architecture trapping heat and a lack of vegetation to cool things off. By increasing urban vegetation, 
+        Urban Heat Index, a phenomenon that describes when urban areas become hotter than surrounding rural regions. This happens primarily for two reasons. 
+        Urban architecture traps heat, and because urban areas have less vegetation to provide shade, they tend to become more hot. By increasing urban vegetation, 
         we can make Sterling Heights more comfortable and safe for its residents, particularly during the hot summer months. 
         You can read more in the{" "}
         <a
@@ -328,8 +325,6 @@ const About = () => {
         and methods for constructing your forest.
 
 
-
-
         {/* Final components */}
         <div style={{
           marginTop: "2rem",
@@ -341,16 +336,10 @@ const About = () => {
           <BasicButton to="/Guide">Up Next: Guide</BasicButton>
           <ScrollToTop />
         </div>
-
-
       </div>
-
       <FooterComp />
-
     </div>
-
   </div>
-
   );
 };
 

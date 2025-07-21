@@ -50,7 +50,7 @@ const Step3 = () => {
 
         <p>
             Now that you’ve finished planting, it is time to move on to maintenance. Pocket Forests are designed to grow very quickly, meaning that your 
-            forest should establish itself within only 1-2 years. However, minor maintenance is still recommended in order to give your plants the 
+            forest should establish itself within only 1-2 years. However, some maintenance is still recommended in order to give your plants the 
             best chance of survival.
         </p>
 
@@ -73,7 +73,7 @@ const Step3 = () => {
 
         <p>
           It is best to prevent weeds from growing in the first place by limiting their ability to seed. 
-          The “cover and smother” method described in the <Link to="/Step1" className={styles.other_links}>Before you plant</Link> 
+          The “cover and smother” method described in the <Link to="/Step1" className={styles.other_links}>before you plant</Link> 
           {" "} section will take care of your weeds’ ability to seed in your soil. Additionally, the burlap you use in your Pocket Forest will
           last and degrade naturally during your plants’ establishment period. However, this method is imperfect. 
           It is recommended to check frequently for new weeds and remove them promptly. This is especially true 
@@ -82,7 +82,7 @@ const Step3 = () => {
 
         <p>
             In the first year of your forest, plan to remove weeds at least every two weeks during the warmest months. 
-            During winter, you may choose to weed less frequently.
+            During the winter, you may choose to weed less frequently.
         </p>
 
         <p>
@@ -91,7 +91,7 @@ const Step3 = () => {
           <a className={styles.other_links}
               href="https://www.dammannsgardenco.com/blog/how-to-identify-soil-types#:~:text=THE%20SQUISH%20TEST,have%20a%20high%20silt%20percentage"
               target="_blank"
-              rel="noopener noreferrer">Michigan’s Worst Weeds</a> article.
+              rel="noopener noreferrer">'Michigan’s Worst Weeds'</a> article.
         </p>
 
         <p>
@@ -150,7 +150,7 @@ const Step3 = () => {
 
 
         <p>
-            You may also choose to monitor for pests. Again, herbicides are strongly discouraged, 
+            You may also choose to monitor for pests. Again, pesticides are strongly discouraged, 
             especially if you chose a food-friendly or pollinator forest type. The good news is that 
             the more biodiverse your forest is, and the higher density you planted at, the more your forest is protected from pests.
         </p>
@@ -159,7 +159,7 @@ const Step3 = () => {
             When doing routine maintenance of your forest, be sure to check yourself for pests. 
             In particular, ticks can be a health concern in Michigan, especially during the summer. 
             If you are concerned, wear long sleeves and long pants with socks long enough to cover the 
-            base of your pants. Limit exposed skin as much as possible. Check yourself before and after 
+            base of your pants. Limit exposed skin as much as possible. Check your clothing before and after 
             arriving inside, and change and wash your clothes if necessary to prevent transporting any pests with you.
         </p>
 
@@ -202,14 +202,13 @@ const Step3 = () => {
 
 
         <div className={styles.subheader}>
-            Wrapping Up and Questions
+            Wrapping Up
         </div>
 
         <p>
             That's a wrap! Congratulations on building your very own Pocket Forest. We appreciate your
             efforts to help reforest our city. We hope that in building this forest, you can benefit from
             better air, more shade, and company from the small animals and insects that may visit.
-
         </p>
 
         <p>

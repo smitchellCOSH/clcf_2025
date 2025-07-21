@@ -53,7 +53,7 @@ const Step1 = () => {
             Before you start planting, you’ll want to carefully assess your planting space and understand the maintenance requirements 
             for your unique Pocket Forest. Some things you’ll want to consider might include the soil type of your 
             plot area, the shape and size of your plot area, any preexisting plants in your planting area, 
-            underground utilities and obstructions within your plot area. 
+            and underground utilities and obstructions within your plot area. 
         </p>
 
 
@@ -65,10 +65,6 @@ const Step1 = () => {
 
 
         {/* Note */}
-        {/* <div className="frosted-container float-left">
-              <img className="frosted-image" src="photos/step1_image_001.jpg" alt="Step 1: Photo 001" />
-              <div className="frosted-overlay">Iris virginica – Blue flag iris.</div>
-        </div> */}
         <p style={{ width: "80%", display: "inline-block", backgroundColor: "#c3e344", borderRadius: "10px", outline: "solid 2px", outlineColor: "#0057b8" }}>
           <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
           <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
@@ -88,10 +84,9 @@ const Step1 = () => {
         </p>
       </div>
 
-
         <p>
-            First, you’ll want to choose your planting site. This could be in your yard or piece of land that you own. 
-            You’ll want to consider whether or not you have permission to plant on the land and if there are 
+            First, you’ll want to choose your planting site. This could be in your yard or on of land that you own. 
+            First, you'll want to determine whether or not you have permission to plant on the land and if there are 
             any restrictions on what you can plant on your land.
         </p>
 
@@ -99,16 +94,16 @@ const Step1 = () => {
         <p style={{ width: "80%", display: "inline-block", backgroundColor: "#c3e344", borderRadius: "10px", outline: "solid 2px", outlineColor: "#0057b8" }}>
           <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
           <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
-          Note that while planting a Pocket Forest with native plants might expand planting options on your property, 
-          but make sure to check for any restrictions in your area that may apply to your planting site.
+          Note that planting a Pocket Forest with native plants might expand planting options on your property. 
+          Make sure to check for any restrictions in your area that apply to your planting site.
           </li>
         </p>
 
           <p>
-          Next, you’ll want to assess the specific conditions of your planting site. What is the soil type? 
-          How much sunlight does your forest get? Is there enough room for a buffer between your home or any 
-          other buildings on your property and the planting site? What is the soil type? How well does the soil 
-          drain? This will help you to determine which plants will grow best in your forest.
+          Next, you’ll want to assess the specific conditions of your planting site. What is the soil type? How well does the soil 
+          drain? How much sunlight will your forest get? Is there enough room for a buffer between your home or any 
+          other buildings on your property and the planting site? This will help you to determine which plants 
+          will grow best in your forest.
           </p>
 
 
@@ -132,10 +127,10 @@ const Step1 = () => {
         </p>
 
         <p>
-            You can get a good idea about your soil type by inspecting the soil visually. First, you’ll want to dig 
+            You can estimate your soil type by inspecting the soil visually. First, you’ll want to dig 
             into your soil about 4 to 10 inches deep. Deeper is best, ensuring that any organic matter on the soil’s 
-            surface doesn’t affect your assessment of the soil type. Think about it – your tree's roots will be digging 
-            deeper than you will!
+            surface doesn’t affect your assessment of the soil type. Think about it – the tree roots of your forest will 
+            be digging deeper than you will!
         </p>
 
           <p>
@@ -144,13 +139,13 @@ const Step1 = () => {
               <div className="frosted-overlay">Root system in soil.</div>
             </div>
 
-            For an easy way to evaluate your soil type, you can read {" "}
+            For an easy way to evaluate your soil type, you can read the {" "}
             <a
               className={styles.other_links}
               href="https://www.dammannsgardenco.com/blog/how-to-identify-soil-types#:~:text=THE%20SQUISH%20TEST,have%20a%20high%20silt%20percentage"
               target="_blank"
               rel="noopener noreferrer"
-            > this guide</a>,
+            > Dammann's Garden Co. guide</a>,
             which lists several tests to help you determine whether your soil is clay, chalk, peat, silt, 
             sand, or loam. Sterling Heights has diverse soil types, so it is important to know which 
             trees and shrubs will grow best on your land.
@@ -165,13 +160,20 @@ const Step1 = () => {
               target="_blank"
               rel="noopener noreferrer"
             > Michigan State University Extension</a>,
-            where samples mailed to the university will be processed for detailed assessment and results. Finally, if you would like to learn more details about your soil type, you can also use {" "}
+            where samples mailed to the university will be processed for detailed assessment and results. Finally, if you would like to learn more details about your soil type, you can also use the {" "}
             <a
               className={styles.other_links}
               href="https://umich.maps.arcgis.com/apps/mapviewer/index.html?layers=06e5fd61bdb6453fb16534c676e1c9b9"
               target="_blank"
               rel="noopener noreferrer"
-            > this map tool</a> {" "}
+            > USA Soils Map Units tool</a> {" "} 
+            or the {" "}
+            <a
+              className={styles.other_links}
+              href="https://websoilsurvey.nrcs.usda.gov/app/"
+              target="_blank"
+              rel="noopener noreferrer"
+            > USDA Web Soil Survey tool</a> {" "}
             for more information.
         </p>
 
@@ -181,7 +183,7 @@ const Step1 = () => {
         <p style={{ width: "80%", display: "inline-block", backgroundColor: "#c3e344", borderRadius: "10px", outline: "solid 2px", outlineColor: "#0057b8" }}>
           <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
           <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
-          Note that beginner foresters might find the map tool confusing, but don’t worry! 
+          Note that beginner foresters might find the map tools confusing, but don’t worry! 
           A simple soil test is good enough to determine which plants are best suited for your Pocket Forest.
           </li>
         </p>
@@ -203,7 +205,6 @@ const Step1 = () => {
           </p>
 
 
-
         <p>
         <span style={{fontWeight: "bold", color: "#0057b8" }}>First</span>, in your forest plot, dig a hole that is at least 12 
         inches deep and about the same width. 
@@ -217,7 +218,7 @@ const Step1 = () => {
 
         <p>
         <span style={{fontWeight: "bold", color: "#0057b8" }}>Next</span>, fill the hole completely with water once again. 
-        Write down your start time and watch the hole for drainage. Once it has drained completely, write down your end time. 
+        Write down your start time and watch the hole as it drains. Once it has drained completely, write down the end time. 
         By determining how much time has passed, you can understand your soil’s drainage type.
         </p>
 
@@ -269,14 +270,11 @@ const Step1 = () => {
 
 
         <p>
-        This {" "}
         <a
           className={styles.other_links}
           href="https://www.treepeople.org/wp-content/uploads/2020/08/How-to-Test-Soil-Drainage.pdf"
           target="_blank"
-          rel="noopener noreferrer">one-page guide</a> {" "} may be helpful for your soil test.
-
-        To learn more about which plants work best in your soil type and moisture level, continue reading.
+          rel="noopener noreferrer">TreePeople's one-page guide</a> {" "} may be helpful for your soil test.
         </p>
 
       </div>
@@ -292,7 +290,7 @@ const Step1 = () => {
       <p>
         To help with planting, you’ll want to make sure that your Pocket Forest site is easily accessible both on 
         foot and by vehicle. For the establishment period, you will want to make sure that your Pocket Forest 
-        can easily be watered, with a hose or sprinkler system nearby.
+        can easily be watered if needed, with a hose or sprinkler system nearby.
       </p>
 
 
@@ -307,7 +305,7 @@ const Step1 = () => {
         <p>
           Now that you have considered your Pocket Forest placement, soil, and accessibility, 
           it’s time to choose your plants. Remember, a Pocket Forest consists of {" "}
-          <span style={{fontWeight: "bold", color: "#0057b8" }}>only native plants! </span>
+          <span style={{fontWeight: "bold", color: "#0057b8" }}>only native plants</span>!
           To make it easier to choose your plants, we’ve created a tool for you to discover a variety 
           of plants that are native to Southeast Michigan. We also created forest types that work well 
           in the various soils of Sterling Heights. Though it is recommended that you curate your Pocket 
@@ -350,8 +348,6 @@ const Step1 = () => {
         </p>
       </div>
 
-
-
           <p>
             <div className="frosted-container float-left">
               <img className="frosted-image" src="photos/step1_image_005.jpg" alt="Step 1: Photo 005" />
@@ -364,26 +360,24 @@ const Step1 = () => {
           You can use simple wooden pegs or grass spray. This will ensure that you maintain a buffer zone 
           between your Pocket Forest and any obstructions on your property and make it easier to properly space your plants.</p>
 
+          <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Then</span>, you’ll want to weed your planting area. 
+          Herbicides are strictly not recommended for Pocket Forests. Not only does the use of herbicides require more maintenance, 
+          it risks harming your plants – and particularly native species – during their establishment period. Instead, a helpful 
+          method is the “cover and smother” method. First, you will need to manually remove as many weeds as possible. 
+          Then, to suppress the weeds, cover your planting area with burlap. After that, add a layer of soil on top. Ideally, 
+          you will also want to use landscaping staples to hold your burlap in place and effectively suppress new weed growth.</p>
 
+          <p>Make sure to use plant-based rather than synthetic burlap. The burlap will degrade naturally in a few years, 
+            after which time your plants will already be established. Using this method will also make the maintenance period 
+            easier, with less weeding required overall.</p>
 
-        <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Then</span>, you’ll want to weed your planting area. 
-        Herbicides are strictly not recommended for Pocket Forests. Not only does the use of herbicides require more maintenance, 
-        it risks harming your plants – and particularly native species – during their establishment period. Instead, a helpful 
-        method is the “cover and smother” method. First, you will need to manually remove as many weeds as possible. 
-        Then, to suppress the weeds, cover your planting area with burlap. After that, add a layer of soil on top. Ideally, 
-        you will also want to use landscaping staples to hold your burlap in place and effectively suppress new weed growth.</p>
+          <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Optionally</span>, you may choose to prewater your soil. 
+          Prewatering is not necessary in Michigan’s climate, but may be recommended if your site has not experienced significant 
+          rain for several weeks.</p>
 
-        <p>Make sure to use plant-based rather than synthetic burlap. The burlap will degrade naturally in a few years, 
-          after which time your plants will already be established. Using this method will also make the maintenance period 
-          easier, with less weeding required overall.</p>
-
-        <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Optionally</span>, you may choose to prewater your soil. 
-        Prewatering is not necessary in Michigan’s climate, but may be recommended if your site has not experienced significant 
-        rain for several weeks.</p>
-
-        <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Note</span> that you should avoid tilling your soil. 
-        Although it may appear helpful, unless your weeding is 100% effective, tilling will spread weeds across your plot 
-        and assist their growth. Tilling is not necessary for your Pocket Forest except for in special circumstances.</p>
+          <p><span style={{ fontWeight: "bold", color: "#0057b8" }}>Note</span> that you should avoid tilling your soil. 
+          Although it may appear helpful, unless your weeding is 100% effective, tilling will spread weeds across your plot 
+          and assist their growth. Tilling is not necessary for your Pocket Forest except for in special circumstances.</p>
 
 
       {/* Step 5: Next steps */}
@@ -408,14 +402,8 @@ const Step1 = () => {
           <BasicButton to="/Step2">Step 2: Planting day</BasicButton>
           <ScrollToTop />
       </div>
-
-
-
     </div>
-
     <FooterComp />
-
-    
     </div>
   </div>
 
