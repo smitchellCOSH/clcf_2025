@@ -58,20 +58,24 @@ const About = () => {
             <span style={{ fontWeight: "bold", color: "#0057b8" }}>Pocket Forests</span>, otherwise known as{" "}
             <span style={{ fontStyle: "italic", color: "#0057b8" }}>Microforests </span> or{" "}
             <span style={{ fontStyle: "italic", color: "#0057b8" }}>Miniforests</span> are areas of densely-packed,
-            highly biodiverse vegetation. These forests are unique, because they grow very quickly and require little maintenance,
+            highly biodiverse vegetation. These forests are unique, because they grow very quickly and require relatively little maintenance,
             making them great for beginner gardeners.
           </div>
 
         <p>
           Pocket forests are a tool in urban forestry used to combat deforestation and
-          provide ecological benefits, such as lowering an urban area’s heat index (in other words, cooling off a city during
-          the hot summer months), improving air quality, and removing carbon from the atmosphere.&nbsp; 
+          provide ecological benefits, such as lowering an urban area’s heat index (in other words, cooling off a city), 
+          improving air quality, and restoring ecological systems.&nbsp; 
         </p>
 
         <p>
-          This website builds off of the work of Akira Miyawaki, a botanist and ecologist who pioneered the Miyawaki Method which
-          describes the process of creating a Pocket Forest. Based off of work by LA Microforests designer Katherine Pakrodouni,
-          this website features plants native to Southeast Michigan and prioritizes cultivating a variety of native vegetation.
+          This website builds off of the work of Akira Miyawaki, a botanist and ecologist who pioneered the Miyawaki Method of Pocket Forestry. 
+          Based off of work by <a
+            className={styles.other_links}
+            href="https://www.lamicroforests.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LA Microforests</a> creator Katherine Pakradouni, this website features plants native to Southeast Michigan and prioritizes cultivating a variety of native vegetation.
           A benefit of increasing biodiversity means that Michigan’s native plants are protected from the effects of climate change.
         </p>
 

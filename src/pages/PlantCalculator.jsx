@@ -663,7 +663,7 @@ const [showHelp, setShowHelp] = useState(false);
           {/* Dropdown Help Section */}
           <div className={styles.dropdownHelp}>
             <button onClick={() => setShowHelp(!showHelp)} className={styles.dropdownHelp}>
-              {showHelp ? 'Hide' : 'Having trouble choosing plants? (Show)'}
+              {showHelp ? '(Hide)' : 'Having trouble choosing plants? (Show)'}
             </button>
             {showHelp && (
               <div className={styles.dropdownContent}>
@@ -762,7 +762,7 @@ const [showHelp, setShowHelp] = useState(false);
           {/* Dropdown Help Section */}
           <div className={styles.dropdownHelp}>
             <button onClick={() => setShowHelp(!showHelp)} className={styles.dropdownHelp}>
-              {showHelp ? 'Hide' : 'Having trouble placing your plants? (Show)'}
+              {showHelp ? '(Hide)' : 'Having trouble placing your plants? (Show)'}
             </button>
             {showHelp && (
               <div className={styles.dropdownContent}>

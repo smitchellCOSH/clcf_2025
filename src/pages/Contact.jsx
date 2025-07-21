@@ -37,12 +37,12 @@ const Contact = () => {
 
       <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>Sterling Heights</span>
 
-
-      <p>Thank you for contributing to local reforestation efforts. If you have any 
+    
+      <p style={{ wordBreak: 'break-word', overflowWrap: 'break-word', whiteSpace: "normal"}}>Thank you for contributing to local reforestation efforts. If you have any 
         any questions or comments, please reach out to the Sterling Heights Sustainability
         Planning team at sustainability@sterlingheights.gov.
 
-        If you're interested in learning more about sustainability projects in Sterling Heights,
+        {" "} If you're interested in learning more about sustainability projects in Sterling Heights,
         take a look at the <a
                     className={styles.other_links}
                     href="https://www.sterlingheights.gov/2330/Pathway-to-Play-and-Preservation"
@@ -51,6 +51,7 @@ const Contact = () => {
                   >Think Sterling Green</a> {" "}
         sustainability initiatives webpage. With your help, we're one step closer to a sustainable city!
       </p>
+
 
 
       <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>Acknowledgments</span>
