@@ -111,7 +111,7 @@ Float right places the image on the right side of the page. */
     max-width: 600px;
   }
   .frosted-container.xlarge {
-    max-width: 700px;
+    max-width: 600px;
     overflow-x: auto;
   }
 }
@@ -121,7 +121,7 @@ Float right places the image on the right side of the page. */
     max-width: 500px;
   }
   .frosted-container.xlarge {
-    max-width: 500px;
+    max-width: 400px;
   }
 }
 
@@ -138,7 +138,30 @@ Float right places the image on the right side of the page. */
     max-width: 60vh;
   }
   .frosted-container.xlarge {
-    max-width: 50vh;
+    max-width: 80vh;
+  }
+  .frosted-container.portrait-image {
+    max-width: 80%; /* Screen-size responsive. */
+    max-height: 250px;
+    float: none;
+    margin: 1em auto;
+  }
+}
+
+@media (max-width: 500px) {
+  .frosted-container.float-left,
+  .frosted-container.float-right {
+    float: none;
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+  }
+
+  .frosted-container.large {
+    max-width: 60vh;
+  }
+  .frosted-container.xlarge {
+    max-width: 60vh;
   }
   .frosted-container.portrait-image {
     max-width: 80%; /* Screen-size responsive. */

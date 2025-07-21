@@ -679,6 +679,17 @@ const [showHelp, setShowHelp] = useState(false);
                   style={{ width: "1100px" }}
                   className="xlarge"
                   />
+                  <p>
+                    You can also download our plant spreadsheet to learn more about individual plant's characteristics.
+                    <br /> <br />
+                    <a 
+                      href="downloads/nativeplants.xlsx" 
+                      download
+                      style={{ color: "#fdfff6", textDecoration: "underline" }}
+                    >
+                      Download Plant Spreadsheet
+                    </a>
+                  </p>
               </div>
             )}
             </div>
