@@ -8,10 +8,10 @@ profile from the list and stores the selection and data for use in the plant cal
 /* Styling contained in ForestProfileSelector.module.css */
 
 
-
+/* Imports */
 import styles from './ForestProfileSelector.module.css';
 
-
+/* Content */
 export default function ForestProfileSelector({ profiles, selected, onSelect }) { /* Accepts array of profiles, currently selected forest, callback function */
   return (
     <div className={styles.responsiveGrid}>

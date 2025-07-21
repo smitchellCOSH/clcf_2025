@@ -10,7 +10,7 @@ attribution is shown (FrostedImage.jsx).
 
 
 
-/* Container for the frosting component */
+/* Container for the frosting component. */
 .frosted-container {
   position: relative;
   max-width: 400px;
@@ -20,7 +20,7 @@ attribution is shown (FrostedImage.jsx).
   height: auto;
 }
 
-/* Transition specifications for frosting the image */
+/* Transition specifications for frosting the image. */
 .frosted-image {
   width: 100%;
   border-radius: 10px;
@@ -30,7 +30,7 @@ attribution is shown (FrostedImage.jsx).
 }
 
 
-/* Creates an overlay */
+/* Creates an overlay. */
 .frosted-overlay {
   position: absolute;
   top: 50%;
@@ -71,7 +71,9 @@ attribution is shown (FrostedImage.jsx).
   max-width: 1500px;
 }
 
-
+/* Specifies in-line embedded image styling. Float left places 
+the image on the left side of the page and text wraps around it.
+Float right places the image on the right side of the page. */
 .frosted-container.float-left {
   float: left;
   margin: 1em 1em 1em 0;
@@ -84,12 +86,16 @@ attribution is shown (FrostedImage.jsx).
   max-width: 40%;
 }
 
+/* Special styling for portrait style images. */
 .frosted-container.portrait-image {
   max-width: 350px;
   max-height: 800px;
 }
 
 
+
+
+/* Styles for different screen sizes. */
 @media (max-width: 1600px) {
   .frosted-container.large {
     max-width: 750px;
@@ -134,13 +140,18 @@ attribution is shown (FrostedImage.jsx).
   .frosted-container.xlarge {
     max-width: 50vh;
   }
-
   .frosted-container.portrait-image {
-    max-width: 80%; /* keep responsive */
+    max-width: 80%; /* Screen-size responsive. */
     max-height: 250px;
     float: none;
     margin: 1em auto;
   }
 }
 
+
+@media (max-width: 400px) {
+  .frosted-container.large {
+    max-width: 40vh;
+  }
+}
 

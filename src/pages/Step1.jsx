@@ -21,10 +21,8 @@ import styles from '../mystyle.module.css';
 import Navbar from '../components/Navbar';
 import FooterComp from '../components/FooterComp';
 import HeaderComp from '../components/HeaderComp';
-import FrostedImage from '../components/FrostedImage';
 import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
-import InlineImageText from '../components/InlineImageText';
 
 
 /* Content */

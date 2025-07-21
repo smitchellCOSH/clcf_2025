@@ -91,9 +91,6 @@ const Contact = () => {
         </div>
 
       </div>
-
-
-
       <FooterComp />
 
     </div>

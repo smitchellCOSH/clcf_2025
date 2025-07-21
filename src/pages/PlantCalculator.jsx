@@ -42,7 +42,7 @@ import { useMemo } from 'react';
 import { useRef } from 'react';
 import QuantityTracker from '../components/QuantityTracker';
 import FrostedImage from '../components/FrostedImage';
-import { getColorForPlantId } from '../components/colorUtils';
+import getColorForPlantId from '../components/colorUtils';
 
 
 
@@ -50,8 +50,6 @@ import { getColorForPlantId } from '../components/colorUtils';
 
 /* Content */
 export default function PlantCalculator() {
-
-
 
   /* Tracks variables, incl. square footage input by the user,
   selected forest profile, and the plants selected for each category */
@@ -62,9 +60,7 @@ export default function PlantCalculator() {
   const pixelsPerFoot = 5;  // Conversion for placing a grid on the plot.
   const layoutSize = Math.sqrt(squareFootage) * pixelsPerFoot; // Creates layout size.
 
-
 /* ********************************************************************* */
-
   /* Generate a consistent colormap for selected plants in the layout. */
   const colorMap = useMemo(() => {
     const map = {};
@@ -75,7 +71,6 @@ export default function PlantCalculator() {
     }
     return map;
   }, [selectedPlants]);
-
 
 
 /* ********************************************************************* */
@@ -105,7 +100,6 @@ export default function PlantCalculator() {
     const sortedProfiles = profileOrder
       .map((name) => forestProfiles.find((p) => p.name === name))
       .filter(Boolean);
-
 
 /* ********************************************************************* */
   /* Tracks the number of plants selected for each plant type and allows
@@ -142,7 +136,6 @@ export default function PlantCalculator() {
   });
 };
 
-
 /* ********************************************************************* */
   /* Handles the plant recommendation calculations using the plant density
   for each forest type and the inputted square footage */
@@ -163,10 +156,8 @@ export default function PlantCalculator() {
     return plantCounts;
   };
 
-
   /* Calls the calculation function for each plant type. */
   const [plantCounts, setPlantCounts] = useState({});
-
 
   useEffect(() => {
   const newCounts = handleCalculate();
@@ -174,7 +165,6 @@ export default function PlantCalculator() {
   }, [squareFootage, selectedProfile]);
 
   /* ********************************************************************* */
-
   /* Filters from the plant database the plants selected by the
   forest type. For example, choosing the Dry Prairie type will display
   only Dry Prairie plants. */
@@ -196,22 +186,21 @@ export default function PlantCalculator() {
   }
 
 
-
   /* ********************************************************************* */
-
   /* Generates a PDF using jsPDF and plant selections */
   const generatePDF = () => {
 
-    // Generates the PDF.
+    /* Generates the PDF. */
     const doc = new jsPDF({
       unit: "in",
       format: [8.5, 11]
     });
 
-    const pageWidth = doc.internal.pageSize.getWidth(); // Gets the width of the page for centering.
+    /* Gets the width of the page for centering. */
+    const pageWidth = doc.internal.pageSize.getWidth(); 
     let y = 0.2;
 
-    // Adds the title to the top of the PDF.
+    /* Adds the title to the top of the PDF. */
     doc.setFontSize(28);
     doc.setFont("helvetica", "bold");
     doc.text("Pocket Forests Project", 2.1, y + 0.6); // Sets the x and y position.
@@ -220,7 +209,7 @@ export default function PlantCalculator() {
     y += 1.5;
 
 
-    // Forest Type display.
+    /* Prints the forest type. */
     doc.setFont("helvetica", "bold");
     doc.setFontSize(24)
     const prof = "Your Forest Type — " + selectedProfile.name;
@@ -230,7 +219,7 @@ export default function PlantCalculator() {
     y += 0.6;
 
 
-    // Adds forest type description.
+    /* Adds the forest type description. */
     doc.setFontSize(15) // Font size for the forest description.
     doc.setFont("helvetica", "normal"); // Font type for the forest description.
     const descriptionLines = doc.splitTextToSize(selectedProfile.description, 7.5);
@@ -238,7 +227,7 @@ export default function PlantCalculator() {
     y += descriptionLines.length * 0.3;
 
 
-    // Adds a plant selection subtitle.
+    /* Adds a plant selection subtitle. */
     doc.setFont("helvetica", "bold");
     doc.setFontSize(24)
     doc.text("Your Plant Selections", 2.8, y); // Centers it.
@@ -249,13 +238,13 @@ export default function PlantCalculator() {
     doc.setFont("helvetica", "normal"); // Font type set for plants list.
 
 
-    // Allows excess selections to spill onto a new page.
+    /* Allows excess selections to spill onto a new page. */
     const lineHeight = 0.5;
     const bottomMargin = 0.5;
     const pageHeight = doc.internal.pageSize.getHeight();
     const maxY = pageHeight - bottomMargin;
 
-    // Lists each plant selected.
+    /* Lists each plant selected. */
     Object.entries(selectedPlants).forEach(([type, plantMap]) => {
     Object.entries(plantMap).forEach(([plantId, qty]) => {
       const plant = plants.find((p) => p.id === plantId);
@@ -274,7 +263,7 @@ export default function PlantCalculator() {
     });
   });
 
-  // Displays if a user generates a PDF without selecting any plants.
+  /* Displays if a user generates a PDF without selecting any plants. */
   if (!somethingAdded) {
     doc.text("No plants selected.", 0.5, y);
   }
@@ -289,7 +278,7 @@ function hslToRgb(h, s, l) {
   let r, g, b;
 
   if (s === 0) {
-    r = g = b = l; // achromatic
+    r = g = b = l; // Achromatic.
   } else {
     const hue2rgb = (p, q, t) => {
       if(t < 0) t += 1;
@@ -311,23 +300,6 @@ function hslToRgb(h, s, l) {
   return [Math.round(r * 255), Math.round(g * 255), Math.round(b * 255)];
 }
 
-/* Helper: Convert colors from RGB to Hexcode. */
-function rgbToHex([r, g, b]) {
-  return "#" + [r, g, b].map(x => x.toString(16).padStart(2, "0")).join("");
-}
-
-/* Helper: Convert colors from Hexcode to RGB. */
-function hexToRgb(hex) {
-  hex = hex.replace(/^#/, '');
-  if (hex.length !== 6) return [0, 0, 0]; 
-
-  const bigint = parseInt(hex, 16);
-  const r = (bigint >> 16) & 255;
-  const g = (bigint >> 8) & 255;
-  const b = bigint & 255;
-
-  return [r, g, b];
-}
 
 
 /* ********************************************************************* */
@@ -336,15 +308,15 @@ const exportLayoutToPDF = async () => {
   const stage = svgRef.current;
   if (!stage) return;
 
-  const canvasWidth = stage.width();
-  const canvasHeight = stage.height();
+  const canvasWidth = stage.width(); // Gets the canvas width based on selected shape.
+  const canvasHeight = stage.height(); // Gets the canvas height based on selected shape.
 
   const dataURL = stage.toDataURL({ pixelRatio: 2 });
 
   /* Determine page orientation based on the layout shape. */
   const isLandscape = canvasWidth > canvasHeight;
 
-  // Use standard Letter dimensions (612 x 792 pt) in portrait by default
+  /* Use standard Letter dimensions (612 x 792 pt) in portrait by default. */
   const pdf = new jsPDF({
     orientation: isLandscape ? 'landscape' : 'portrait',
     unit: 'pt',
@@ -390,7 +362,7 @@ const exportLayoutToPDF = async () => {
   pdf.setFontSize(12);
 
 
-  /* Loop over the selected plants using consistent colormapping. */
+  /* Loop over the selected plants using consistent colormapping (utility function). */
   uniquePlants.forEach(({ plantId, plantName, quantity, number }, index) => {
     const hslColor = colorMap[plantId] || "hsl(0, 0%, 0%)";
     function parseHSL(hsl) {
@@ -403,16 +375,13 @@ const exportLayoutToPDF = async () => {
     const saturation = Number(match[3]);
     const lightness = Number(match[4]);
 
-    // Normalize negative hue values
+    /* Normalizes negative hue values. */
     if (hue < 0) {
       hue = (hue % 360) + 360;
     }
 
-    return [hue, saturation, lightness];
-  }
-
-
-    console.log(`Plant ID: ${plantId}, Color string: "${hslColor}"`);
+      return [hue, saturation, lightness];
+    }
 
     const [hue, sat, light] = parseHSL(hslColor);
     const [r, g, b] = hslToRgb(hue, sat / 100, light / 100);
@@ -422,6 +391,7 @@ const exportLayoutToPDF = async () => {
       y = 40;
     }
 
+    /* Creates legend color circles. */
     const circleX = xStart;
     const circleY = y - 6;
     const radius = 6;
@@ -430,12 +400,12 @@ const exportLayoutToPDF = async () => {
     pdf.setFillColor(r, g, b);
     pdf.circle(circleX, circleY, radius, 'FD');
 
-
+    /* Creates legend numbers. */
     pdf.setTextColor(255, 255, 255);
     pdf.setFontSize(10);
     const numberText = String(number);
     const textX = circleX - (pdf.getTextWidth(numberText) / 2);
-    pdf.text(numberText, textX + 0.5, circleY + 2);
+    pdf.text(numberText, textX, circleY + 3);
 
     pdf.setTextColor(0, 0, 0);
     pdf.setFontSize(12);
@@ -476,14 +446,12 @@ function hslToRgb(h, s, l) {
 }
 
 /* ********************************************************************* */
-
   /* Clears selected plant quantities for a "Clear all" button */
   const clearSelections = () => {
     setSelectedPlants({});
   };
 
 /* ********************************************************************* */
-
   /* Unique number for each plant on legend. */
 
 const uniquePlants = useMemo(() => {
@@ -504,7 +472,6 @@ const uniquePlants = useMemo(() => {
 
 
 /* ********************************************************************* */
-
   /* Defines canvas size dimensions for each shape. */
   const shapeDimensions = {
     square: { width: 600, height: 600 },
@@ -542,7 +509,6 @@ const uniquePlants = useMemo(() => {
 }, [selectedPlants, squareFootage, plotShape]); 
 
 /* ********************************************************************* */
-
   /* Initializes the layout cache states. */
   const [layoutCache, setLayoutCache] = useState({
     square: [],
@@ -551,7 +517,6 @@ const uniquePlants = useMemo(() => {
   });
 
 /* ********************************************************************* */
-
 /* Caches the layout shape and generated points to prevent changes when switching
 plot shapes. Maintains consistency until refreshing the page. */
 useEffect(() => {
@@ -585,13 +550,11 @@ useEffect(() => {
 
 
 /* ********************************************************************* */
-
   /* Defines state for converting the Konva canvases to SVGs for the PDF. */
   const svgRef = useRef(null);
   const legendRef = useRef(null);
 
 /* ********************************************************************* */
-
   /* Downloads the layout content as an image. */
   const downloadLayoutAsImage = () => {
     const stage = svgRef.current;
@@ -608,13 +571,12 @@ useEffect(() => {
 
 
 /* ********************************************************************* */
-
   /* Clears the user's selections when the user changes their square footage input. */
   useEffect(() => {
-  // Clear plant selections
+  // Clear plant selections.
   setSelectedPlants({});
 
-  // Clear layout cache or points
+  // Clear layout cache or points.
   setLayoutCache({
     square: [],
     rectangle: [],
@@ -623,17 +585,13 @@ useEffect(() => {
 
 }, [squareFootage]);
 
-
-
-
 /* ********************************************************************* */
+/* Shows and hides the helper menus. */
 const [showHelp, setShowHelp] = useState(false);
 
 
 
 /* ********************************************************************* */
-
-
   /* Rendered layout */
   return (
     <div className="Plant Calculator">
@@ -650,7 +608,6 @@ const [showHelp, setShowHelp] = useState(false);
           Choose the forest type that interests you and best suits your space.
         </p>
 
-
         <div style={{padding: "20px"}}>
         <ForestProfileSelector
           profiles={sortedProfiles}
@@ -661,7 +618,7 @@ const [showHelp, setShowHelp] = useState(false);
 
 
         <div style={{ marginBottom: "0.8rem", padding: "0.2rem" }}>
-          
+
             Input the square footage of your Pocket Forest (minimum 30 sq. ft):
             <input className={styles.inputBox}
               type="number"
@@ -685,21 +642,23 @@ const [showHelp, setShowHelp] = useState(false);
             />
           </div>
 
-        <div className={styles.result_content}>
-              <p>
-                Below is the number of each type of plant you will need for your
-                Pocket Forest space.
-              </p>
-              <div className={styles.plantCountRow}>
-                {orderedTypes.map((type) => (
-                  <div key={type} className={styles.plantCountItem}>
-                    <span className={styles.plantCountBubble}>
-                      <strong>{type}:</strong> {plantCounts[type] || 0} plants
-                    </span>
-                  </div>
-                ))}
-              </div>
+          <div className={styles.result_content}>
+            <p>
+              Below is the number of each type of plant you will need for your
+              Pocket Forest space.
+            </p>
+            <div className={styles.plantCountRow}>
+              {orderedTypes.map((type) => (
+                <div key={type} className={styles.plantCountItem}>
+                  <span className={styles.plantCountBubble}>
+                    <strong>{type}:</strong> {plantCounts[type] || 0} plants
+                  </span>
+                </div>
+              ))}
             </div>
+          </div>
+
+          <div style={{ margin: "1rem" }}></div>
 
           {/* Dropdown Help Section */}
           <div className={styles.dropdownHelp}>
@@ -723,7 +682,6 @@ const [showHelp, setShowHelp] = useState(false);
               </div>
             )}
             </div>
-  
 
         <div className={styles.subheader}>
           Choose your plants
@@ -743,7 +701,8 @@ const [showHelp, setShowHelp] = useState(false);
 
 
         {/* Note. */}
-        <p style={{ width: "80%", display: "inline-block", backgroundColor: "#fdfff6", borderRadius: "10px", outline: "solid 2px", outlineColor: "#0057b8" }}>
+        <p style={{ width: "80%", display: "inline-block", backgroundColor: "#fdfff6", borderRadius: "10px", outline: "solid 2px", 
+          outlineColor: "#0057b8" }}>
           <img src="icons/information-box-outline.svg" style={{width: "40px", marginTop: "15px" }}></img>
           <li style={{paddingLeft: "3%", paddingRight: "3%", paddingBottom: "3%", listStyle: "none"}}>
           Some of the plants listed require special care, or have notes on their edibility
@@ -775,27 +734,25 @@ const [showHelp, setShowHelp] = useState(false);
         )}
 
         {Object.keys(selectedPlants).length > 0 && (
-            <div style={{
-                marginTop: "2rem",
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "center",
-                gap: "0.5rem"
-              }}>
+          <div style={{
+              marginTop: "2rem",
+              display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
+              gap: "0.5rem"
+            }}>
 
-              <GeneratePDFButton onClick={clearSelections}>
-                Clear Selections
-              </GeneratePDFButton>
+            <GeneratePDFButton onClick={clearSelections}>
+              Clear Selections
+            </GeneratePDFButton>
 
-              <GeneratePDFButton onClick={generatePDF}>
-                Download your plant list as a PDF
-              </GeneratePDFButton>
+            <GeneratePDFButton onClick={generatePDF}>
+              Download your plant list as a PDF
+            </GeneratePDFButton>
 
-              <ScrollToTop />
-
-
-            </div>
-          )}
+            <ScrollToTop />
+          </div>
+        )}
 
 
         <div className={styles.subheader}>
@@ -819,16 +776,15 @@ const [showHelp, setShowHelp] = useState(false);
                   attribution="How many different plants should I choose?"
                   style={{ width: "1100px" }}
                   className="xlarge"
-                  />
+                />
               </div>
-            )}
+              )}
             </div>
 
 
           {/* ************************* PLOTTING *************************** */}
           {Object.keys(selectedPlants).length > 0 && (
             <>
-
               <p>Visualize how your forest will be arranged based on your chosen square footage and plants.</p>
 
               <div style={{
@@ -838,7 +794,9 @@ const [showHelp, setShowHelp] = useState(false);
                 justifyContent: "center",
                 gap: "0.5rem"
               }}>
+
                 <label>Choose plot shape: </label>
+
                 {["square", "rectangle", "circle"].map((s) => (
                   <GeneratePDFButton key={s} onClick={() => setPlotShape(s)}>
                     {s.charAt(0).toUpperCase() + s.slice(1)}
@@ -847,27 +805,25 @@ const [showHelp, setShowHelp] = useState(false);
               </div>
 
               <div style={{ overflow: 'auto', width: '100%' }}>
-              <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
-              <div
-                  style={{
-                    border: "1px solid #383838",
-                    background: plotShape === "circle" ? "transparent" : "#fdfff6",
-                    borderRadius: plotShape === "circle" ? "50%" : "0",
-                    width: width,
-                    height: height,
-                  }}
-                >
-          
-              <PlantLayout
-                ref={svgRef}
-                width={width}
-                height={height}
-                plotShape={plotShape}
-                plantPoints={layoutCache[plotShape] || []}
-                uniquePlants={uniquePlants}
-              />
-
-              </div>
+                <div style={{ display: "flex", justifyContent: "center", margin: "2rem 0" }}>
+                  <div
+                      style={{
+                        border: "1px solid #383838",
+                        background: plotShape === "circle" ? "transparent" : "#fdfff6",
+                        borderRadius: plotShape === "circle" ? "50%" : "0",
+                        width: width,
+                        height: height,
+                      }}
+                    >
+                  <PlantLayout
+                    ref={svgRef}
+                    width={width}
+                    height={height}
+                    plotShape={plotShape}
+                    plantPoints={layoutCache[plotShape] || []}
+                    uniquePlants={uniquePlants}
+                  />
+                </div>
               </div>
             </div>
 
@@ -876,54 +832,53 @@ const [showHelp, setShowHelp] = useState(false);
             <div style={{ textAlign: "center" }}>
               <div ref={legendRef} style={{ textAlign: "center" }}>
 
-              <h4>Legend</h4>
-              <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "left",
-                padding: "20px",
-                gap: "1rem",
-                pageBreakInside: "avoid"
-              }}>
-                <div>
-                  {uniquePlants.map(plant => (
-                  <div key={plant.plantId} style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{
-                      width: 12,
-                      height: 12,
-                      backgroundColor: plant.color,
-                      borderRadius: '50%',
-                      marginRight: 6,
-                    }} />
-                    <span>{plant.number}. {plant.plantName} ({plant.quantity})</span>
-                  </div>
-                ))}
-
+                <h4>Legend</h4>
+                  <div style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "left",
+                    padding: "20px",
+                    gap: "1rem",
+                    pageBreakInside: "avoid"
+                  }}>
+                    <div>
+                      {uniquePlants.map(plant => (
+                      <div key={plant.plantId} style={{ display: 'flex', alignItems: 'center' }}>
+                        <div style={{
+                          width: 12,
+                          height: 12,
+                          backgroundColor: plant.color,
+                          borderRadius: '50%',
+                          marginRight: 6,
+                        }} />
+                        <span>{plant.number}. {plant.plantName} ({plant.quantity})</span>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>
           </div>
 
-            <div style={{
-              marginTop: "2rem",
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              gap: "0.5rem"
-            }}>
+          <div style={{
+            marginTop: "2rem",
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "center",
+            gap: "0.5rem"
+          }}>
 
-              <GeneratePDFButton onClick={exportLayoutToPDF}>
-                Download layout
-              </GeneratePDFButton>
+          <GeneratePDFButton onClick={exportLayoutToPDF}>
+            Download layout
+          </GeneratePDFButton>
 
-              <ScrollToTop />
+          <ScrollToTop />
 
-            </div>
+          </div>
 
-            </>
+          </>
 
-          )}
-      </div>
+        )}
+        </div>
       <FooterComp id="footer"/>
     </div>
   );

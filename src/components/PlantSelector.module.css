@@ -1,11 +1,9 @@
 /* PlantSelector.module.css */
-
-
 /* Contains styling for the Plant Selector component (PlantSelector.jsx). */
 
 
 
-/* Creates a grid of plant cards with plant photos and information */
+/* Creates a grid of plant cards with plant photos and information. */
 .gridContainer {
   display: grid;
   grid-template-columns: 1fr;
@@ -13,14 +11,14 @@
   margin-top: 1rem;
 }
 
-/* Styles for smaller screens */
+/* Styles for smaller screens. */
 @media (min-width: 640px) {
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Styles for larger screens */
+/* Styles for larger screens. */
 @media (min-width: 910px) {
   .gridContainer {
     grid-template-columns: repeat(3, 1fr);
@@ -46,7 +44,7 @@
 
 /* ************* PLANT CARD ************** */
 
-/* Creates a card to hold plant data within the grid format */
+/* Creates a card to hold plant data within the grid format. */
 .plantCard {
   border: 1px solid #383838;
   border-radius: 10px;
@@ -59,7 +57,7 @@
 }
 
 
-/* Styles the image shown in each plant card */
+/* Styles the image shown in each plant card. */
 .plantImage {
   object-fit: cover;
   margin-bottom: 0.5rem;
@@ -71,14 +69,14 @@
   box-shadow: 0 4px 6px #383838;
 }
 
-/* Styles the name of the plant in each plant card */
+/* Styles the name of the plant in each plant card. */
 .plantName {
   font-weight: bold;
 }
 
 
 /* Styles the description/note of the plant in each plant card.
-Includes the image attributions */
+Includes the image attributions. */
 .plantNotes {
   font-size: 0.9rem;
   color: #383838;
@@ -90,9 +88,7 @@ Includes the image attributions */
 
 /* ************* SELECTIONS ************** */
 
-
-
-/* Styles the text that counts plant selections for each category */
+/* Styles the text that counts plant selections for each category. */
 .catTitle {
   font-weight: bold;
   border-radius: 999px;
@@ -163,7 +159,7 @@ Includes the image attributions */
 
 
 
-/* Styles the plant selection buttons and their text */
+/* Styles the plant selection buttons and their text. */
 .qtyControls {
   position: absolute;
   bottom: 1rem;
@@ -179,7 +175,7 @@ Includes the image attributions */
 }
 
 
-/* Styles the quantity control button (+/-) */
+/* Styles the quantity control button (+/-). */
 .qtyControls button {
   padding: 4px 8px;
   font-size: 1rem;
@@ -197,8 +193,31 @@ Includes the image attributions */
 }
 
 
-/* Styles the quantity control button (+/-) */
+/* Styles the quantity control button (+/-). */
 .qtyControls span {
   min-width: 20px;
   text-align: center;
+}
+
+@media (max-width: 400px) {
+  .catTitle {
+    font-weight: bold;
+    border-radius: 999px;
+    background-color: #0057b8;
+    padding: 0.8rem;
+    color: #fdfff6;
+    font-size: 0.7rem;
+    width: fit-content;
+    display: inline-block;
+  }
+  .catCount {
+    position: sticky;
+    top: 10px;
+    background-color: #c3e344;
+    color: #383838;
+    padding: 0.6rem 1rem;
+    border-radius: 999px;
+    font-weight: bold;
+    font-size: 0.7rem;
+  }
 }

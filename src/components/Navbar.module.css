@@ -1,9 +1,8 @@
 /* Navbar.module.css */
-
 /* Contains styling for the Navigation Bar component (Navbar.jsx). */
 
 
-/* Wrapper nav element */
+/* Wrapper nav element. */
 .navWrapper {
   position: relative;
   background-color: #fdfff6;
@@ -14,7 +13,7 @@
 }
 
 
-/* Flex nav menu (links) */
+/* Flex nav menu (links). */
 .navbar {
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +23,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-/* Add hamburger button - hidden on desktop */
+/* Add hamburger button - hidden on large screens. Mobile only. */
 .hamburger {
   display: none;
   background: none;
@@ -38,7 +37,7 @@
   z-index: 2000;
 }
 
-/* Nav links */
+/* Nav links. */
 .nav-link {
   display: flex;
   align-items: center;
@@ -55,7 +54,7 @@
   color: #0057b8;
 }
 
-/* Navbar icons styling */
+/* Navbar icons styling. */
 .nav-icon {
   width: 25px;
   height: 25px;
@@ -63,10 +62,10 @@
 
 
 
-/* Mobile screen size styling */
+/* Mobile screen size styling. */
 @media (max-width: 600px) {
   .navWrapper {
-    padding-top: 2.2rem; /* More space for hamburger */
+    padding-top: 2.2rem;
   }
   .navbar {
     display: none;
@@ -81,7 +80,7 @@
   .hamburger {
     display: block;
   }
-  /* Adjust dropdown on mobile */
+  /* Adjust dropdown on mobile. */
   .dropdown {
     position: static !important;
     box-shadow: none !important;
@@ -92,8 +91,6 @@
     padding-left: 1.5rem;
   }
 }
-
-
 
 
 /* ****** DROPDOWN MENUS ****** /
@@ -132,7 +129,7 @@
 }
 
 
-/* Colors applied when hovering over a dropdown link */
+/* Colors applied when hovering over a dropdown link. */
 .dropdown-link:hover {
   background-color: #e8f5c8;
   color: #0057b8;

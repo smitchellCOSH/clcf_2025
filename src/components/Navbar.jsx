@@ -76,7 +76,7 @@ const Navbar = () => {
         )}
       </div>
 
-      {/* GUIDE */}
+      {/* Guide */}
       <div
         className={styles["dropdown-container"]}
         onMouseEnter={() => !isMobileMenuOpen && toggleGuide()}

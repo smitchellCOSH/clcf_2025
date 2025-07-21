@@ -12,7 +12,7 @@ user's input square footage and plant selections.
 import { Stage, Layer, Circle, Text, Rect, Line } from 'react-konva'; // Konva components.
 import { useEffect, useState, useMemo } from 'react';
 import React, { forwardRef } from 'react';
-import { getColorForPlantId } from './colorUtils';
+import getColorForPlantId from './colorUtils';
 
 
 
@@ -142,22 +142,6 @@ export function generatePlantLayout({
   /* Returns the final list of plant dots. */
   return plantDots;
 }
-
-  // /* Helper function that selects a color to represent a plant on the layout 
-  // based on each plant's ID. */
-  // export function getColorForPlantId(plantId) {
-    
-  //   /* Ensures a range of colors. */
-  //   const goldenAngle = 137.508;
-  //   let hash = 0;
-  //   for (let i = 0; i < plantId.length; i++) {
-  //     hash = plantId.charCodeAt(i) + ((hash << 5) - hash);
-  //   }
-
-  //   const hue = (hash * goldenAngle) % 360;
-  //   return `hsl(${hue}, 70%, 50%)`; // Ensures contrast between colors.
-  // }
-
 
   /* Assigns a radius for each plant type. */
   function getRadiusForType(type) {

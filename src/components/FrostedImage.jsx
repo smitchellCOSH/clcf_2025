@@ -15,6 +15,7 @@
 import React from "react";
 import "./FrostedImage.css";
 
+/* Content */
 const FrostedImage = ({ src, alt, attribution, style, className }) => (
   <div className={`frosted-container ${className || ""}`} style={style}>
     <img src={src} alt={alt} className="frosted-image" />

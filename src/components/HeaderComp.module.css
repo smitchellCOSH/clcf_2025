@@ -4,7 +4,7 @@
 
 
 
-/* Styles the Header divider block */
+/* Styles the Header divider block. */
 .HeaderComp {
     display: flex;
     align-items: center;
@@ -15,11 +15,13 @@
     max-height: 10%;
 }
 
+/* Header image - Logo. */
 .HeaderImg {
     width: 10.5rem;
     height: 4rem;
 }
 
+/* Header title. */
 .HeaderTitle {
   margin: 0;
   font-size: 3rem;

@@ -69,7 +69,7 @@ function ImageGrid() {
         >
         <img src={img.src} alt={`${img.common} - ${img.scientific}`} className={styles.imageCircle} />
         <div className={styles.caption}>
-          {img.common} - <em>{img.scientific}</em>
+          {img.common} - <em>{img.scientific}</em> {/* Italicizes the Scientific name. */}
         </div>
         </a>
       ))}

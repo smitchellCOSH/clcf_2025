@@ -26,14 +26,15 @@ const FooterComp = ({ id }) => {
           Contact
         </Link>
 
-        {" ↟ "}
+        <span className={styles.divider}>{" ↟ "}</span>
 
         {/* Internal link */}
         <Link to="/FAQ" className={styles.footer_link_text}>
           Frequently Asked Questions
         </Link>
 
-        {" ↟ "}
+        <span className={styles.divider}>{" ↟ "}</span>
+
 
         {/* External link */}
         <a

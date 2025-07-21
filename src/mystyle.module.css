@@ -74,18 +74,6 @@ light-blue background. */
 }
 
 
-/* Styles the notes on the guide pages */
-/* .note_content {
-    border-radius: 10px;
-    background-color: #0057b8;
-    padding: 3%;
-    margin: 3%;
-    color: #fdfff6;
-    display: inline-block;
-    width: 70%;
-    font-size: 1.3rem
-} */
-
 .note_content {
   background-color: #0057b8;
   color: #fdfff6;
@@ -217,3 +205,4 @@ the main content. */
     background-size: 2200px;
   }
 }
+

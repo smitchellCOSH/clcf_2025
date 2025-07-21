@@ -26,7 +26,6 @@ import BasicButton from '../components/BasicButton';
 import ScrollToTop from '../components/ScrollToTop';
 import { Link } from 'react-router-dom';
 import ImageGrid from '../components/ImageGrid';
-import InlineImageText from '../components/InlineImageText';
 
 
 
@@ -51,7 +50,7 @@ const About = () => {
           </p>
         </div>
 
-          <p>
+          <div>
             <div className="frosted-container float-right">
               <img className="frosted-image" src="photos/about_image_001.jpg" alt="Pocket Forest" />
               <div className="frosted-overlay">Liriodendron tulipifera - Tulip tree.</div>
@@ -61,7 +60,7 @@ const About = () => {
             <span style={{ fontStyle: "italic", color: "#0057b8" }}>Miniforests</span> are areas of densely-packed,
             highly biodiverse vegetation. These forests are unique, because they grow very quickly and require little maintenance,
             making them great for beginner gardeners.
-          </p>
+          </div>
 
         <p>
           Pocket forests are a tool in urban forestry used to combat deforestation and
@@ -109,7 +108,7 @@ const About = () => {
           biodiversity to prevent further deforestation is essential. 
         </p>
 
-          <p>
+          <div>
             <div className="frosted-container float-right portrait-image" >
               <img className="frosted-image" src="photos/akira_miyawaki.jpg" alt="Akira Miyawaki" />
               <div className="frosted-overlay">Renowned botanist Akira Miyawaki – photo by Yoshitomo Tanaka.</div>
@@ -128,7 +127,7 @@ const About = () => {
           </a>
             {" "} as a regular forest. Their quick growth is attributed to the
             competitive nature resulting from their density. 
-          </p>
+          </div>
 
           <p>Another benefit of Pocket Forests is that they quickly become self-sustaining, 
             meaning that they can be cultivated with only about a year of maintenance. Weeding, watering, and protecting
@@ -231,7 +230,7 @@ const About = () => {
 
         <span style={{ fontWeight: "bold", color: "#0057b8", fontSize: "2rem" }}>Sterling Heights' Pocket Forest</span>
 
-          <p>
+          <div>
             <div className="frosted-container float-left">
               <img className="frosted-image" src="photos/about_image_004.jpg" alt="Sterling Heights' Pocket Forest" />
               <div className="frosted-overlay">Sterling Heights' Pocket Forest.</div>
@@ -240,7 +239,7 @@ const About = () => {
             Community Garden. The Pocket Forest was planted in April of 2025 and is one of the steps the city is taking to 
             improve reforestation. Housed next to the Butterfly Garden, the Pocket Forest will one day be a refuge for 
             pollinators and small animal life.<br></br>
-          </p>
+          </div>
 
 
           <p>
@@ -276,7 +275,7 @@ const About = () => {
 
         {/* Content */}
 
-        <p>
+        <div>
 
         <div className="frosted-container float-left">
           <img className="frosted-image" src="photos/about_image_002.jpg" alt="Oak forest" />
@@ -295,7 +294,7 @@ const About = () => {
           Sterling Heights 2025 Climate Action Plan</a>
 
         .{" "}
-        </p>
+        </div>
 
           <p>
             Pocket Forests also improve air quality, manage carbon dioxide levels, provide habitats for local animals, 
@@ -326,7 +325,13 @@ const About = () => {
 
 
         {/* Final components */}
-        <div style={{ marginTop: "2rem" }}>
+        <div style={{
+          marginTop: "2rem",
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: "0.5rem"
+        }}>
           <BasicButton to="/Guide">Up Next: Guide</BasicButton>
           <ScrollToTop />
         </div>

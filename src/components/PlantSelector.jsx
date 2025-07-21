@@ -54,7 +54,7 @@ export default function PlantSelector({ categorizedPlants, selectedPlants, onCha
               style={{ cursor: "pointer" }}
             >
               <div className={styles.catTitle}>
-                {isExpanded ? "▼" : "▶"} {type}
+                {isExpanded ? '\u25BC' : '\u25B6'} {type}
               </div>
               <div className={styles.catCount}>
                 {totalSelected} / {maxAllowed} selected

@@ -1,11 +1,8 @@
 /* ImageGrid.module.css */
-
 /* Contains styling for the ImageGrid component (ImageGrid.jsx). */
 
 
-
-
-/* Creates container to hold the grid elements */
+/* Creates container to hold the grid elements. */
 .gridContainer {
   display: grid;
   grid-template-columns: auto auto auto auto;
@@ -15,7 +12,7 @@
 }
 
 
-/* Creates an individual item in the grid */
+/* Creates an individual item in the grid. */
 .gridItem {
   text-align: center;
   text-decoration: none;
@@ -24,7 +21,7 @@
 
 
 /* Transforms the image, displaying it as a small circle with border,
-shadow, and transition details */
+shadow, and transition details. */
 .imageCircle {
   width: 150px;
   height: 150px;
@@ -36,13 +33,13 @@ shadow, and transition details */
 }
 
 
-/* Specifies action upon hovering with the mouse */
+/* Specifies action upon hovering with the mouse. */
 .imageCircle:hover {
   transform: scale(1.05);
 }
 
 
-/* Adds individual captions to each image */
+/* Adds individual captions to each image. */
 .caption {
   margin-top: 10px;
   font-size: 1rem;
@@ -50,10 +47,15 @@ shadow, and transition details */
   font-weight: bold;
 }
 
-
+/* Styles for different screen sizes. */
 @media (max-width: 600px) {
   .gridContainer {
     grid-template-columns: repeat(2, 1fr);
   }
+}
 
+@media (max-width: 400px) {
+  .gridContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
