@@ -25,5 +25,3 @@ plants that are native to your area.
 #### Questions
 
 If you have questions about this project, please contact sustainability@sterlingheights.gov for more information.
-
-
