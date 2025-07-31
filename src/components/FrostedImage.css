@@ -103,6 +103,12 @@ Float right places the image on the right side of the page. */
   .frosted-container.xlarge {
     max-width: 1500px;
   }
+  .frosted-container.float-right {
+    float: none;
+    display: block;
+    margin: 1em auto;
+    max-width: 100%;
+  }
 }
 
 

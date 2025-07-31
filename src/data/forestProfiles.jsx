@@ -16,8 +16,6 @@ Attributes:
 */
 
 
-
-
 export const forestProfiles = [
   {
     id: "dry_prairie",

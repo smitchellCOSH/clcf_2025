@@ -16,7 +16,6 @@ for screens > 768px wide */
 
 
 /* MOBILE & TABLET SCREEN WIDTHS */
-
 /* Defines grid numbers for screens that are between 769 and 1200px wide. */
 @media (max-width: 1200px) {
   .responsiveGrid {
@@ -37,7 +36,6 @@ for screens > 768px wide */
     grid-template-columns: repeat(1, 1fr);
   }
 }
-
 
 
 

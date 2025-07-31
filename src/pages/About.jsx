@@ -333,7 +333,9 @@ const About = () => {
           justifyContent: "center",
           gap: "0.5rem"
         }}>
+          
           <BasicButton to="/Guide">Up Next: Guide</BasicButton>
+
           <ScrollToTop />
         </div>
       </div>

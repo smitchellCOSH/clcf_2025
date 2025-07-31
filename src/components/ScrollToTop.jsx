@@ -1,6 +1,6 @@
 /* 
 
-ScrollToTop Component
+ScrollToTop Component.
 
 Handles the action of scrolling to the top of the page when a ScrollToTop
 button is pressed. Interfaces with the BasicButton component for styling. No

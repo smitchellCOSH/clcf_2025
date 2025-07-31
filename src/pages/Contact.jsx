@@ -28,6 +28,7 @@ const Contact = () => {
   return (
     <div>
       <HeaderComp />
+
       <Navbar />
 
       <div className={styles.about_content}>
