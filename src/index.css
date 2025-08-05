@@ -5,7 +5,7 @@ name with the name of your new font. Add the new font's URL and format. Then,
 you can reference the new font by name in other parts of your code. */
 @font-face {
   font-family: "Nunito Sans";
-  src: url("fonts/NunitoSansVariable.ttf") format("truetype");
+  src: url('/clcf_2025/fonts/NunitoSansVariableFont.ttf') format("truetype");
 }
 
 
